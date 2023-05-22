@@ -18,7 +18,7 @@
                   height="30px"
                 />
               </div>
-              <b>Landline Phone: </b>
+              <h3>Landline Phone:</h3>
             </div>
             <span class="phone-number">+00 123 456 789</span>
           </div>
@@ -32,7 +32,7 @@
                   height="30px"
                 />
               </div>
-              <b>Mail: </b>
+              <h3>Mail:</h3>
             </div>
             <span class="email-address">example@apex-venture.com</span>
           </div>
@@ -40,35 +40,39 @@
       </div>
       <hr style="max-width: 600px" />
       <div class="newsletter">
-        <h3 style="color: var(--white-color)">Newsletter</h3>
-        <div>
-          <label class="label name">
-            <span class="required">Name</span>
-            <input type="text" class="text" name="name" />
-          </label>
+        <h2 style="color: var(--white-color)">Newsletter</h2>
+        <div class="field-row">
+          <div class="field">
+            <span>Name</span>
+            <input type="text" class="input-field" name="name" />
+          </div>
+          <div class="field">
+            <span>Surname</span>
+            <input type="text" class="input-field" name="surname" />
+          </div>
         </div>
-        <div>
-          <label class="label surname">
-            <span class="required">Surname</span>
-            <input type="text" class="text" name="surname" />
-          </label>
+        <div class="field">
+          <span>Email</span>
+          <input type="email" class="input-field" name="email" />
         </div>
-        <div>
-          <label class="label email">
-            <span class="required">Email</span>
-            <input type="email" class="text" name="email" />
-          </label>
-        </div>
-        <div>
-          <label class="label company">
-            <span>Company</span>
-            <input type="text" class="text" name="company" />
-          </label>
+        <div class="field">
+          <span>Company</span>
+          <input type="text" class="input-field" name="company" />
         </div>
       </div>
+      <div class="informative-checkbox">
+        <input type="checkbox" name="informative" />
+        <span class="informative-text"
+          >I declare that I have read the privacy policy and consent to the
+          processing of my personal data for the purposes of service delivery
+          and for the fulfillment of contractual and legal obligations
+        </span>
+      </div>
+      <button class="submit-button">Submit</button>
     </div>
   </div>
 </template>
+
 
 <style>
 /* Container */
@@ -80,21 +84,12 @@
   height: 100vh;
 }
 
-.card-body {
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
 .card {
   position: relative;
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
   background-color: var(--secondary-color);
-  padding: 20px;
+  padding: 30px;
   min-height: 600px;
   max-width: 800px;
   width: 80%; /* Larghezza massima */
@@ -102,7 +97,7 @@
   text-align: center;
   justify-content: centers;
   align-items: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 /* Contacts */
@@ -112,7 +107,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .phone-container,
@@ -144,22 +139,68 @@
 
 /* Form */
 
-
 .newsletter {
-  margin-top: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10% auto 10%;
 }
 
-.newsletter h4 {
-  margin-bottom: 10px;
+.field-row {
+  justify-content: center;
+  gap: 30%;
+  display: flex;
 }
 
-.form-group {
-  margin-bottom: 10px;
+.field {
+  text-align: left;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
-.btn-primary {
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+.field > span {
+  color: var(--white-color);
+}
+
+.input-field {
+  border: transparent;
+  width: 100%;
+  height: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.informative-text {
+  font-size: x-small;
+}
+
+.informative-checkbox {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10% auto 10%;
+}
+
+.informative-checkbox > span {
+  text-align: left;
+  color: var(--white-color);
+}
+
+.submit-button {
+  margin: 40px;
   background-color: var(--clickable-color);
+  color: var(--white-color);
+  border: none;
+  min-width: 150px;
+  min-height: 30px;
+  border-radius: 15px 0 15px 0;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s;
+}
+
+.submit-button:hover {
+  cursor: pointer;
 }
 </style>

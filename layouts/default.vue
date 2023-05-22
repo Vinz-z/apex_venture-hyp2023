@@ -22,16 +22,16 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #f3eff5;
+  background-color: #F3EFF5;
   margin: 0;
 }
 
 :root {
-  --primary-color: #00524cff;
+  --primary-color: #00524C;
   --secondary-color: #49817f;
-  --clickable-color: #2effd1ff;
-  --white-color: #f3eff5ff;
-  --black-color: #2e2836ff;
+  --clickable-color: #26CFAA;
+  --white-color: #F3EFF5;
+  --black-color: #2E2836;
   --decoration-color: #e0607eff;
 
   --big-round: 30px;
