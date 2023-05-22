@@ -14,6 +14,8 @@
 </script>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+
     body {
         margin: 0;
     }
@@ -24,5 +26,15 @@
         flex-direction: column;
         background-color: #F3EFF5;
         margin: 0;
+    }
+
+    :root {
+        --primary-color: #00524cff;
+        --secondary-color: #2effd1ff;
+        --white-color: #f3eff5ff;
+        --black-color: #2e2836ff;
+        --decoration-color: #e0607eff;
+
+        font-family: 'Heebo', sans-serif;
     }
 </style>

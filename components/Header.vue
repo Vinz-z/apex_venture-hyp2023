@@ -16,7 +16,6 @@
     header
     {
         padding: 0px 20px 0px 20px;
-        margin-bottom: 5px;
         
         display: flex;
         justify-content: space-between;
