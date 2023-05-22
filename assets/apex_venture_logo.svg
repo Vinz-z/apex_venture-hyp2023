@@ -1,0 +1,55 @@
+<svg id="Livello_2" data-name="Livello 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 702.279 609.372">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #f3eff5;
+        stroke-linejoin: round;
+        stroke-width: 15px;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #f3eff5;
+      }
+
+      .cls-3 {
+        font-size: 99.583px;
+        font-family: Mytupi-Bold, Mytupi;
+        font-weight: 700;
+      }
+
+      .cls-4 {
+        letter-spacing: 1.442em;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        letter-spacing: 0.386em;
+      }
+
+      .cls-7 {
+        letter-spacing: 0.339em;
+      }
+
+      .cls-8 {
+        letter-spacing: 0.386em;
+      }
+    </style>
+  </defs>
+  <g>
+    <g>
+      <g>
+        <polyline class="cls-1" points="553.687 12.761 235.056 331.391 152.374 248.708 17.259 335.424 278.414 74.269 542.595 338.449 670.652 210.392 542.595 338.449"/>
+        <polygon class="cls-2" points="515.216 15.268 551.19 15.258 551.179 51.231 566.447 35.963 566.447 0 530.484 0 515.216 15.268"/>
+      </g>
+      <g>
+        <line class="cls-1" x1="542.595" y1="338.449" x2="685.021" y2="195.772"/>
+        <polygon class="cls-2" points="682.547 234.244 682.526 198.271 646.553 198.313 661.807 183.031 697.77 182.999 697.802 218.962 682.547 234.244"/>
+      </g>
+    </g>
+    <text class="cls-3" transform="translate(0 467.068)"><tspan class="cls-4">APE<tspan class="cls-5" x="635.757" y="0">X</tspan></tspan><tspan class="cls-6" x="0" y="119.499">VENT</tspan><tspan class="cls-7" x="419.59" y="119.499">U</tspan><tspan class="cls-8" x="525.333" y="119.499">R</tspan><tspan x="635.758" y="119.499">E</tspan></text>
+  </g>
+</svg>
