@@ -34,6 +34,8 @@ body {
   --black-color: #2e2836ff;
   --decoration-color: #e0607eff;
 
+  --big-round: 30px;
+
   font-family: "Heebo", sans-serif;
 }
 </style>

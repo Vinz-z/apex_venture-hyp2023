@@ -37,7 +37,7 @@ export default {
   width: 100%;
   height: 30vh;
   overflow: hidden;
-  border-bottom: var(--secondary-color) 5px solid;
+  border-bottom: var(--clickable-color) 5px solid;
 }
 
 .banner-image {
