@@ -68,7 +68,7 @@ export default {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: auto;
   padding: 20px;
   color: var(--white-color);
 }

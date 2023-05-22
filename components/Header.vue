@@ -4,6 +4,10 @@
 <template>
     <header>
         <h1>Apex Venture</h1>
+        <nav>
+            <NuxtLink to = "/">HOME</NuxtLink>
+            <NuxtLink to = "/contacts">Contacts</NuxtLink>
+        </nav>
     </header>
 </template>
 
