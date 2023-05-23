@@ -68,7 +68,7 @@
           and for the fulfillment of contractual and legal obligations
         </span>
       </div>
-      <button class="submit-button">Submit</button>
+      <button class="av-button">Submit</button>
     </div>
   </div>
 </template>
@@ -103,8 +103,6 @@
 /* Contacts */
 
 .contacts-container {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -112,9 +110,9 @@
 
 .phone-container,
 .email-container {
+  flex-wrap: wrap;
   justify-content: center;
   display: flex;
-  gap: 100px;
   color: var(--white-color);
   text-align: center;
   align-items: center;
@@ -123,10 +121,15 @@
 
 .phone-text-icon-container,
 .email-text-icon-container {
+  margin-right: 100px;
   gap: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.phone-number{
+  flex-wrap: nowrap;
 }
 
 .phone-icon,
@@ -164,6 +167,7 @@
 }
 
 .input-field {
+  background-color: var(--white-color);
   border: transparent;
   width: 100%;
   height: 20px;
@@ -188,19 +192,7 @@
   color: var(--white-color);
 }
 
-.submit-button {
-  margin: 40px;
-  background-color: var(--clickable-color);
-  color: var(--white-color);
-  border: none;
-  min-width: 150px;
-  min-height: 30px;
-  border-radius: 15px 0 15px 0;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s;
-}
-
-.submit-button:hover {
+button:hover {
   cursor: pointer;
 }
 </style>
