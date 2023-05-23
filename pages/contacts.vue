@@ -61,18 +61,44 @@
         </div>
       </div>
       <div class="informative-checkbox">
-        <input type="checkbox" name="informative" />
+        <input
+          type="checkbox"
+          name="informative"
+          v-model="checkBoxValue"
+          @change="handleChangeCheckbox"
+        />
         <span class="informative-text"
           >I declare that I have read the privacy policy and consent to the
           processing of my personal data for the purposes of service delivery
           and for the fulfillment of contractual and legal obligations
         </span>
       </div>
-      <button class="av-button">Submit</button>
+      <div>
+        <ContactsButton :isChecked="checkBoxValue" />
+      </div>
     </div>
   </div>
 </template>
 
+<script>
+import ContactsButton from "~/components/ContactsButton.vue";
+
+export default {
+  components: {
+    ContactsButton,
+  },
+  data() {
+    return {
+      checkBoxValue: false,
+    };
+  },
+  methods: {
+    handleChangeCheckbox() {
+      console.log("Checkbox value: " + this.checkBoxValue);
+    },
+  },
+};
+</script>
 
 <style>
 /* Container */
@@ -128,7 +154,7 @@
   justify-content: center;
 }
 
-.phone-number{
+.phone-number {
   flex-wrap: nowrap;
 }
 
@@ -190,9 +216,5 @@
 .informative-checkbox > span {
   text-align: left;
   color: var(--white-color);
-}
-
-button:hover {
-  cursor: pointer;
 }
 </style>
