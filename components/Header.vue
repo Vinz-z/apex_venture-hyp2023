@@ -24,7 +24,7 @@
             >
           </li>
           <li>
-            <NuxtLink to="/contacts" style="color: var(--white-color)"
+            <NuxtLink to="/projects" style="color: var(--white-color)"
               >Projects</NuxtLink
             >
           </li>

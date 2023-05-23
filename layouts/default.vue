@@ -35,6 +35,7 @@ body {
   --decoration-color: #e0607eff;
 
   --big-round: 30px;
+  --medium-round: 20px;
 
   font-family: "Heebo", sans-serif;
 }
