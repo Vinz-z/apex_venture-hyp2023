@@ -1,5 +1,5 @@
 <template>
-  <div class="banner">
+  <div class="banner mt-5">
     <div class="banner-image">
       <img :src="imageUrl" alt="Banner Image" />
       <div class="banner-overlay"></div>
@@ -35,9 +35,10 @@ export default {
 .banner {
   position: relative;
   width: 100%;
-  height: 30vh;
+  height: 40vh;
   overflow: hidden;
   border-bottom: var(--clickable-color) 5px solid;
+  z-index: 1;
 }
 
 .banner-image {
@@ -53,6 +54,8 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 85%;
+
 }
 
 .banner-overlay {
@@ -74,10 +77,13 @@ export default {
 }
 
 .banner-title {
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  font-size: 4rem;
 }
 
 .banner-caption {
   width: 100%;
+  font-size: 1.2rem;
+
 }
 </style>

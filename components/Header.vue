@@ -1,14 +1,14 @@
 <template>
-  <nav class="w-full p-6 bg-[var(--primary-color)]">
-    <div class="flex items-center justify-between">
+  <nav class="w-full p-6 bg-[var(--primary-color)] fixed top-0 z-10" id="header">
+    <div class="flex items-center justify-between" >
       <!-- Header logo -->
       <div>
         <NuxtLink to="/">
-        <img
-          src="~/assets/apex_venture_logo.svg"
-          alt="logo"
-          class="h-20 w-20"
-        />
+          <img
+            src="~/assets/logos/apex_venture_logo.svg"
+            alt="logo"
+            class="h-auto w-20"
+          />
         </NuxtLink>
       </div>
 
@@ -33,27 +33,53 @@
       <div class="hidden md:flex w-full justify-center">
         <ul class="flex space-x-20 text-2xl items-center">
           <li>
-            <NuxtLink to="/ourTeam" style="color: var(--white-color)"
-              >Team</NuxtLink
+            <NuxtLink
+              to="/ourTeam"
+              style="color: var(--white-color)"
+              class="hovered-link"
+              @mouseenter="handleMouseEnter"
+              @mouseleave="handleMouseLeave"
             >
+              Team
+            </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/" style="color: var(--white-color)"
+            <NuxtLink
+              to="/"
+              style="color: var(--white-color)"
+              class="hovered-link"
+              @mouseenter="handleMouseEnter"
+              @mouseleave="handleMouseLeave"
               >Strategy</NuxtLink
             >
           </li>
           <li>
-            <NuxtLink to="/projects" style="color: var(--white-color)"
+            <NuxtLink
+              to="/projects"
+              style="color: var(--white-color)"
+              class="hovered-link"
+              @mouseenter="handleMouseEnter"
+              @mouseleave="handleMouseLeave"
               >Projects</NuxtLink
             >
           </li>
           <li>
-            <NuxtLink to="/" style="color: var(--white-color)"
-              >Area</NuxtLink
+            <NuxtLink
+              to="/"
+              style="color: var(--white-color)"
+              class="hovered-link"
+              @mouseenter="handleMouseEnter"
+              @mouseleave="handleMouseLeave"
+              >Areas</NuxtLink
             >
           </li>
           <li>
-            <NuxtLink to="/contacts" style="color: var(--white-color)"
+            <NuxtLink
+              to="/contacts"
+              style="color: var(--white-color)"
+              class="hovered-link"
+              @mouseenter="handleMouseEnter"
+              @mouseleave="handleMouseLeave"
               >Contacts</NuxtLink
             >
           </li>
@@ -112,9 +138,9 @@
         >
           <div>
             <img
-              src="~/assets/apex_venture_logo.svg"
+              src="~/assets/logos/apex_venture_logo.svg"
               alt="logo"
-              class="h-20 w-auto"
+              class="h-auto w-20"
             />
           </div>
         </span>
@@ -122,7 +148,7 @@
         <ul class="divide-y font-sans">
           <li>
             <NuxtLink
-              to="/"
+              to="/ourTeam"
               style="color: var(--white-color)"
               class="my-4 inline-block"
               @click="isOpen = false"
@@ -140,7 +166,7 @@
           </li>
           <li>
             <NuxtLink
-              to="/"
+              to="/projects"
               style="color: var(--white-color)"
               class="my-4 inline-block"
               @click="isOpen = false"
@@ -175,12 +201,19 @@
 export default {
   data() {
     return {
+      isHovered: false,
       isOpen: false,
     };
   },
   methods: {
     drawer() {
       this.isOpen = !this.isOpen;
+    },
+    handleMouseEnter() {
+      this.isHovered = true;
+    },
+    handleMouseLeave() {
+      this.isHovered = false;
     },
   },
   watch: {
@@ -196,3 +229,28 @@ export default {
   },
 };
 </script>
+
+<style>
+.hovered-link {
+  position: relative;
+}
+
+.hovered-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--clickable-color);
+  transition: width 0.2s ease;
+}
+
+.hovered-link:hover::after {
+  width: 100%;
+}
+
+#header {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+</style>
