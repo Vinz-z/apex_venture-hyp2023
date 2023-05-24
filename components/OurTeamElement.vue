@@ -2,22 +2,24 @@
     <div class="boxed">
         <div class="image-column">
             <img class="image" :src="img">
-            <div class="bg-shape1">
+            <div :class="[`bg-shape1-${left ? 'left' : 'right'}`]">
             </div>
-            <div class="bg-shape2">
+            <div :class="[`bg-shape2-${left ? 'right' : 'left'}`]">
             </div>
         </div>
         <div class="data-column">
             <div class="name">
-                <h1>{{ title }}</h1>
+                {{ title }}
             </div>
             <div class="role">
-                <h2>{{ role }}</h2>
+                {{ role }}
             </div>
             <div class="cv">
-                <p>{{ cv }}</p>
+                {{ cv }}
             </div>
-            <button class="av-button">See more</button>
+            <div class="button">
+                <button class="av-button">See more</button>
+            </div>
         </div>
     </div>
 </template>
@@ -40,7 +42,11 @@ export default {
     img: {
         type: String,
         required: true,
-    }
+    },
+    left: {
+      type: Boolean,
+      required: true,
+    },
   },
 };
 </script>
@@ -52,9 +58,9 @@ export default {
         border-top-left-radius: 50px;
         border-bottom-right-radius: 50px;
         background-color: var(--secondary-color);
-        max-width: 500px;
+        max-width: 600px;
         min-width: 500px;
-        max-height: 300px;
+        max-height: 100%;
         min-height: 300px;
         flex: 1 1 40%;
         margin: 4%;
@@ -79,8 +85,9 @@ export default {
         align-items: right;
         padding: 5%;
         min-width: 50%;
-        width: 50%;
+        max-width: 50%;
         min-height: 100%;
+        max-height: 100%;
         text-align: left;
     }
 
@@ -89,7 +96,7 @@ export default {
         z-index: 3;
     }
 
-    .bg-shape1 {
+    .bg-shape1-left {
         padding: 5%;
         position: absolute;
         top: 50%;
@@ -102,7 +109,20 @@ export default {
         z-index: 1;
     }
 
-    .bg-shape2 {
+    .bg-shape1-right {
+        padding: 5%;
+        position: absolute;
+        top: 50%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        width: 30%;
+        height: 30%;
+        border-radius: 50%;
+        background-color: var(--clickable-color);
+        z-index: 1;
+    }
+
+    .bg-shape2-right {
         margin: 10%;
         top: 35%;
         left: 35%;
@@ -115,15 +135,52 @@ export default {
         z-index: 2;
     }
 
+    .bg-shape2-left {
+        margin: 10%;
+        top: 35%;
+        left: 10%;
+        padding: 5%;
+        position: absolute;
+        width: 40%;
+        height: 40%;
+        border-radius: 50%;
+        background-color: var(--decoration-color);
+        z-index: 2;
+    }
+
     .name {
+        font-weight: bold;
+        position: relative;
+        max-height: 30px;
+        min-height: 30px;
+        font-size: 200%;
+        padding-top: 5%;
+        padding-bottom: 5%;
         color: var(--white-color);
     }    
     
     .role {
+        font-weight: bold;
+        position: relative;
+        max-height: 30px;
+        min-height: 30px;
+        font-size: 130%;
+        padding-top: 5%;
+        padding-bottom: 2%;
         color: var(--decoration-color);
     }
 
     .cv {
+        position: relative;
+        font-size: 100%;
+        max-height: 70%;
+        min-height: 70%;
+        padding-right: 5%;
         color: var(--white-color);
+    }
+
+    .button {
+        top: 68%;
+        position: absolute;
     }
 </style>

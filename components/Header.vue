@@ -14,7 +14,7 @@
       <div class="navbar-right">
         <ul>
           <li>
-            <NuxtLink to="/contacts" style="color: var(--white-color)"
+            <NuxtLink to="/ourTeam" style="color: var(--white-color)"
               >Team</NuxtLink
             >
           </li>
