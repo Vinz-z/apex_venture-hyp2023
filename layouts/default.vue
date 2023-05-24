@@ -12,7 +12,7 @@
 <script></script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Heebo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Tilt+Prism&display=swap");
 
 body {
   margin: 0;
@@ -22,21 +22,21 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #F3EFF5;
+  background-color: var(--white-color);
   margin: 0;
 }
 
 :root {
-  --primary-color: #00524C;
+  --primary-color: #00524c;
   --secondary-color: #49817f;
-  --clickable-color: #26CFAA;
-  --white-color: #F3EFF5;
-  --black-color: #2E2836;
+  --clickable-color: #26cfaa;
+  --white-color: #f3eff5;
+  --black-color: #2e2836;
   --decoration-color: #e0607eff;
 
   --big-round: 30px;
   --medium-round: 20px;
 
-  font-family: "Heebo", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 </style>

@@ -1,9 +1,11 @@
 <template>
-  <Banner
-    imageUrl="https://picsum.photos/id/237/200/300"
-    title="Contacts us"
+  <banner
+    imageUrl="_nuxt/assets/banners/bannerContacts.jpeg"
+    title="Contact us"
     caption="Sign up for our newsletter to receive the latest news and updates. To get in touch with us, reach out to us via landline phone or email."
   />
+  <Circle top="50" left="90" size="400" color="var(--clickable-color)"/>
+  <Circle top="65" left="95" size="350" color="var(--decoration-color)"/>
   <div class="main-container">
     <div class="card">
       <div class="card-body">
@@ -38,7 +40,7 @@
           </div>
         </div>
       </div>
-      <hr style="max-width: 600px" />
+      <hr />
       <div class="newsletter">
         <h2 style="color: var(--white-color)">Newsletter</h2>
         <div class="field-row">
@@ -74,7 +76,7 @@
         </span>
       </div>
       <div>
-        <ContactsButton :isChecked="checkBoxValue" />
+        <contacts-button :isChecked="checkBoxValue" />
       </div>
     </div>
   </div>
@@ -82,10 +84,14 @@
 
 <script>
 import ContactsButton from "~/components/ContactsButton.vue";
+import Banner from "~/components/Banner.vue";
+import Circle from "~/components/BackgroundCircle.vue";
 
 export default {
   components: {
     ContactsButton,
+    Banner,
+    Circle,
   },
   data() {
     return {
@@ -111,6 +117,7 @@ export default {
 }
 
 .card {
+  gap: 20px;
   position: relative;
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -131,24 +138,23 @@ export default {
 .contacts-container {
   justify-content: center;
   align-items: center;
-  gap: 10px;
 }
 
 .phone-container,
 .email-container {
+  padding: 3%;
   flex-wrap: wrap;
   justify-content: center;
   display: flex;
   color: var(--white-color);
   text-align: center;
   align-items: center;
-  margin-bottom: 10px;
+  font-size: large;
 }
 
 .phone-text-icon-container,
 .email-text-icon-container {
-  margin-right: 100px;
-  gap: 20px;
+  margin-right: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,6 +179,10 @@ export default {
   align-items: center;
   justify-content: center;
   margin: 0 10% auto 10%;
+}
+
+.newsletter > h2 {
+  font-size: x-large;
 }
 
 .field-row {
@@ -217,4 +227,13 @@ export default {
   text-align: left;
   color: var(--white-color);
 }
+
+hr {
+  width: 80%;
+  margin: 20px 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 </style>
