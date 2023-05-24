@@ -11,7 +11,7 @@
         :logo_path="project.logo_path!"
         :name="project.name!"
         :short_overview="project.short_overview!"
-        :areas="['gino', 'pino']"
+        :areas="['budget', 'education']"
         />
     </div>
 </template>

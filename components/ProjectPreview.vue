@@ -4,12 +4,12 @@
             <div class="project-image" :style="`background-image: url(${logo_path});`"></div>
         </div>
         <div class="project-info">
-            <h3>{{ name }}</h3>
-            <ul>
-                <li v-for="area in areas" :key="area">
-                    <NuxtLink :to="`/areas/${area}`">{{ area }}</NuxtLink>
-                </li>
-            </ul>
+            <h2>{{ name }}</h2>
+            <div class="area-container">
+                <NuxtLink :to="`/areas/${area}`" v-for="area in areas" :key="area">
+                    <img :src="`/icons/areas/${area}.png`" alt="{{ area }}" height="30px" width="30px"/>
+                </NuxtLink>
+            </div>
             <p>{{ short_overview }}</p>
         </div>
     </div>
@@ -89,9 +89,19 @@ const props = defineProps({
     z-index: -1;
 }
 
-.project-info h3 {
+.project-info h2 {
     width: 100%;
     text-align: center;
+}
+
+.area-container {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .project-info p {

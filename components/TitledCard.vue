@@ -1,5 +1,5 @@
 <template>
-  <div class="boxed">
+  <div class="titled-card">
     <div :class="[{ title: true }, `title-${left ? 'left' : 'right'}`]">
       <h2>{{ title }}</h2>
     </div>
@@ -36,7 +36,7 @@ export default {
   margin: 0;
 }
 
-.boxed {
+.titled-card {
   padding: 1rem;
   margin: 1rem;
   color: var(--white-color);
