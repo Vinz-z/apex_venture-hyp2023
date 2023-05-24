@@ -1,32 +1,33 @@
 <template>
     <div class="project-preview">
         <div class="image-container">
-            <div class="project-image" :style="`background-image: url(${imageUrl});`"></div>
+            <div class="project-image" :style="`background-image: url(${logo_path});`"></div>
         </div>
         <div class="project-info">
-            <h3>{{ title }}</h3>
+            <h3>{{ name }}</h3>
             <ul>
                 <li v-for="area in areas" :key="area">
                     <NuxtLink :to="`/areas/${area}`">{{ area }}</NuxtLink>
                 </li>
             </ul>
-            <p>{{ caption }}</p>
+            <p>{{ short_overview }}</p>
         </div>
     </div>
 </template>
 
 <script setup>
 const props = defineProps({
-    imageUrl: {
+    logo_path: {
         type: String,
         default: 'https://picsum.photos/id/237/200/300',
     },
-    title: {
+    name: {
         type: String,
         default: 'no title',
     },
-    caption: {
+    short_overview: {
         type: String,
+        required: true,
         default: 'no caption',
     },
     areas: {

@@ -6,68 +6,27 @@
     />
     <div class="content">
         <ProjectPreview
-        v-for="project in projects"
+        v-for="project of projects"
         :key="project.id"
-        :imageUrl="project.imageUrl"
-        :title="project.title"
-        :caption="project.caption"
-        :areas="project.areas"
+        :logo_path="project.logo_path!"
+        :name="project.name!"
+        :short_overview="project.short_overview!"
+        :areas="['gino', 'pino']"
         />
     </div>
 </template>
 
-<script>
-    export default {
-        data() {
-            return {
-                projects: [
-                    {
-                        id: 1,
-                        imageUrl: 'https://picsum.photos/id/237/200/300',
-                        title: 'Project 1',
-                        caption: 'Project 1 Caption',
-                        areas: ['Area 1', 'Area 2'],
-                    },
-                    {
-                        id: 2,
-                        imageUrl: 'https://picsum.photos/id/237/200/300',
-                        title: 'Project 2',
-                        caption: 'Project 2 Caption',
-                        areas: ['Area 1', 'Area 2'],
-                    },
-                    {
-                        id: 3,
-                        imageUrl: 'https://picsum.photos/id/237/200/300',
-                        title: 'Project 3',
-                        caption: 'Project 3 Caption',
-                        areas: ['Area 1', 'Area 2'],
-                    },
-                    {
-                        id: 4,
-                        imageUrl: 'https://picsum.photos/id/237/200/300',
-                        title: 'Project 4',
-                        caption: 'Project 4 Caption',
-                        areas: ['Area 1', 'Area 2'],
-                    },
-                    {
-                        id: 5,
-                        imageUrl: 'https://picsum.photos/id/237/200/300',
-                        title: 'Project 5',
-                        caption: 'Project 5 Caption',
-                        areas: ['Area 1', 'Area 2'],
-                    },
-                    {
-                        id: 6,
-                        imageUrl: 'https://picsum.photos/id/237/200/300',
-                        title: 'Project 6',
-                        caption: 'Project 6 Caption',
-                        areas: ['Area 1', 'Area 2'],
-                    },
-                ],
-            }
-        }
-    }
+<script setup lang="ts">
+    import { Database } from '~~/types/supabase'
+
+    const client = useSupabaseClient<Database>();
+
+    const { data: projects } = await useAsyncData('projects', async () => {
+        const { data } = await client.from('Project').select('*');
+        return data;
+    });
 </script>
+
 <style>
 .content {
     display: flex;
