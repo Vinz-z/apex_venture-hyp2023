@@ -33,7 +33,7 @@
       <div class="hidden md:flex w-full justify-center">
         <ul class="flex space-x-20 text-2xl items-center">
           <li>
-            <NuxtLink to="/" style="color: var(--white-color)"
+            <NuxtLink to="/ourTeam" style="color: var(--white-color)"
               >Team</NuxtLink
             >
           </li>
@@ -43,7 +43,7 @@
             >
           </li>
           <li>
-            <NuxtLink to="/" style="color: var(--white-color)"
+            <NuxtLink to="/projects" style="color: var(--white-color)"
               >Projects</NuxtLink
             >
           </li>

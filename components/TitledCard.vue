@@ -37,8 +37,8 @@ export default {
 }
 
 .boxed {
-  padding: 20px;
-  margin: 20px;
+  padding: 1rem;
+  margin: 1rem;
   color: var(--white-color);
   position: relative;
 }
@@ -64,7 +64,7 @@ export default {
 
 .content-box {
   background-color: var(--secondary-color);
-  padding: 20px;
+  padding: 1rem;
   position: relative;
   top: -50px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
