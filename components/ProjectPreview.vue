@@ -1,13 +1,13 @@
 <template>
-    <div class="project-preview">
-        <div class="image-container">
+    <div class="project-preview justify-self-center">
+        <nuxt-link :to="project2route(name)" class="image-container">
             <div class="project-image" :style="`background-image: url(${logo_path});`"></div>
-        </div>
+        </nuxt-link>
         <div class="project-info">
-            <h2>{{ name }}</h2>
+            <h2 class="text-2xl font-medium leading-normal mt-0 mb-2 p-2">{{ name }}</h2>
             <div class="area-container">
-                <NuxtLink :to="`/areas/${area}`" v-for="area in areas" :key="area">
-                    <img :src="`/icons/areas/${area}.png`" alt="{{ area }}" height="30px" width="30px"/>
+                <NuxtLink :to="`/areas/${area.name}`" v-for="area in areas">
+                    <img :src="area.icon" alt="area icon" height="30px" width="30px"/>
                 </NuxtLink>
             </div>
             <p>{{ short_overview }}</p>
@@ -15,29 +15,31 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const props = defineProps({
     logo_path: {
         type: String,
-        default: 'https://picsum.photos/id/237/200/300',
+        required: true,
     },
     name: {
         type: String,
-        default: 'no title',
+        required: true,
     },
     short_overview: {
         type: String,
         required: true,
-        default: 'no caption',
     },
     areas: {
-        type: Array,
+        type: Array<Area>,
         default: () => [],
     },
 });
+
+const project2route = (name: string) => `/projects/${name.toLowerCase().replace(/ /g, "-")}`;
+
 </script>
 
-<style>
+<style scoped>
 .project-preview {
     height: 400px;
     width: 285px;
@@ -108,5 +110,4 @@ const props = defineProps({
     width: 100%;
     text-align: center;
 }
-
 </style>
