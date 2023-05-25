@@ -1,5 +1,5 @@
 <template>
-    <div class="boxed">
+    <div class="box">
         <div class="image-column">
             <img class="image" :src="img">
             <div :class="[`bg-shape1-${left ? 'left' : 'right'}`]">
@@ -18,7 +18,7 @@
                 {{ cv }}
             </div>
             <div class="button">
-                <button class="av-button">See more</button>
+                <NuxtLink :to="{path: '/person', query: {title, img, role}}"><button class="av-button">See more</button></NuxtLink>
             </div>
         </div>
     </div>
@@ -52,7 +52,7 @@ export default {
 </script>
 
 <style>
-    .boxed {
+    .box {
         display: flex;
         position: relative;
         border-top-left-radius: 50px;
@@ -63,7 +63,7 @@ export default {
         max-height: 100%;
         min-height: 300px;
         flex: 1 1 40%;
-        margin: 4%;
+        margin: 3%;
         text-align: center;
         justify-content: center;
         align-items: center;
@@ -153,7 +153,7 @@ export default {
         position: relative;
         max-height: 30px;
         min-height: 30px;
-        font-size: 200%;
+        font-size: 150%;
         padding-top: 5%;
         padding-bottom: 5%;
         color: var(--white-color);
@@ -164,17 +164,19 @@ export default {
         position: relative;
         max-height: 30px;
         min-height: 30px;
-        font-size: 130%;
+        font-size: 120%;
         padding-top: 5%;
-        padding-bottom: 2%;
+        padding-bottom: 5%;
         color: var(--decoration-color);
     }
 
     .cv {
         position: relative;
-        font-size: 100%;
+        font-size: 80%;
         max-height: 70%;
         min-height: 70%;
+        padding-top: 5%;
+        padding-bottom: 5%;
         padding-right: 5%;
         color: var(--white-color);
     }

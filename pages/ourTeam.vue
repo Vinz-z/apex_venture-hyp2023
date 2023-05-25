@@ -6,7 +6,7 @@
   />
   <div class="container">
     <OurTeamElement 
-        title="Luca Cavallaro"
+        title="Claudio Cavallaro"
         role="President" 
         cv="An experienced finance professional with a deep understanding of the startup industry and venture capital investment."
         img="_nuxt/assets/team/Roberto-Magnifico.png"
