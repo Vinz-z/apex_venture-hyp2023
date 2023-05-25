@@ -58,52 +58,87 @@ export default {
         border-top-left-radius: 50px;
         border-bottom-right-radius: 50px;
         background-color: var(--secondary-color);
-        max-width: 600px;
-        min-width: 500px;
-        max-height: 100%;
-        min-height: 300px;
-        flex: 1 1 40%;
-        margin: 3%;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         text-align: center;
         justify-content: center;
         align-items: center;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        flex-wrap: wrap;
+        height: auto;
+        flex: 1 1 50%;
+        margin: 3%;
+        max-width: 500px;
     }
 
     .image-column {
         position: relative;
-        min-width: 50%;
-        max-width: 50%;
-        min-height: 100%;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        flex-wrap: wrap;
+        width: 200px;
+    }
+    
+    .image {
+        width: 100%;
+        z-index: 3;
     }
 
     .data-column {
         position: relative;
-        align-items: right;
+        align-items: center;
+        justify-content: center;
         padding: 5%;
-        min-width: 50%;
-        max-width: 50%;
-        min-height: 100%;
-        max-height: 100%;
         text-align: left;
+        flex-wrap: wrap;
+        max-width: 300px;
+        width: 100%;
+        min-height: 300px;
     }
 
-    .image {
-        width: 80%;
-        z-index: 3;
+    .name {
+        font-weight: bold;
+        position: relative;
+        margin-bottom: 3%;
+        width: 100%;
+        font-size: 150%;
+        color: var(--white-color);
+    }    
+    
+    .role {
+        font-weight: bold;
+        position: relative;
+        width: 100%;
+        font-size: 120%;
+        color: var(--decoration-color);
     }
 
+    .cv {
+        position: relative;
+        font-size: 80%;
+        width: 100%;
+        height: fit-content;
+        padding-right: 5%;
+        color: var(--white-color);
+    }
+
+    .button {
+        top: 68%;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+    }
+
+    
     .bg-shape1-left {
         padding: 5%;
         position: absolute;
         top: 50%;
         left: 40%;
         transform: translate(-50%, -50%);
-        width: 30%;
-        height: 30%;
+        width: 40%;
+        height: 40%;
         border-radius: 50%;
         background-color: var(--clickable-color);
         z-index: 1;
@@ -115,11 +150,24 @@ export default {
         top: 50%;
         left: 70%;
         transform: translate(-50%, -50%);
-        width: 30%;
-        height: 30%;
+        width: 40%;
+        height: 40%;
         border-radius: 50%;
         background-color: var(--clickable-color);
         z-index: 1;
+    }
+    
+    .bg-shape2-left {
+        margin: 10%;
+        top: 35%;
+        left: 10%;
+        padding: 5%;
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        border-radius: 50%;
+        background-color: var(--decoration-color);
+        z-index: 2;
     }
 
     .bg-shape2-right {
@@ -128,61 +176,10 @@ export default {
         left: 35%;
         padding: 5%;
         position: absolute;
-        width: 40%;
-        height: 40%;
+        width: 50%;
+        height: 50%;
         border-radius: 50%;
         background-color: var(--decoration-color);
         z-index: 2;
-    }
-
-    .bg-shape2-left {
-        margin: 10%;
-        top: 35%;
-        left: 10%;
-        padding: 5%;
-        position: absolute;
-        width: 40%;
-        height: 40%;
-        border-radius: 50%;
-        background-color: var(--decoration-color);
-        z-index: 2;
-    }
-
-    .name {
-        font-weight: bold;
-        position: relative;
-        max-height: 30px;
-        min-height: 30px;
-        font-size: 150%;
-        padding-top: 5%;
-        padding-bottom: 5%;
-        color: var(--white-color);
-    }    
-    
-    .role {
-        font-weight: bold;
-        position: relative;
-        max-height: 30px;
-        min-height: 30px;
-        font-size: 120%;
-        padding-top: 5%;
-        padding-bottom: 5%;
-        color: var(--decoration-color);
-    }
-
-    .cv {
-        position: relative;
-        font-size: 80%;
-        max-height: 70%;
-        min-height: 70%;
-        padding-top: 5%;
-        padding-bottom: 5%;
-        padding-right: 5%;
-        color: var(--white-color);
-    }
-
-    .button {
-        top: 68%;
-        position: absolute;
     }
 </style>

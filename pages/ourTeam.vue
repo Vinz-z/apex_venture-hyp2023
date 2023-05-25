@@ -38,6 +38,8 @@
 
 <style>
 .container {
+    margin-left: auto;
+    margin-right: auto;
     padding: 5%;
     flex-wrap: wrap;
     justify-content: center;
