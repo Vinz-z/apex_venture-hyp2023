@@ -1,5 +1,5 @@
 <template>
-  <div class="banner mt-5">
+  <div class="banner">
     <div class="banner-image">
       <img :src="imageUrl" alt="Banner Image" />
       <div class="banner-overlay"></div>

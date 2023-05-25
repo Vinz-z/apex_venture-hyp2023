@@ -4,10 +4,10 @@
     title="Contact us"
     caption="Sign up for our newsletter to receive the latest news and updates. To get in touch with us, reach out to us via landline phone or email."
   />
-  <Circle top="30" left="90" size="400" color="var(--clickable-color)"/>
-  <Circle top="45" left="95" size="350" color="var(--decoration-color)"/>
-  <Circle top="75" left="-10" size="400" color="var(--decoration-color)"/>
-  <Circle top="70" left="-8" size="250" color="var(--clickable-color)"/>
+  <Circle top="30" left="90" size="400" color="var(--clickable-color)" />
+  <Circle top="45" left="95" size="350" color="var(--decoration-color)" />
+  <Circle top="75" left="-10" size="400" color="var(--decoration-color)" />
+  <Circle top="70" left="-8" size="250" color="var(--clickable-color)" />
   <div class="main-container">
     <div class="card">
       <div class="card-body">
@@ -47,21 +47,44 @@
         <h2 style="color: var(--white-color)">Newsletter</h2>
         <div class="field-row">
           <div class="field">
-            <span>Name</span>
-            <input type="text" class="input-field" name="name" />
+            <span class="text-[var(--white-color)]">Name</span>
+            <input type="text" class="input-field" name="name" v-model="name" />
+            <span v-if="errors.name" class="text-yellow-500"
+              >Please enter your name.</span
+            >
           </div>
           <div class="field">
-            <span>Surname</span>
-            <input type="text" class="input-field" name="surname" />
+            <span class="text-[var(--white-color)]">Surname</span>
+            <input
+              type="text"
+              class="input-field"
+              name="surname"
+              v-model="surname"
+            />
+            <span v-if="errors.surname" class="text-yellow-500"
+              >Please enter your surname.</span
+            >
           </div>
         </div>
         <div class="field">
-          <span>Email</span>
-          <input type="email" class="input-field" name="email" />
+          <span class="text-[var(--white-color)]">Email</span>
+          <input
+            type="email"
+            class="input-field"
+            name="email"
+            v-model="email"
+          />
+          <span v-if="errors.email" class="text-yellow-500"
+            >Please enter a valid email address.</span
+          >
         </div>
         <div class="field">
-          <span>Company</span>
-          <input type="text" class="input-field" name="company" />
+          <span class="text-[var(--white-color)]">Company</span>
+          <input
+            type="text"
+            class="input-field"
+            name="company"
+          />
         </div>
       </div>
       <div class="informative-checkbox">
@@ -78,7 +101,10 @@
         </span>
       </div>
       <div>
-        <contacts-button :isChecked="checkBoxValue" />
+        <contacts-button
+          :isChecked="canSubmit"
+          @click="checkIfCorrect"
+        />
       </div>
     </div>
   </div>
@@ -97,12 +123,52 @@ export default {
   },
   data() {
     return {
+      name: "",
+      surname: "",
+      email: "",
       checkBoxValue: false,
+      canSubmit: false,
+      errors: {},
     };
   },
   methods: {
     handleChangeCheckbox() {
+
       console.log("Checkbox value: " + this.checkBoxValue);
+    },
+    checkIfCorrect() {
+      this.canSubmit = false;
+      this.errors = {};
+
+      if (this.name.trim() === "") {
+        this.errors.name = true;
+      }
+      if (this.surname.trim() === "") {
+        this.errors.surname = true;
+      }
+      if (this.email.trim() === "" || !this.isValidEmail(this.email)) {
+        this.errors.email = true;
+      }
+
+      // Viene fatto l'handleclick 
+      //del pulsante prima che ci sia questo controllo, trovare un modo per fare le cose sequenziali
+
+      if (Object.keys(this.errors).length === 0) {
+        // Tutti i campi sono validi, esegui azioni aggiuntive
+        console.log("Tutti i campi sono validi.");
+        if (this.checkBoxValue){
+          this.canSubmit = true;
+        }
+      } else {
+        // Ci sono errori nei campi
+        console.log("Ci sono errori nei campi.");
+      }
+    },
+    isValidEmail(email) {
+      // Verifica se l'email è valida
+      // Puoi utilizzare una regex o altre logiche di validazione qui
+      // In questo esempio, verifichiamo solo che l'email contenga una '@'
+      return email.includes("@");
     },
   },
 };
@@ -110,12 +176,12 @@ export default {
 
 <style>
 /* Container */
-
 .main-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin-top: 2%;
 }
 
 .card {
@@ -197,11 +263,7 @@ export default {
   text-align: left;
   width: 100%;
   border-radius: 5px;
-  margin-bottom: 20px;
-}
-
-.field > span {
-  color: var(--white-color);
+  margin-bottom: 5%;
 }
 
 .input-field {
@@ -210,7 +272,6 @@ export default {
   width: 100%;
   height: 20px;
   border-radius: 5px;
-  margin-bottom: 20px;
 }
 
 .informative-text {
@@ -236,6 +297,4 @@ hr {
   margin-left: auto;
   margin-right: auto;
 }
-
-
 </style>
