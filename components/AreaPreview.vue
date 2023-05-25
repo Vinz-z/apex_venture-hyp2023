@@ -139,6 +139,7 @@
   font-size: xx-small;
 }
 .project-content {
+  padding: 5%;
   color: var(--white-color);
   align-self: flex-start;
   font-size: xx-small;

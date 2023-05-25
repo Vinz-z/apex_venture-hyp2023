@@ -65,7 +65,7 @@
           </li>
           <li>
             <NuxtLink
-              to="/"
+              to="/areas"
               style="color: var(--white-color)"
               class="hovered-link"
               @mouseenter="handleMouseEnter"
@@ -175,7 +175,7 @@
           </li>
           <li>
             <NuxtLink
-              to="/"
+              to="/areas"
               style="color: var(--white-color)"
               class="my-4 inline-block"
               @click="isOpen = false"
