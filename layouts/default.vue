@@ -24,6 +24,8 @@ body {
   flex-direction: column;
   background-color: var(--white-color);
   margin: 0;
+  overflow: hidden;
+  position: relative;
 }
 
 :root {

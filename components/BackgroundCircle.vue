@@ -27,7 +27,7 @@
   
   <style scoped>
   .circle {
-    position: fixed;
+    position: absolute;
     border-radius: 50%;
     z-index: 0;
   }

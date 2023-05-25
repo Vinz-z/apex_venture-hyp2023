@@ -4,8 +4,10 @@
     title="Contact us"
     caption="Sign up for our newsletter to receive the latest news and updates. To get in touch with us, reach out to us via landline phone or email."
   />
-  <Circle top="50" left="90" size="400" color="var(--clickable-color)"/>
-  <Circle top="65" left="95" size="350" color="var(--decoration-color)"/>
+  <Circle top="30" left="90" size="400" color="var(--clickable-color)"/>
+  <Circle top="45" left="95" size="350" color="var(--decoration-color)"/>
+  <Circle top="75" left="-10" size="400" color="var(--decoration-color)"/>
+  <Circle top="70" left="-8" size="250" color="var(--clickable-color)"/>
   <div class="main-container">
     <div class="card">
       <div class="card-body">

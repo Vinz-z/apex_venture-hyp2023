@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-full p-6 bg-[var(--primary-color)] fixed top-0 z-10" id="header">
+  <nav class="w-full p-4 bg-[var(--primary-color)] fixed top-0 z-10" id="header">
     <div class="flex items-center justify-between" >
       <!-- Header logo -->
       <div>
@@ -7,7 +7,7 @@
           <img
             src="~/assets/logos/apex_venture_logo.svg"
             alt="logo"
-            class="h-auto w-20"
+            class="h-auto w-20 ml-5"
           />
         </NuxtLink>
       </div>
@@ -31,7 +31,7 @@
 
       <!-- Navbar -->
       <div class="hidden md:flex w-full justify-center">
-        <ul class="flex space-x-20 text-2xl items-center">
+        <ul class="flex space-x-20 text-l items-center">
           <li>
             <NuxtLink
               to="/ourTeam"
