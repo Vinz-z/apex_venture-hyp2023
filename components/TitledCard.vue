@@ -1,7 +1,7 @@
 <template>
   <div class="titled-card">
     <div :class="[{ title: true }, `title-${left ? 'left' : 'right'}`]">
-      <h2>{{ title }}</h2>
+      <div>{{ title }}</div>
     </div>
     <div
       :class="[
@@ -32,8 +32,9 @@ export default {
 </script>
 
 <style scoped>
-.title h2 {
+.title div {
   margin: 0;
+  font-size: x-large;
 }
 
 .titled-card {
@@ -41,6 +42,7 @@ export default {
   margin: 1rem;
   color: var(--white-color);
   position: relative;
+  font-size: medium;
 }
 
 .title {
