@@ -1,13 +1,13 @@
 <template>
   <nav class="w-full p-4 bg-[var(--primary-color)] fixed top-0 z-10" id="header">
-    <div class="flex items-center justify-between" >
+    <div class="flex items-center justify-between">
       <!-- Header logo -->
       <div>
         <NuxtLink to="/">
           <img
             src="~/assets/logos/apex_venture_logo.svg"
             alt="logo"
-            class="h-auto w-20 ml-5"
+            class="h-auto w-20"
           />
         </NuxtLink>
       </div>
@@ -45,12 +45,12 @@
           </li>
           <li>
             <NuxtLink
-              to="/"
+              to="/aboutUs"
               style="color: var(--white-color)"
               class="hovered-link"
               @mouseenter="handleMouseEnter"
               @mouseleave="handleMouseLeave"
-              >Strategy</NuxtLink
+              >About us</NuxtLink
             >
           </li>
           <li>
@@ -65,7 +65,7 @@
           </li>
           <li>
             <NuxtLink
-              to="/"
+              to="/areas"
               style="color: var(--white-color)"
               class="hovered-link"
               @mouseenter="handleMouseEnter"
@@ -157,11 +157,11 @@
           </li>
           <li>
             <NuxtLink
-              to="/"
+              to="/aboutUs"
               style="color: var(--white-color)"
               class="my-4 inline-block"
               @click="isOpen = false"
-              >Strategy</NuxtLink
+              >About us</NuxtLink
             >
           </li>
           <li>
@@ -175,7 +175,7 @@
           </li>
           <li>
             <NuxtLink
-              to="/"
+              to="/areas"
               style="color: var(--white-color)"
               class="my-4 inline-block"
               @click="isOpen = false"
@@ -195,6 +195,7 @@
       </aside>
     </div>
   </nav>
+  <div id="spacer" :style="{ height: spacerHeight }"></div>
 </template>
 
 <script>
@@ -203,6 +204,7 @@ export default {
     return {
       isHovered: false,
       isOpen: false,
+      spacerHeight: 0,
     };
   },
   methods: {
@@ -215,6 +217,11 @@ export default {
     handleMouseLeave() {
       this.isHovered = false;
     },
+    calculateSpacerHeight() {
+      const headerElement = document.getElementById('header');
+      const headerHeight = headerElement.offsetHeight - 5;
+      this.spacerHeight = `${headerHeight}px`;
+    }
   },
   watch: {
     isOpen: {
@@ -225,12 +232,16 @@ export default {
           else document.body.style.removeProperty("overflow");
         }
       },
+      
     },
+  },
+  mounted() {
+    this.calculateSpacerHeight();
   },
 };
 </script>
 
-<style>
+<style scoped>
 .hovered-link {
   position: relative;
 }

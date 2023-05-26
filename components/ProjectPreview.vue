@@ -37,7 +37,7 @@ const props = defineProps({
 });
 </script>
 
-<style>
+<style scoped>
 .project-preview {
     height: 400px;
     width: 285px;
