@@ -11,12 +11,12 @@
                     <div>Sectors</div>
                 </div>
                 <AreaPreview
-                    iconUrl="/icons/areas/planet-earth.png"
+                    iconUrl="/icons/areas/healthcare.png"
                     title="Health"
                     caption="Invest in medical devices, telemedicine solutions, and software to improve healthcare outcomes and manage health data."
                 />
                 <AreaPreview
-                    iconUrl="/icons/areas/healthcare.png"
+                    iconUrl="/icons/areas/planet-earth.png"
                     title="Green"
                     caption="Invest in clean energy production, waste management, and sustainable mobility solutions to address environmental challenges."
                 />
@@ -115,7 +115,8 @@ import AreaPreview from '~/components/AreaPreview.vue';
   margin-top: 135px;
   position: relative;
   width: 1px; /* Set the width of the separator */
-  background-color: gray; /* Adjust the color of the separator */}
+  background-color: gray; /* Adjust the color of the separator */
+}
 
 .technologies,
 .sectors {
