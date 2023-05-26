@@ -5,13 +5,16 @@
     caption=""
   />
   <div class="grid-box">
-    <div class="image-box">
+    <div class="first-column">
+      <div class="image-box">
         <PictureTitledCard :image="image" :role="role">
         </PictureTitledCard>
+      </div>
+      <div class="information-box">
+          gino
+      </div>
     </div>
-    <div class="information-box">
-        gino
-    </div>
+
     <div class="cv-box">
         <TitledCard title="Curriculum Vitae" :left=true>
         gino
@@ -41,28 +44,28 @@ export default {
 <style>
     .grid-box {
         display: flex;
-        flex-direction: row;
+        flex-wrap: wrap;
         position: relative;
         text-align: center;
         justify-content: center;
         align-items: center;
         padding: 5%;
     }
+    .first-column {
+      min-width: 500px;
+      display: grid;
+    }
     .image-box {
-      min-height: 400px;
-      min-width: 400px;
     }
     .information-box {
-      min-height: 400px;
-      min-width: 400px;
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
       background-color: var(--white-color);
       border-radius: 0px var(--big-round);
+      width: 500px;
     }
 
     .cv-box {
-      min-height: 800px;
-      min-width: 400px;
+      width: 600px;
     }
 
 </style>
