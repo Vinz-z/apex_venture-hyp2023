@@ -14,7 +14,7 @@
     </footer>
 </template>
 
-<style>
+<style scoped>
     footer
     {
         background-color: var(--primary-color);

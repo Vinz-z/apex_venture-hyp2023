@@ -25,8 +25,9 @@ const props = defineProps({
 </script>
 
 <style scoped>
-.title h2 {
+.title div {
   margin: 0;
+  font-size: x-large;
 }
 
 .titled-card {
@@ -34,6 +35,7 @@ const props = defineProps({
   margin: 1rem;
   color: var(--white-color);
   position: relative;
+  font-size: medium;
 }
 
 .title {

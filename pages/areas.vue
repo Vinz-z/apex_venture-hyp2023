@@ -71,7 +71,7 @@
 import AreaPreview from '~/components/AreaPreview.vue';
 </script>
 
-<style>
+<style scoped>
 
 .giga-container{
     display: flex;

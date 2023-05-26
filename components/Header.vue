@@ -45,12 +45,12 @@
           </li>
           <li>
             <NuxtLink
-              to="/"
+              to="/aboutUs"
               style="color: var(--white-color)"
               class="hovered-link"
               @mouseenter="handleMouseEnter"
               @mouseleave="handleMouseLeave"
-              >Strategy</NuxtLink
+              >About us</NuxtLink
             >
           </li>
           <li>
@@ -157,11 +157,11 @@
           </li>
           <li>
             <NuxtLink
-              to="/"
+              to="/aboutUs"
               style="color: var(--white-color)"
               class="my-4 inline-block"
               @click="isOpen = false"
-              >Strategy</NuxtLink
+              >About us</NuxtLink
             >
           </li>
           <li>
@@ -241,7 +241,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .hovered-link {
   position: relative;
 }

@@ -38,7 +38,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     .grid-box {
         display: flex;
         flex-direction: row;

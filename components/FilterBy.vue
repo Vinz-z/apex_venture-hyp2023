@@ -46,7 +46,7 @@ const props = defineProps({
 })
 </script>
 
-<style>
+<style scoped>
 #active {
     background-color: var(--clickable-color);
     border-radius: var(--medium-round) 0px;

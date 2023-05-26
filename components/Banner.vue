@@ -1,7 +1,7 @@
 <template>
   <div class="banner">
     <div class="banner-image">
-      <img :src="imageUrl" alt="Banner Image" />
+      <img :src="imageUrl" alt="Banner Image" :style="`object-position: center ${percentage}%;`"/>
       <div class="banner-overlay"></div>
     </div>
     <div class="banner-content">
@@ -27,6 +27,11 @@ export default {
       type: String,
       required: true,
     },
+    percentage: {
+      type: Number,
+      required: false,
+      default: 50,
+    },
   },
 };
 </script>
@@ -51,11 +56,11 @@ export default {
 }
 
 .banner-image img {
+  filter: blur(3px);
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 85%;
-
+ 
 }
 
 .banner-overlay {

@@ -80,11 +80,7 @@
         </div>
         <div class="field">
           <span class="text-[var(--white-color)]">Company</span>
-          <input
-            type="text"
-            class="input-field"
-            name="company"
-          />
+          <input type="text" class="input-field" name="company" />
         </div>
       </div>
       <div class="informative-checkbox">
@@ -101,10 +97,7 @@
         </span>
       </div>
       <div>
-        <contacts-button
-          :isChecked="canSubmit"
-          @click="checkIfCorrect"
-        />
+        <contacts-button @click="checkIfCorrect"/>
       </div>
     </div>
   </div>
@@ -121,23 +114,20 @@ export default {
     Banner,
     Circle,
   },
+
   data() {
     return {
       name: "",
       surname: "",
       email: "",
       checkBoxValue: false,
-      canSubmit: false,
+      checkboxError: false,
       errors: {},
     };
   },
-  methods: {
-    handleChangeCheckbox() {
 
-      console.log("Checkbox value: " + this.checkBoxValue);
-    },
+  methods: {
     checkIfCorrect() {
-      this.canSubmit = false;
       this.errors = {};
 
       if (this.name.trim() === "") {
@@ -150,31 +140,28 @@ export default {
         this.errors.email = true;
       }
 
-      // Viene fatto l'handleclick 
-      //del pulsante prima che ci sia questo controllo, trovare un modo per fare le cose sequenziali
-
-      if (Object.keys(this.errors).length === 0) {
-        // Tutti i campi sono validi, esegui azioni aggiuntive
+      if (Object.keys(this.errors).length === 0 && this.checkBoxValue) {
         console.log("Tutti i campi sono validi.");
-        if (this.checkBoxValue){
-          this.canSubmit = true;
-        }
+        this.handleClick();
       } else {
-        // Ci sono errori nei campi
         console.log("Ci sono errori nei campi.");
       }
     },
+
     isValidEmail(email) {
-      // Verifica se l'email è valida
-      // Puoi utilizzare una regex o altre logiche di validazione qui
-      // In questo esempio, verifichiamo solo che l'email contenga una '@'
-      return email.includes("@");
+      const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      return regex.test(email);
+    },
+
+    handleClick() {
+      console.log("Button clicked");
+      alert("Thank you for subscribing to our newsletter!");
     },
   },
 };
 </script>
 
-<style>
+<style scoped>
 /* Container */
 .main-container {
   display: flex;

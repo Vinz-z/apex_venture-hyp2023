@@ -1,33 +1,8 @@
 <template>
-  <button class="rectangle-button" @click="handleClick">
+  <button class="rectangle-button">
     <span> Submit </span>
   </button>
 </template>
-
-<script>
-export default {
-  props: {
-    isChecked: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  data() {
-    return {
-      isClicked: false,
-    };
-  },
-  methods: {
-    handleClick() {
-      console.log("Button clicked but not checked");
-      if (this.isChecked) {
-        console.log("Button clicked");
-        this.isClicked = !this.isClicked;
-      }
-    },
-  },
-};
-</script>
 
 <style scoped>
 .rectangle-button {
