@@ -7,7 +7,8 @@
             >
             <img class="project-logo" :src="project_image">
         </div>
-        <button class="project-button"
+        <NuxtLink to="/projects/_name">
+          <button class="project-button"
             :style="{ height: isHovered ? '80px' : '0' }"
             @mouseover="expandComponents"
             @mouseout="collapseComponents">
@@ -16,7 +17,8 @@
                 :style="{ visibility: isHovered ? 'visible' : 'hidden' }">
                 {{ project_name }}
             </div>
-        </button>
+          </button>
+        </NuxtLink>
     </div>
 
 </template>
@@ -57,8 +59,8 @@ export default {
         width: 190px;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 5%;
-        margin-top: 5%;
+        margin-bottom: 2%;
+        margin-top: 2%;
         padding-left: 20px;
         padding-right: 20px;
         

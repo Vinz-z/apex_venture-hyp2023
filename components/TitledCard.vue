@@ -38,8 +38,6 @@ export default {
 }
 
 .titled-card {
-  /*padding: 1rem;
-  margin: 1rem;*/
   color: var(--white-color);
   position: relative;
   font-size: medium;

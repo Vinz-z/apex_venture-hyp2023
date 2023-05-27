@@ -25,12 +25,12 @@
     </div>
     <div class="projects">
       <TitledCard title="Supervised Projects" :left="true">
-        <ProjectLogo project_image="_nuxt/assets/team/Roberto-Magnifico.png" project_name="Project1"></ProjectLogo>
-        <ProjectLogo project_image="_nuxt/assets/team/Roberto-Magnifico.png" project_name="Project1"></ProjectLogo>
-        <ProjectLogo project_image="_nuxt/assets/team/Roberto-Magnifico.png" project_name="Project1"></ProjectLogo>
-        <ProjectLogo project_image="_nuxt/assets/team/Roberto-Magnifico.png" project_name="Project1"></ProjectLogo>
-        <ProjectLogo project_image="_nuxt/assets/team/Roberto-Magnifico.png" project_name="Project1"></ProjectLogo>
-        <ProjectLogo project_image="_nuxt/assets/team/Roberto-Magnifico.png" project_name="Project1"></ProjectLogo>
+        <ProjectLogo :project_image="person_image" project_name="Project1"></ProjectLogo>
+        <ProjectLogo :project_image="person_image" project_name="Project2"></ProjectLogo>
+        <ProjectLogo :project_image="person_image" project_name="Project3"></ProjectLogo>
+        <ProjectLogo :project_image="person_image" project_name="Project4"></ProjectLogo>
+        <ProjectLogo :project_image="person_image" project_name="Project5"></ProjectLogo>
+        <ProjectLogo :project_image="person_image" project_name="Project6"></ProjectLogo>
 
       </TitledCard>
     </div>
