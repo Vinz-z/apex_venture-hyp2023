@@ -1,25 +1,38 @@
 <template>
   <Banner
     imageUrl="_nuxt/assets/banners/bannerPerson.png"
-    :title="user"
+    :title="person_name"
     caption=""
   />
   <div class="grid-box">
     <div class="first-column">
       <div class="image-box">
-        <PictureTitledCard :image="image" :role="role">
+        <PictureTitledCard :image="person_image" :role="person_role">
         </PictureTitledCard>
       </div>
-      <div class="information-box">
-          gino
-      </div>
+      <WhiteBox>
+        <p><b>Address: </b>{{ person_address }}</p>
+        <p><b>Phone: </b>{{ person_phone }}</p>
+        <p><b>Email: </b>{{ person_email }}</p>
+        <p><b>Date of Birth: </b>{{ person_birthday }}</p>
+        <p><b>Nationality: </b>{{ person_nationality }}</p>
+      </WhiteBox>
     </div>
-
     <div class="cv-box">
         <TitledCard title="Curriculum Vitae" :left=true>
-        gino
-        gino
+        {{ person_longcv }}
         </TitledCard>
+    </div>
+    <div class="projects">
+      <TitledCard title="Supervised Projects" :left="true">
+        <ProjectLogo project_image="_nuxt/assets/team/Roberto-Magnifico.png" project_name="Project1"></ProjectLogo>
+        <ProjectLogo project_image="_nuxt/assets/team/Roberto-Magnifico.png" project_name="Project1"></ProjectLogo>
+        <ProjectLogo project_image="_nuxt/assets/team/Roberto-Magnifico.png" project_name="Project1"></ProjectLogo>
+        <ProjectLogo project_image="_nuxt/assets/team/Roberto-Magnifico.png" project_name="Project1"></ProjectLogo>
+        <ProjectLogo project_image="_nuxt/assets/team/Roberto-Magnifico.png" project_name="Project1"></ProjectLogo>
+        <ProjectLogo project_image="_nuxt/assets/team/Roberto-Magnifico.png" project_name="Project1"></ProjectLogo>
+
+      </TitledCard>
     </div>
   </div>
 </template>
@@ -28,44 +41,70 @@
 export default {
   data() {
     return {
-      user: {},
-      image: {},
-      role: {},
+      person_name: {},
+      person_image: {},
+      person_role: {},
+      person_address: {},
+      person_phone: {},
+      person_email: {},
+      person_birthday: {},
+      person_nationality: {},
+      person_longcv: {},
+      person_shortcv: {},
     }
   },
   mounted() {
-    this.user = this.$route.query.title;
-    this.image = this.$route.query.img;
-    this.role = this.$route.query.role;
+    this.person_name = this.$route.query.person_name;
+    this.person_image = this.$route.query.person_image;
+    this.person_role = this.$route.query.person_role;
+    this.person_address = this.$route.query.person_address;
+    this.person_phone = this.$route.query.person_phone;
+    this.person_email = this.$route.query.person_email;
+    this.person_birthday = this.$route.query.person_birthday;
+    this.person_nationality = this.$route.query.person_nationality;
+    this.person_longcv = this.$route.query.person_longcv;
   }
 }
 </script>
 
 <style scoped>
     .grid-box {
-        display: flex;
-        flex-wrap: wrap;
-        position: relative;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        padding: 5%;
+      margin-top: 5%;
+      padding-top: 5%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      text-align: center;
+      justify-content: center;
+      vertical-align: top;
+
     }
     .first-column {
-      min-width: 500px;
-      display: grid;
-    }
-    .image-box {
-    }
-    .information-box {
-      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-      background-color: var(--white-color);
-      border-radius: 0px var(--big-round);
+      padding-top: 5%;
+      margin-left: 5%;
+      margin-right: 5%;
+      padding-bottom: 5%;
       width: 500px;
+      display: grid;
     }
 
     .cv-box {
-      width: 600px;
+      padding-bottom: 5%;
+      margin-left: 5%;
+      margin-right: 5%;
+      width: 500px;
+      vertical-align: top;
+    }
+
+    .projects {
+      display: wrap;
+      margin-left: 20%;
+      margin-right: 20%;
+      margin-bottom: 10%;
+      height: fit-content;
+      min-width: 500px;
+      width: fit-content;
     }
 
 </style>
