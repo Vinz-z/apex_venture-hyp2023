@@ -6,31 +6,55 @@
   />
   <div class="container">
     <OurTeamElement 
-        title="Claudio Cavallaro"
-        role="President" 
-        cv="An experienced finance professional with a deep understanding of the startup industry and venture capital investment."
-        img="_nuxt/assets/team/Roberto-Magnifico.png"
+        person_name="Claudio Cavallaro"
+        person_image="_nuxt/assets/team/Roberto-Magnifico.png"
+        person_role="President"
+        person_address="a"
+        person_phone="a"
+        person_email="a"
+        person_birthday="a"
+        person_nationality="a"
+        person_longcv="a"
+        person_shortcv="An experienced finance professional with a deep understanding of the startup industry and venture capital investment."
         :left=true>
     </OurTeamElement>
     <OurTeamElement 
-        title="Taddeo Curreri"
-        role="Executive Director" 
-        cv="A professional with a strong background in investments and acquisitions, responsible for overseeing the operational management and implementation of the investment strategy."
-        img="_nuxt/assets/team/Luigi-Capello.png"
+        person_name="Taddeo Curreri"
+        person_image="_nuxt/assets/team/Luigi-Capello.png"
+        person_role="Executive Director"
+        person_address="a"
+        person_phone="a"
+        person_email="a"
+        person_birthday="a"
+        person_nationality="a"
+        person_longcv="a"
+        person_shortcv="A professional with a strong background in investments and acquisitions, responsible for overseeing the operational management and implementation of the investment strategy."
         :left=false>
     </OurTeamElement>
     <OurTeamElement 
-        title="Cassio Siniscalchi"
-        role="Chief Financial Officer" 
-        cv="An accounting and finance expert with in-depth knowledge of financial operations, responsible for financial planning, investment valuation, and portfolio management."
-        img="_nuxt/assets/team/Stefano-Pighini.png"
+        person_name="Cassio Siniscalchi"
+        person_image="_nuxt/assets/team/Stefano-Pighini.png"
+        person_role="Chief Financial Officer"
+        person_address="a"
+        person_phone="a"
+        person_email="a"
+        person_birthday="a"
+        person_nationality="a"
+        person_longcv="a"
+        person_shortcv="An accounting and finance expert with in-depth knowledge of financial operations, responsible for financial planning, investment valuation, and portfolio management."
         :left=true>
     </OurTeamElement>
     <OurTeamElement 
-        title="Sara Genovese"
-        role="Investment Director" 
-        cv="An individual with a solid background in investment analysis, responsible for evaluating investment opportunities, managing the portfolio, and implementing exit strategies."
-        img="_nuxt/assets/team/Antonella-Zullo.png"
+        person_name="Sara Genovese"
+        person_image="_nuxt/assets/team/Antonella-Zullo.png"
+        person_role="Investment Director"
+        person_address="a"
+        person_phone="a"
+        person_email="a"
+        person_birthday="a"
+        person_nationality="a"
+        person_longcv="a"
+        person_shortcv="An individual with a solid background in investment analysis, responsible for evaluating investment opportunities, managing the portfolio, and implementing exit strategies."
         :left=false>
     </OurTeamElement>
   </div>

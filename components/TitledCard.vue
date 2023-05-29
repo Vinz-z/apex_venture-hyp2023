@@ -31,8 +31,6 @@ const props = defineProps({
 }
 
 .titled-card {
-  padding: 1rem;
-  margin: 1rem;
   color: var(--white-color);
   position: relative;
   font-size: medium;
@@ -59,9 +57,11 @@ const props = defineProps({
 
 .content-box {
   background-color: var(--secondary-color);
-  padding: 1rem;
+  padding: 2rem;
   position: relative;
-  top: -50px;
+  display: flex;
+  flex-wrap: wrap;
+  top: -40px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
@@ -74,6 +74,8 @@ const props = defineProps({
 }
 
 .content {
-  padding: 20px;
+  padding-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>

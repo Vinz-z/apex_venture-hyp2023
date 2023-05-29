@@ -1,7 +1,7 @@
 <template>
     <div class="box">
         <div class="image-column">
-            <img class="image" :src="img">
+            <img class="image" :src="person_image">
             <div :class="[`bg-shape1-${left ? 'left' : 'right'}`]">
             </div>
             <div :class="[`bg-shape2-${left ? 'right' : 'left'}`]">
@@ -9,16 +9,27 @@
         </div>
         <div class="data-column">
             <div class="name">
-                {{ title }}
+                {{ person_name }}
             </div>
             <div class="role">
-                {{ role }}
+                {{ person_role }}
             </div>
             <div class="cv">
-                {{ cv }}
+                {{ person_shortcv }}
             </div>
             <div class="button">
-                <NuxtLink :to="{path: '/person', query: {title, img, role}}"><button class="av-button">See more</button></NuxtLink>
+                <NuxtLink :to="{path: '/person', query: {
+                    person_name,
+                    person_image,
+                    person_role,
+                    person_address,
+                    person_phone,
+                    person_email,
+                    person_birthday,
+                    person_nationality,
+                    person_longcv,
+                    person_shortcv,
+                }}"><button class="av-button">See more</button></NuxtLink>
             </div>
         </div>
     </div>
@@ -27,21 +38,45 @@
 <script>
 export default {
   props: {
-    title: {
+    person_name: {
       type: String,
       required: true,
     },
-    role: {
+    person_image: {
       type: String,
       required: true,
     },
-    cv: {
+    person_role: {
       type: String,
       required: true,
     },
-    img: {
+    person_address: {
         type: String,
         required: true,
+    },
+    person_phone: {
+      type: String,
+      required: true,
+    },
+    person_email: {
+      type: String,
+      required: true,
+    },
+    person_birthday: {
+      type: String,
+      required: true,
+    },
+    person_nationality: {
+        type: String,
+        required: true,
+    },
+    person_longcv: {
+      type: String,
+      required: true,
+    },
+    person_shortcv: {
+      type: String,
+      required: true,
     },
     left: {
       type: Boolean,

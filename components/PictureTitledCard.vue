@@ -28,8 +28,6 @@
   </script>
   <style scoped>
   .person-box {
-    padding: 5%;
-    margin: 1rem;
     color: var(--white-color);
     position: relative;
     align-items: flex-end;
@@ -38,6 +36,7 @@
   
   .title-left-bottom {
     position: absolute;
+    font-size: larger;
     bottom: 10%;
     background-color: var(--primary-color);
     padding: 20px 60px;
@@ -54,7 +53,7 @@
     background-color: var(--secondary-color);
     padding: 1rem;
     position: relative;
-    top: -50px;
+    top: -85px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 0px var(--big-round);
   }
