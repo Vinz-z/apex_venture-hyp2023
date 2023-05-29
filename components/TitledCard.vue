@@ -15,10 +15,12 @@
 const props = defineProps({
   title: {
     type: String,
-    required: false,
+    required: true,
+    default: 'title'
   },
   left: {
     type: Boolean,
+    required: false,
     default: true,
   },
 })
@@ -57,7 +59,8 @@ const props = defineProps({
 
 .content-box {
   background-color: var(--secondary-color);
-  padding: 2rem;
+  padding: 30px;
+  padding-top: 50px;
   position: relative;
   display: flex;
   flex-wrap: wrap;

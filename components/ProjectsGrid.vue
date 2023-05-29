@@ -1,5 +1,5 @@
 <template>
-    <div  class="w-full grid md:grid-cols-3 grid-cols-4 g-4">
+    <div  class="w-full grid md:grid-cols-3 grid-cols-4 g-4 m-4">
         <project-preview
         v-for="item in projects"
         :logo_path="item.logo_path"
