@@ -4,12 +4,24 @@
 <template>
   <div class="page">
     <Header />
+    <Circle top="30" left="90" size="400" color="var(--clickable-color)" />
+    <Circle top="45" left="95" size="350" color="var(--decoration-color)" />
+    <Circle top="75" left="-10" size="400" color="var(--decoration-color)" />
+    <Circle top="70" left="-8" size="250" color="var(--clickable-color)" />
     <slot />
     <Footer />
   </div>
 </template>
 
-<script></script>
+<script>
+  import Circle from "~/components/BackgroundCircle.vue";
+
+  export default {
+      components: {
+          Circle,
+      }
+  }
+</script>
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Tilt+Prism&display=swap");

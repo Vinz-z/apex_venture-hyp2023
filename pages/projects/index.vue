@@ -26,5 +26,8 @@ let sectors = areas.filter((area) => area.type === 'sector');
 <style scoped>
 .shadowed-box {
     box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
+        z-index: 2;
+    background-color: var(--white-color)
 }
+
 </style>

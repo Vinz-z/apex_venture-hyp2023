@@ -29,8 +29,6 @@
         <ProjectLogo project_image=/images/logos/sample.png project_name="Project3"></ProjectLogo>
         <ProjectLogo project_image=/images/logos/sample.png project_name="Project4"></ProjectLogo>
         <ProjectLogo project_image=/images/logos/sample.png project_name="Project5"></ProjectLogo>
-        <ProjectLogo project_image=/images/logos/sample.png project_name="Project6"></ProjectLogo>
-
       </TitledCard>
     </div>
   </div>
@@ -41,7 +39,6 @@ import Banner from "~/components/Banner.vue";
 import TitledCard from "~/components/TitledCard.vue";
 
 const route = useRoute();
-
 // this is the data that i should fetch from the api
 const person = {
     name: route2person(route.params.name),
