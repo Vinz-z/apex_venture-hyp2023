@@ -98,20 +98,22 @@
         </span>
       </div>
       <div>
-        <contacts-button @click="checkIfCorrect"/>
+        <apex-button
+          caption="Submit"
+         @click="checkIfCorrect"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import ContactsButton from "~/components/ContactsButton.vue";
+import ApexButton from "~/components/ApexButton.vue";
 import Banner from "~/components/Banner.vue";
 import Circle from "~/components/BackgroundCircle.vue";
 
 export default {
   components: {
-    ContactsButton,
+    ApexButton,
     Banner,
     Circle,
   },
