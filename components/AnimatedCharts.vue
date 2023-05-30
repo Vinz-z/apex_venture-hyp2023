@@ -1,98 +1,180 @@
 <template>
-  <div>
-    <canvas ref="histogram" width="500" height="400">
-      Get a newer browser!
-    </canvas><br><br>
-    <button @click="drawHistogram">Animate Graph</button>
+  <div class="chartBarsWrap">
+    <div class="chartBars chartBars1">
+      <ul class="numbers">
+        <li><b>${{ maxBarValue }}M</b></li>
+        <li><b>${{ maxBarValue * 0.75 }}M</b></li>
+        <li><b>${{ maxBarValue * 0.5 }}M</b></li>
+        <li><b>${{ maxBarValue * 0.25 }}M</b></li>
+        <li><b>0</b></li>
+      </ul>
+      <ul class="bars">
+        <li>
+          <div :data-value="10" class="bar firstBar trigger"></div>
+          <b>2015</b>
+        </li>
+        <li>
+          <div :data-value="20" class="bar secondBar trigger"></div>
+          <b>2020</b>
+        </li>
+        <li>
+          <div :data-value="30" class="bar thirdBar trigger"></div>
+          <b>2023</b>
+        </li>
+        <li>
+          <div :data-value="40" class="bar fourthBar trigger"></div>
+          <b>2025</b>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  mounted() {
-    this.init();
-  },
   data() {
     return {
-      canvas: null,
-      ctx: null,
-      barWidth: null,
-      linesToDraw: null,
-      id: null,
-      textBuffer: 20,
-      block: 30,
-      margin: 10,
-      colors: ['#900', '#090', '#009', '#990', '#099', '#909'],
-      data: [
-        [3, 'cats'],
-        [2, 'dogs'],
-        [9, 'birds'],
-        [4.5, 'dinosaurs'],
-        [12, 'monkeys'],
-        [1.5, 'giraffes']
-      ]
+      maxBarValue: 40,
     };
   },
+  mounted() {
+    this.scrollReveal();
+  },
   methods: {
-    init() {
-      this.canvas = this.$refs.histogram;
-      this.ctx = this.canvas.getContext('2d');
-      this.barWidth = (this.canvas.width / this.data.length) - this.margin;
-  
-      this.drawHistogram();
+    scrollReveal() {
+      const bars = Array.from(document.querySelectorAll(".trigger"));
+      bars.forEach((bar) => {
+        var value = bar.getAttribute("data-value");
+        value = (value / this.maxBarValue) * 100;
+        bar.style.height = value + "%";
+      });
     },
-    drawHistogram() {
-      cancelAnimationFrame(this.id);
-      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-      this.drawAxisLabels();
-      this.linesToDraw = this.block * 12;
-  
-      this.id = requestAnimationFrame(this.drawBars);
-    },
-    drawBars() {
-      this.ctx.save();
-      this.ctx.translate(20, this.canvas.height - 20);
-  
-      for (let j = 0; j < this.data.length; j++) {
-        let currentLine = 360 - this.linesToDraw;
-        this.ctx.fillStyle = this.colors[j];
-        if (this.block * this.data[j][0] >= currentLine)
-          this.ctx.fillRect(
-            this.barWidth * j + this.margin * j,
-            0,
-            this.barWidth,
-            -currentLine
-          );
-      }
-  
-      this.linesToDraw--;
-  
-      if (this.linesToDraw > 0) {
-        this.id = requestAnimationFrame(this.drawBars);
-      }
-  
-      this.ctx.restore();
-    },
-    drawAxisLabels() {
-      this.ctx.save();
-      this.ctx.translate(20, this.canvas.height - 20);
-  
-      for (let i = 0; i < this.data.length; i++) {
-        this.ctx.fillStyle = this.colors[i];
-        this.ctx.fillText(
-          this.data[i][1],
-          this.barWidth * i + this.margin * i + 5,
-          15
-        );
-      }
-  
-      for (let j = 0; j <= 12; j++) {
-        this.ctx.fillStyle = 'black';
-        this.ctx.fillText(j, -this.textBuffer, -j * this.block);
-      }
-  
-      this.ctx.restore();
-    }
-  }
+  },
 };
 </script>
+
+<style scoped>
+.chartBarsWrap {
+  padding-left: 40px;
+  margin: 0 30px 0 20px;
+  min-width: 400px;
+}
+
+.chartBars {
+  position: relative;
+  max-width: 600px;
+  height: 300px;
+  margin: 50px auto 100px;
+}
+
+.chartBars .bars {
+  display: flex;
+  justify-content: space-around;
+  border-left: 1px solid var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  padding: 0 1%;
+  margin: 0;
+}
+
+.chartBars .bars li {
+  display: inline-block;
+  flex: 0 1 24%;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  position: relative;
+  font-size: 16px;
+}
+
+.chartBars .bars li .bar {
+  width: 100%;
+  background: #49E;
+  position: absolute;
+  font-size: 1.5em;
+  padding-top: 18px;
+  bottom: 0;
+  height: 0;
+  overflow: hidden;
+  font-weight: bold;
+  outline: 2px solid transparent;
+  transition: 1.5s height cubic-bezier(.6, .4, .4, 1.1);
+}
+
+.chartBars .bars li b {
+  color: var(--primary-color);
+  width: 100%;
+  position: absolute;
+  bottom: -2em;
+  left: 0;
+  text-align: center;
+}
+
+.chartBars .numbers {
+  width: 50px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  position: absolute;
+  left: -50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: -20px;
+  justify-content: space-between;
+}
+
+.chartBars .numbers li {
+  text-align: right;
+  padding-right: 1em;
+  list-style: none;
+  font-size: 13px;
+  color: var(--primary-color);
+}
+
+.chartBars1 .bar {
+  border-top-left-radius: 15px;
+}
+
+.bars li .bar.firstBar {
+  background: linear-gradient(to bottom, #E0607E 0%, #FF3C69 100%);
+}
+
+.bars li .bar.secondBar {
+  background: linear-gradient(to bottom, #E0607E 0%, #FF3C69 100%);
+}
+
+.bars li .bar.thirdBar {
+  background: linear-gradient(to bottom, #E0607E 0%, #FF3C69 100%);
+}
+
+.bars li .bar.fourthBar {
+  background: linear-gradient(to bottom, #E0607E 0%, #FF3C69 100%);
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+h1 {
+  margin: 100px auto 0;
+  color: #F0B015;
+}
+
+h2 {
+  margin: 20px auto 0;
+  font-size: 1.2em;
+}
+
+p {
+  margin: 5vw auto;
+  padding: 0 5vw;
+  line-height: 2em;
+  max-width: 60em;
+}
+</style>

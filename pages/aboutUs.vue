@@ -6,9 +6,9 @@
     :percentage=10
   />
 
-  <div class="flex justify-center items-center">
+  <div class="flex justify-center items-center mt-20 mb-20">
     <div class="grid grid-rows-2 grid-col-2 grid-flow-col gap-4">
-      <div class="row-span-2 bg-red-500" id="strategy">
+      <div class="row-span-2 w-5/6" id="strategy">
         <titled-card title="Investment Strategy" :left=true>
           <p class="mt-5">
             At Apex Venture, we are driven by a forward-thinking investment
@@ -35,7 +35,7 @@
       <div class="bg-blue-500">
         
       </div>
-      <div class="bg-green-500"><animated-charts /></div>
+      <div id="graph"><animated-charts /></div>
     </div>
   </div>
 </template>
@@ -53,14 +53,16 @@ export default {
   },
 };
 
-
-
-
-
 </script>
 
 <style scoped>
 #strategy {
   max-width: 600px;
+  justify-content: center;
+}
+
+#graph {
+  min-width: fit-content;
+  justify-content: center;
 }
 </style>
