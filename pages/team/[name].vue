@@ -2,7 +2,6 @@
     <banner 
         :imageUrl="'/images/banners/person.png'"
         :title="person.name"
-        :caption="''"
     />
     <div class="grid-box">
     <div class="first-column">
