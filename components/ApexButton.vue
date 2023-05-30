@@ -1,12 +1,20 @@
 <template>
   <button class="rectangle-button">
-    <span> Submit </span>
+    <span> {{caption}} </span>
   </button>
 </template>
 
+<script setup>
+    const props = defineProps({
+        caption: {
+            type: String,
+            required: true,
+        },
+    })
+</script>
+
 <style scoped>
 .rectangle-button {
-  margin: 40px;
   background-color: var(--clickable-color);
   color: var(--white-color);
   border: none;

@@ -1,6 +1,8 @@
 <template>
     <div class="mega-container 
-                w-80 
+                min-h-50
+                min-w-70
+                self-center
                 flex">
         <WhiteBox>
             <div class="grid 
@@ -14,13 +16,14 @@
                             border-b 
                             border-zinc-300 
                             border-1
-                            h-30 
+                            h-35 
                             flex 
                             flex-col 
                             justify-center 
                             items-center 
                             p-4">
                     <div class="data 
+                                font-bold
                                 break-word 
                                 text-5xl">
                         {{ dataTopLeft }}
@@ -37,7 +40,7 @@
                             border-l 
                             border-b 
                             border-zinc-300 
-                            h-30 
+                            h-35 
                             flex 
                             flex-col 
                             justify-center 
@@ -45,6 +48,7 @@
                             p-4">
                     <div class="data 
                                 break-word 
+                                font-bold
                                 text-5xl">
                         {{ dataTopRight }}
                     </div>
@@ -60,7 +64,7 @@
                             border-r 
                             border-t 
                             border-zinc-300 
-                            h-30 
+                            h-35 
                             flex 
                             flex-col 
                             justify-center 
@@ -68,6 +72,7 @@
                             p-4">
                     <div class="data 
                                 break-word 
+                                font-bold
                                 text-5xl">
                         {{ dataBottomLeft }}
                     </div>
@@ -83,14 +88,15 @@
                             border-l 
                             border-t 
                             border-zinc-300
-                            h-30 
+                            h-35 
                             flex 
                             flex-col 
                             justify-center 
                             items-cente 
                             p-4">
                     <div class="data 
-                                break-word 
+                                break-word
+                                font-bold
                                 text-5xl">
                         {{ dataBottomRight }}
                     </div>
@@ -142,13 +148,3 @@
         },
     })
 </script>
-
-<style scoped>
-
-.mega-container {
-    align-self: center;
-    min-width: 300px;
-    min-height: 300px;
-}
-
-</style>
