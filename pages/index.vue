@@ -49,9 +49,10 @@
     <img class="photo" src="/images/banners/hometeam.jpeg">
     <div class="green-box">
       <h2 class="text-xl mb-4"><b>Our Team</b></h2>
-      <p>When investors, operators, founders, and specialists align under one mission and commit as a team, each with their own unique set of experiences, accomplishments, and failures, great things are bound to happen.</p>
+      <p class="mb-5">When investors, operators, founders, and specialists align under one mission and commit as a team, each with their own unique set of experiences, accomplishments, and failures, great things are bound to happen.</p>
       <div class="button">
-        <NuxtLink :to="'/team'"><button class="av-button">See more</button></NuxtLink>
+        <NuxtLink :to="'/team'"><ApexButton
+          caption="See more"/></NuxtLink>
       </div>
     </div>
   </div>

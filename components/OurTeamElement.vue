@@ -17,8 +17,9 @@
             <div class="cv">
                 {{ person_shortcv }}
             </div>
-            <div class="button">
-                <NuxtLink :to="person2route(person_name)"><button class="av-button">See more</button></NuxtLink>
+            <div class="button mt-10">
+                <NuxtLink :to="person2route(person_name)"><ApexButton
+          caption="See more"/></NuxtLink>
             </div>
         </div>
     </div>
