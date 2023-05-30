@@ -4,7 +4,11 @@
         :title="$route.params.name"
         caption="Explore diverse investment areas, empowering visionary entrepreneurs across industries to shape the future."
     />
-    <div class="ultra-container flex gap-20 mt-10">
+    <div class="ultra-container 
+                flex 
+                gap-20 
+                mt-10
+                justify-center">
         <TitledCard
             :title="`Investing in ${$route.params.name}`"
             :left="false"
@@ -29,9 +33,12 @@
             captionBottomRight="caption Bottom Right"
         />
     </div>
+
+    <div class="separator self-center h-[1px] w-1/3 my-10"></div>
+
     <div class="projects-container 
                 flex
-                self-center">
+                justify-center">
         <TitledCard title="Supervised Projects" :left="true">
             <div class="mid-container flex flex-wrap justify-start gap-4">
                 <div class="project-item">
@@ -42,9 +49,6 @@
                 </div>
                 <div class="project-item">
                     <ProjectLogo project_image="~/../../images/logos/sample.png" project_name="Project3"></ProjectLogo>
-                </div>
-                <div class="project-item">
-                    <ProjectLogo project_image="~/../../images/logos/sample.png" project_name="Project4"></ProjectLogo>
                 </div>
                 <div class="project-item">
                     <ProjectLogo project_image="~/../../images/logos/sample.png" project_name="Project5"></ProjectLogo>
@@ -79,6 +83,10 @@
 
 .see-all {
     background-color: var(--clickable-color);
+}
+
+.separator{
+    background-color: gray; 
 }
 
 </style>
