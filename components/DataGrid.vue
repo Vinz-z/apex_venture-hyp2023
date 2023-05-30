@@ -1,39 +1,108 @@
 <template>
-    <div class="mega.container">
-        <div class="grid">
-            <div class="top-left-square">
-                <div class="data">
-                    {{ dataTopLeft }}
+    <div class="mega-container 
+                w-80 
+                flex">
+        <WhiteBox>
+            <div class="grid 
+                        grid-cols-2 
+                        w-full 
+                        h-full 
+                        place-content-center">
+                <div class="top-left-square 
+                            text-center 
+                            border-r 
+                            border-b 
+                            border-zinc-300 
+                            border-1
+                            h-30 
+                            flex 
+                            flex-col 
+                            justify-center 
+                            items-center 
+                            p-4">
+                    <div class="data 
+                                break-word 
+                                text-5xl">
+                        {{ dataTopLeft }}
+                    </div>
+                    <div class="caption 
+                                break-word 
+                                overflow-wrap 
+                                text-xs">
+                        {{ captionTopLeft }}
+                    </div>
                 </div>
-                <div class="caption">
-                    {{ captionTopLeft }}
+                <div class="top-right-square 
+                            text-center 
+                            border-l 
+                            border-b 
+                            border-zinc-300 
+                            h-30 
+                            flex 
+                            flex-col 
+                            justify-center 
+                            items-center 
+                            p-4">
+                    <div class="data 
+                                break-word 
+                                text-5xl">
+                        {{ dataTopRight }}
+                    </div>
+                    <div class="caption 
+                                break-word 
+                                overflow-wrap 
+                                text-xs">
+                        {{ captionTopRight }}
+                    </div>
+                </div>
+                <div class="bottom-left-square 
+                            text-center 
+                            border-r 
+                            border-t 
+                            border-zinc-300 
+                            h-30 
+                            flex 
+                            flex-col 
+                            justify-center 
+                            items-center 
+                            p-4">
+                    <div class="data 
+                                break-word 
+                                text-5xl">
+                        {{ dataBottomLeft }}
+                    </div>
+                    <div class="caption 
+                                break-word 
+                                overflow-wrap 
+                                text-xs">
+                        {{ captionBottomLeft }}
+                    </div>
+                </div>
+                <div class="bottom-right-square 
+                            text-center 
+                            border-l 
+                            border-t 
+                            border-zinc-300
+                            h-30 
+                            flex 
+                            flex-col 
+                            justify-center 
+                            items-cente 
+                            p-4">
+                    <div class="data 
+                                break-word 
+                                text-5xl">
+                        {{ dataBottomRight }}
+                    </div>
+                    <div class="caption 
+                                break-word 
+                                overflow-wrap 
+                                text-xs">
+                        {{ captionBottomRight }}
+                    </div>
                 </div>
             </div>
-            <div class="top-right-square">
-                <div class="data">
-                    {{ dataTopRight }}
-                </div>
-                <div class="caption">
-                    {{ captionTopRight }}
-                </div>
-            </div>
-            <div class="bottom-left-square">
-                <div class="data">
-                    {{ dataBottomLeft }}
-                </div>
-                <div class="caption">
-                    {{ captionBottomLeft }}
-                </div>
-            </div>
-            <div class="bottom-right-square">
-                <div class="data">
-                    {{ dataBottomRight }}
-                </div>
-                <div class="caption">
-                    {{ captionBottomRight }}
-                </div>
-            </div>
-        </div>
+        </WhiteBox>
     </div>
 </template>
 
@@ -77,15 +146,9 @@
 <style scoped>
 
 .mega-container {
-    width: 300px;
-    height: 300px;
-}
-
-.grid{
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
-    gap: 0;
+    align-self: center;
+    min-width: 300px;
+    min-height: 300px;
 }
 
 </style>

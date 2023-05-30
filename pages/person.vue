@@ -31,7 +31,6 @@
         <ProjectLogo :project_image="person_image" project_name="Project4"></ProjectLogo>
         <ProjectLogo :project_image="person_image" project_name="Project5"></ProjectLogo>
         <ProjectLogo :project_image="person_image" project_name="Project6"></ProjectLogo>
-
       </TitledCard>
     </div>
   </div>
