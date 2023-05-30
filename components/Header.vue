@@ -34,7 +34,7 @@
         <ul class="flex space-x-20 text-l items-center">
           <li>
             <NuxtLink
-              to="/ourTeam"
+              to="/team"
               style="color: var(--white-color)"
               class="hovered-link"
               @mouseenter="handleMouseEnter"
@@ -148,7 +148,7 @@
         <ul class="divide-y font-sans">
           <li>
             <NuxtLink
-              to="/ourTeam"
+              to="/team"
               style="color: var(--white-color)"
               class="my-4 inline-block"
               @click="isOpen = false"

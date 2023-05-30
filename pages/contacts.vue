@@ -1,8 +1,9 @@
 <template>
   <banner
-    imageUrl="_nuxt/assets/banners/bannerContacts.jpeg"
+    imageUrl="images/banners/contacts.jpeg"
     title="Contact us"
     caption="Sign up for our newsletter to receive the latest news and updates. To get in touch with us, reach out to us via landline phone or email."
+    percentage="80"
   />
   <Circle top="30" left="90" size="400" color="var(--clickable-color)" />
   <Circle top="45" left="95" size="350" color="var(--decoration-color)" />
