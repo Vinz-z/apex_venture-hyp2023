@@ -42,7 +42,7 @@ const route = useRoute();
 // this is the data that i should fetch from the api
 const person = {
     name: route2person(route.params.name),
-    image: "/images/team/Roberto-Magnifico.png",
+    image: "/images/team/Luigi-Capello.png",
     role: "Role",
     address: "Address",
     phone: "+39 012 34 56 789",

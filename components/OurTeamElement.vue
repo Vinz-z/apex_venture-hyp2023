@@ -38,30 +38,6 @@ const props = defineProps({
       type: String,
       required: true,
     },
-    person_address: {
-        type: String,
-        required: true,
-    },
-    person_phone: {
-      type: String,
-      required: true,
-    },
-    person_email: {
-      type: String,
-      required: true,
-    },
-    person_birthday: {
-      type: String,
-      required: true,
-    },
-    person_nationality: {
-        type: String,
-        required: true,
-    },
-    person_longcv: {
-      type: String,
-      required: true,
-    },
     person_shortcv: {
       type: String,
       required: true,
@@ -84,7 +60,7 @@ const props = defineProps({
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         text-align: center;
         justify-content: center;
-        align-items: center;
+        align-items: end;
         flex-wrap: wrap;
         height: auto;
         flex: 1 1 50%;
@@ -94,6 +70,7 @@ const props = defineProps({
 
     .image-column {
         position: relative;
+        padding-left: 3%;
         display: flex;
         align-items: center;
         justify-content: center;
