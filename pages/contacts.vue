@@ -97,7 +97,7 @@
           and for the fulfillment of contractual and legal obligations
         </span>
       </div>
-      <div>
+      <div class="mt-10">
         <apex-button
           caption="Submit"
          @click="checkIfCorrect"/>

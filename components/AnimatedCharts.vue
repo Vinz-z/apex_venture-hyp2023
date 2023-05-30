@@ -10,19 +10,19 @@
       </ul>
       <ul class="bars">
         <li>
-          <div :data-value="10" class="bar firstBar trigger"></div>
+          <div :data-value="10" class="bar firstBar"></div>
           <b>2015</b>
         </li>
         <li>
-          <div :data-value="20" class="bar secondBar trigger"></div>
+          <div :data-value="20" class="bar secondBar"></div>
           <b>2020</b>
         </li>
         <li>
-          <div :data-value="30" class="bar thirdBar trigger"></div>
+          <div :data-value="30" class="bar thirdBar"></div>
           <b>2023</b>
         </li>
         <li>
-          <div :data-value="40" class="bar fourthBar trigger"></div>
+          <div :data-value="40" class="bar fourthBar"></div>
           <b>2025</b>
         </li>
       </ul>
@@ -38,15 +38,31 @@ export default {
     };
   },
   mounted() {
-    this.scrollReveal();
+    this.setupScrollReveal();
   },
   methods: {
-    scrollReveal() {
-      const bars = Array.from(document.querySelectorAll(".trigger"));
+    setupScrollReveal() {
+      const options = {
+        root: null, // Null uses the browser viewport as the root
+        rootMargin: '0px', // Margin around the root. Values are similar to CSS margins
+        threshold: 0.2, // The percentage of the target's visibility needed to trigger the callback
+      };
+      
+      const observer = new IntersectionObserver(this.scrollReveal, options);
+      const bars = Array.from(document.querySelectorAll(".bar"));
+
       bars.forEach((bar) => {
-        var value = bar.getAttribute("data-value");
-        value = (value / this.maxBarValue) * 100;
-        bar.style.height = value + "%";
+        observer.observe(bar);
+      });
+    },
+    scrollReveal(entries, observer) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const value = entry.target.getAttribute("data-value");
+          const height = (value / this.maxBarValue) * 100 + "%";
+          entry.target.style.height = height;
+          observer.unobserve(entry.target);
+        }
       });
     },
   },
