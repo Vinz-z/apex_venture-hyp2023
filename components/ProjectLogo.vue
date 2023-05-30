@@ -6,7 +6,7 @@
         <div class="shape">
             <img class="project-logo" :src="project_image">
         </div>
-        <NuxtLink to="/projects/_name">
+        <NuxtLink to="/projects/project-1">
           <button class="project-button"
             :style="{ height: isHovered ? '85px' : '0' }">
             <div 

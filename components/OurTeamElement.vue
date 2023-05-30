@@ -17,8 +17,9 @@
             <div class="cv">
                 {{ person_shortcv }}
             </div>
-            <div class="button">
-                <NuxtLink :to="person2route(person_name)"><button class="av-button">See more</button></NuxtLink>
+            <div class="button mt-10">
+                <NuxtLink :to="person2route(person_name)"><ApexButton
+          caption="See more"/></NuxtLink>
             </div>
         </div>
     </div>
@@ -35,30 +36,6 @@ const props = defineProps({
       required: true,
     },
     person_role: {
-      type: String,
-      required: true,
-    },
-    person_address: {
-        type: String,
-        required: true,
-    },
-    person_phone: {
-      type: String,
-      required: true,
-    },
-    person_email: {
-      type: String,
-      required: true,
-    },
-    person_birthday: {
-      type: String,
-      required: true,
-    },
-    person_nationality: {
-        type: String,
-        required: true,
-    },
-    person_longcv: {
       type: String,
       required: true,
     },
@@ -84,7 +61,7 @@ const props = defineProps({
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         text-align: center;
         justify-content: center;
-        align-items: center;
+        align-items: flex-end;
         flex-wrap: wrap;
         height: auto;
         flex: 1 1 50%;
@@ -94,6 +71,7 @@ const props = defineProps({
 
     .image-column {
         position: relative;
+        padding-left: 3%;
         display: flex;
         align-items: center;
         justify-content: center;

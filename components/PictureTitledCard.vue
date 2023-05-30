@@ -40,7 +40,7 @@
     bottom: 10%;
     background-color: var(--primary-color);
     padding: 20px 60px;
-    width: 70%;
+    width: 80%;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     z-index: 5;
     border-radius: 0px var(--big-round);
