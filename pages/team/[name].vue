@@ -22,6 +22,7 @@
         {{ person.longcv }}
         </TitledCard>
     </div>
+    <div class="separator self-center h-[1px] w-2/3 my-10"></div>
     <div class="projects">
       <TitledCard title="Supervised Projects" :left="true">
         <ProjectLogo project_image=/images/logos/sample.png project_name="Project1"></ProjectLogo>
@@ -50,7 +51,6 @@ const person = {
     birthday: "01/01/1970",
     nationality: "Italian",
     longcv: "Long CV",
-    shortcv: "Short CV",
 }
 </script>
 
@@ -72,7 +72,7 @@ const person = {
       padding-top: 5%;
       margin-left: 5%;
       margin-right: 5%;
-      padding-bottom: 5%;
+      padding-bottom: 0%;
       width: 500px;
       display: grid;
     }
@@ -85,7 +85,12 @@ const person = {
       vertical-align: top;
     }
 
+    .separator {
+      background-color: gray;
+    }
+
     .projects {
+      justify-content: center;
       display: wrap;
       margin-left: 20%;
       margin-right: 20%;

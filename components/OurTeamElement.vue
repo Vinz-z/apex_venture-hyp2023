@@ -60,7 +60,7 @@ const props = defineProps({
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         text-align: center;
         justify-content: center;
-        align-items: end;
+        align-items: flex-end;
         flex-wrap: wrap;
         height: auto;
         flex: 1 1 50%;
