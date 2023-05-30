@@ -1,34 +1,29 @@
 <template>
   <div class="titled-card">
-    <div :class="[{ title: true }, `title-${left ? 'left' : 'right'}`]">
-      <div>{{ title }}</div>
+    <div :class="['title', `title-${left ? 'left' : 'right'}`]">
+      <h2>{{ title }}</h2>
     </div>
-    <div
-      :class="[
-        { 'content-box': true },
-        `content-box-${left ? 'left' : 'right'}`,
-      ]"
-    >
-      <div class="content">
-        <slot />
-      </div>
+    <div :class="['content-box', `content-box-${left ? 'left' : 'right'}`,]">
+    <div class="content">
+      <slot />
     </div>
   </div>
+</div>
 </template>
 
-<script>
-export default {
-  props: {
-    title: {
-      type: String,
-      required: false,
-    },
-    left: {
-      type: Boolean,
-      required: true,
-    },
+<script setup>
+const props = defineProps({
+  title: {
+    type: String,
+    required: true,
+    default: 'title'
   },
-};
+  left: {
+    type: Boolean,
+    required: false,
+    default: true,
+  },
+})
 </script>
 
 <style scoped>
@@ -64,7 +59,8 @@ export default {
 
 .content-box {
   background-color: var(--secondary-color);
-  padding: 2rem;
+  padding: 30px;
+  padding-top: 50px;
   position: relative;
   display: flex;
   flex-wrap: wrap;

@@ -10,7 +10,7 @@
         :sectors="sectors"
         :selectedOne="Number($route.query.filter_by) ?? -1"
         />
-        <projects-grid :items="projects"/>
+        <projects-grid :projects="projects" :areas="areas"/>
     </div>
 </template>
 
@@ -18,7 +18,9 @@
 import Banner from '~/components/Banner.vue'
 import FilterBy from '~/components/FilterBy.vue'
 import ProjectsGrid from '~/components/ProjectsGrid.vue'
-let { projects, sectors, technologies } = getProjectsData(useSupabaseClient());
+let { projects, areas } = getProjectsData(useSupabaseClient());
+let technologies = areas.filter((area) => area.type === 'technology');
+let sectors = areas.filter((area) => area.type === 'sector');
 </script>
 
 <style scoped>
