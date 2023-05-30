@@ -32,8 +32,10 @@
           </p>
         </titled-card>
       </div>
-      <div class="bg-blue-500">Pino</div>
-      <div class="bg-green-500">Lino</div>
+      <div class="bg-blue-500">
+        
+      </div>
+      <div class="bg-green-500"><animated-charts /></div>
     </div>
   </div>
 </template>
@@ -41,6 +43,20 @@
 <script>
 import Banner from "~/components/Banner.vue";
 import TitledCard from "~/components/TitledCard.vue";
+import animatedCharts from "~/components/AnimatedCharts.vue";
+
+export default {
+  components: {
+    Banner,
+    TitledCard,
+    animatedCharts,
+  },
+};
+
+
+
+
+
 </script>
 
 <style scoped>
