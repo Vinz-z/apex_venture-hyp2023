@@ -1,6 +1,6 @@
 export default function(name: string) {
     // from the hostname lowercase and replace spaces with dashes
-    const route = `/person/${name.toLowerCase().replace(/ /g, '-')}`;
+    const route = `/team/${name.toLowerCase().replace(/ /g, '-')}`;
     console.log(`Generated route for ${name}: ${route}`);
     return route;
 }

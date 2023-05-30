@@ -1,26 +1,26 @@
 <template>
-  <Banner
-    imageUrl="/images/banners/person.png"
-    :title="person_name"
-    caption=""
-  />
-  <div class="grid-box">
+    <banner 
+        :imageUrl="'/images/logos/person.png'"
+        :title="person.name"
+        :caption="''"
+    />
+    <div class="grid-box">
     <div class="first-column">
       <div class="image-box">
-        <PictureTitledCard :image="person_image" :role="person_role">
+        <PictureTitledCard :image="person.image" :role="person.role">
         </PictureTitledCard>
       </div>
       <WhiteBox>
-        <p><b>Address: </b>{{ person_address }}</p>
-        <p><b>Phone: </b>{{ person_phone }}</p>
-        <p><b>Email: </b>{{ person_email }}</p>
-        <p><b>Date of Birth: </b>{{ person_birthday }}</p>
-        <p><b>Nationality: </b>{{ person_nationality }}</p>
+        <p><b>Address: </b>{{ person.address }}</p>
+        <p><b>Phone: </b>{{ person.phone }}</p>
+        <p><b>Email: </b>{{ person.email }}</p>
+        <p><b>Date of Birth: </b>{{ person.birthday }}</p>
+        <p><b>Nationality: </b>{{ person.nationality }}</p>
       </WhiteBox>
     </div>
     <div class="cv-box">
         <TitledCard title="Curriculum Vitae" :left=true>
-        {{ person_longcv }}
+        {{ person.longcv }}
         </TitledCard>
     </div>
     <div class="projects">
@@ -37,35 +37,27 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      person_name: {},
-      person_image: {},
-      person_role: {},
-      person_address: {},
-      person_phone: {},
-      person_email: {},
-      person_birthday: {},
-      person_nationality: {},
-      person_longcv: {},
-      person_shortcv: {},
-    }
-  },
-  mounted() {
-    this.person_name = this.$route.query.person_name;
-    this.person_image = this.$route.query.person_image;
-    this.person_role = this.$route.query.person_role;
-    this.person_address = this.$route.query.person_address;
-    this.person_phone = this.$route.query.person_phone;
-    this.person_email = this.$route.query.person_email;
-    this.person_birthday = this.$route.query.person_birthday;
-    this.person_nationality = this.$route.query.person_nationality;
-    this.person_longcv = this.$route.query.person_longcv;
-  }
+<script setup>
+import Banner from "~/components/Banner.vue";
+import TitledCard from "~/components/TitledCard.vue";
+
+const route = useRoute();
+
+// this is the data that i should fetch from the api
+const person = {
+    name: route2person(route.params.name),
+    image: "_nuxt/assets/team/Roberto-Magnifico.png",
+    role: "Role",
+    address: "Address",
+    phone: "+39 012 34 56 789",
+    email: route.params.name + "@apexventure.com",
+    birthday: "01/01/1970",
+    nationality: "Italian",
+    longcv: "Long CV",
+    shortcv: "Short CV",
 }
 </script>
+
 
 <style scoped>
     .grid-box {

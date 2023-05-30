@@ -18,26 +18,14 @@
                 {{ person_shortcv }}
             </div>
             <div class="button">
-                <NuxtLink :to="{path: '/person', query: {
-                    person_name,
-                    person_image,
-                    person_role,
-                    person_address,
-                    person_phone,
-                    person_email,
-                    person_birthday,
-                    person_nationality,
-                    person_longcv,
-                    person_shortcv,
-                }}"><button class="av-button">See more</button></NuxtLink>
+                <NuxtLink :to="person2route(person_name)"><button class="av-button">See more</button></NuxtLink>
             </div>
         </div>
     </div>
 </template>
 
-<script>
-export default {
-  props: {
+<script  setup lang="ts">
+const props = defineProps({
     person_name: {
       type: String,
       required: true,
@@ -82,8 +70,8 @@ export default {
       type: Boolean,
       required: true,
     },
-  },
-};
+  });
+
 </script>
 
 <style scoped>
