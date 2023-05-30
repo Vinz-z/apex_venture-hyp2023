@@ -7,7 +7,7 @@
       <div class="container">
         <OurTeamElement 
             person_name="Claudio Cavallaro"
-            person_image="_nuxt/assets/team/Roberto-Magnifico.png"
+            person_image="images/team/Roberto-Magnifico.png"
             person_role="President"
             person_address="a"
             person_phone="a"
@@ -20,7 +20,7 @@
         </OurTeamElement>
         <OurTeamElement 
             person_name="Taddeo Curreri"
-            person_image="_nuxt/assets/team/Luigi-Capello.png"
+            person_image="images/team/Luigi-Capello.png"
             person_role="Executive Director"
             person_address="a"
             person_phone="a"
@@ -33,7 +33,7 @@
         </OurTeamElement>
         <OurTeamElement 
             person_name="Cassio Siniscalchi"
-            person_image="_nuxt/assets/team/Stefano-Pighini.png"
+            person_image="images/team/Stefano-Pighini.png"
             person_role="Chief Financial Officer"
             person_address="a"
             person_phone="a"
@@ -46,7 +46,7 @@
         </OurTeamElement>
         <OurTeamElement 
             person_name="Sara Genovese"
-            person_image="_nuxt/assets/team/Antonella-Zullo.png"
+            person_image="images/team/Antonella-Zullo.png"
             person_role="Investment Director"
             person_address="a"
             person_phone="a"

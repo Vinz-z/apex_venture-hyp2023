@@ -1,6 +1,6 @@
 <template>
     <banner 
-        :imageUrl="'/images/logos/person.png'"
+        :imageUrl="'/images/banners/person.png'"
         :title="person.name"
         :caption="''"
     />
@@ -25,12 +25,12 @@
     </div>
     <div class="projects">
       <TitledCard title="Supervised Projects" :left="true">
-        <ProjectLogo :project_image="person_image" project_name="Project1"></ProjectLogo>
-        <ProjectLogo :project_image="person_image" project_name="Project2"></ProjectLogo>
-        <ProjectLogo :project_image="person_image" project_name="Project3"></ProjectLogo>
-        <ProjectLogo :project_image="person_image" project_name="Project4"></ProjectLogo>
-        <ProjectLogo :project_image="person_image" project_name="Project5"></ProjectLogo>
-        <ProjectLogo :project_image="person_image" project_name="Project6"></ProjectLogo>
+        <ProjectLogo project_image=/images/logos/sample.png project_name="Project1"></ProjectLogo>
+        <ProjectLogo project_image=/images/logos/sample.png project_name="Project2"></ProjectLogo>
+        <ProjectLogo project_image=/images/logos/sample.png project_name="Project3"></ProjectLogo>
+        <ProjectLogo project_image=/images/logos/sample.png project_name="Project4"></ProjectLogo>
+        <ProjectLogo project_image=/images/logos/sample.png project_name="Project5"></ProjectLogo>
+        <ProjectLogo project_image=/images/logos/sample.png project_name="Project6"></ProjectLogo>
 
       </TitledCard>
     </div>
@@ -46,7 +46,7 @@ const route = useRoute();
 // this is the data that i should fetch from the api
 const person = {
     name: route2person(route.params.name),
-    image: "_nuxt/assets/team/Roberto-Magnifico.png",
+    image: "/images/team/Roberto-Magnifico.png",
     role: "Role",
     address: "Address",
     phone: "+39 012 34 56 789",
