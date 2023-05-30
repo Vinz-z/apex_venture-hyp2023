@@ -25,7 +25,8 @@ export default {
     },
     caption: {
       type: String,
-      required: true,
+      required: false,
+      default: ""
     },
     percentage: {
       type: Number,

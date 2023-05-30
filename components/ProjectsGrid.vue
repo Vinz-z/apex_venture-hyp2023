@@ -1,10 +1,10 @@
 <template>
-    <div class="container-xl">
+    <div  class="w-full grid md:grid-cols-3 grid-cols-4 g-4 m-4">
         <project-preview
-        v-for="item in items"
+        v-for="item in projects"
         :logo_path="item.logo_path"
         :name="item.name"
-        :areas="item.areas"
+        :areas="areasOfProject(item)"
         :short_overview="item.short_overview"
         />
     </div>
@@ -12,12 +12,16 @@
 
 <script setup>
 import ProjectPreview from './ProjectPreview.vue';
-
 const props = defineProps({
-    items: {
+    projects: {
+        type: Array,
+        required: true
+    },
+    areas: {
         type: Array,
         required: true
     }
 })
 
+const areasOfProject = (project) => {return props.areas.filter((area) => project.areas.includes(area.id))};
 </script>
