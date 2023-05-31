@@ -32,27 +32,19 @@
           </p>
         </titled-card>
       </div>
-      <div class="bg-blue-500">
-        
+      <div class="bg-blue-500 justify-center flex items-center">
+        <data-card data="35+" description="COMPANY INVESTMENT" color="var(--primary-color)"></data-card>
       </div>
       <div id="graph"><animated-charts /></div>
     </div>
   </div>
 </template>
 
-<script>
+<script setup>
 import Banner from "~/components/Banner.vue";
 import TitledCard from "~/components/TitledCard.vue";
 import animatedCharts from "~/components/AnimatedCharts.vue";
-
-export default {
-  components: {
-    Banner,
-    TitledCard,
-    animatedCharts,
-  },
-};
-
+import dataCard from "~/components/SingleDataCard.vue";
 </script>
 
 <style scoped>
