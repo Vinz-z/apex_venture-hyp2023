@@ -10,7 +10,7 @@
         :sectors="sectors"
         :selectedOne="Number($route.query.filter_by) ?? -1"
         />
-        <div class="w-full grid grid-cols-4 g-4 m-4 place-items-center place-content-start">
+        <div class="w-auto grid grid-cols-4 g-4 m-4 place-items-center place-content-start">
             <project-preview
             v-for="item in projects"
             :logo_path="item.logo_path"
