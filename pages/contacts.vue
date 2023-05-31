@@ -5,16 +5,12 @@
     caption="Sign up for our newsletter to receive the latest news and updates. To get in touch with us, reach out to us via landline phone or email."
     percentage="80"
   />
-  <Circle top="30" left="90" size="400" color="var(--clickable-color)" />
-  <Circle top="45" left="95" size="350" color="var(--decoration-color)" />
-  <Circle top="75" left="-10" size="400" color="var(--decoration-color)" />
-  <Circle top="70" left="-8" size="250" color="var(--clickable-color)" />
   <div class="main-container">
     <div class="card">
       <div class="card-body">
         <div class="contacts-container">
           <div class="phone-container">
-            <div class="phone-text-icon-container">
+            <div class="phone-text-icon-container tablet:mr-20">
               <div class="phone-icon">
                 <img
                   src="~/assets/icons/telephone.svg"
@@ -28,7 +24,7 @@
             <span class="phone-number">+00 123 456 789</span>
           </div>
           <div class="email-container">
-            <div class="email-text-icon-container">
+            <div class="email-text-icon-container tablet:mr-20">
               <div class="mail-icon">
                 <img
                   src="~/assets/icons/email.svg"
@@ -46,7 +42,7 @@
       <hr />
       <div class="newsletter">
         <h2 style="color: var(--white-color)">Newsletter</h2>
-        <div class="field-row">
+        <div class="field-row grid desktop:grid-cols-2 gap-x-36">
           <div class="field">
             <span class="text-[var(--white-color)]">Name</span>
             <input type="text" class="input-field" name="name" v-model="name" />
@@ -98,12 +94,14 @@
         </span>
       </div>
       <div class="mt-10">
-        <apex-button
-          caption="Submit"
-         @click="checkIfCorrect"/>
+        <apex-button caption="Submit" @click="checkIfCorrect" />
       </div>
     </div>
   </div>
+  <Circle top="30" left="90" size="400" color="var(--clickable-color)" />
+  <Circle top="45" left="95" size="350" color="var(--decoration-color)" />
+  <Circle top="75" left="-10" size="400" color="var(--decoration-color)" />
+  <Circle top="70" left="-8" size="250" color="var(--clickable-color)" />
 </template>
 
 <script>
@@ -175,12 +173,11 @@ export default {
 }
 
 .card {
-  gap: 20px;
   position: relative;
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
   background-color: var(--secondary-color);
-  padding: 30px;
+  padding: 5%;
   min-height: 600px;
   max-width: 800px;
   width: 80%; /* Larghezza massima */
@@ -192,11 +189,6 @@ export default {
 }
 
 /* Contacts */
-
-.contacts-container {
-  justify-content: center;
-  align-items: center;
-}
 
 .phone-container,
 .email-container {
@@ -212,7 +204,6 @@ export default {
 
 .phone-text-icon-container,
 .email-text-icon-container {
-  margin-right: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -224,6 +215,7 @@ export default {
 
 .phone-icon,
 .mail-icon {
+  justify-self: start;
   display: inline;
   width: 30px;
   height: 30px;
@@ -241,12 +233,6 @@ export default {
 
 .newsletter > h2 {
   font-size: x-large;
-}
-
-.field-row {
-  justify-content: center;
-  gap: 30%;
-  display: flex;
 }
 
 .field {
