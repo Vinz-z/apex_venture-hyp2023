@@ -1,8 +1,12 @@
 <template>
   <div id="card">
     <div class="flex flex-col justify-center items-center">
-      <div class="text-4xl font-bold text-center" :style="{color: color}">{{ data }}</div>
-      <div class="text-l font-bold wrap text-center" :style="{color: color}">{{ description }}</div>
+      <div class="text-4xl font-bold text-center" :style="{ color: color }">
+        {{ data }}
+      </div>
+      <div class="text-l font-bold wrap text-center" :style="{ color: color }">
+        {{ description }}
+      </div>
     </div>
   </div>
 </template>
@@ -11,7 +15,7 @@
 const props = defineProps({
   data: { type: String, required: true },
   description: { type: String, required: true },
-  color: { type: String, required: true},
+  color: { type: String, required: true },
 });
 </script>
 
