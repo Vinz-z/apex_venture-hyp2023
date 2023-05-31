@@ -3,12 +3,11 @@
     class="mega-container"
     @mouseover="expandComponents"
     @mouseout="collapseComponents">
-        <button 
-        class="area-button"
-        :style="{ width: isHovered ? '300px' : '400px' ,
-      borderBottomRightRadius: isHovered ? '0px' : 'var(--big-round)' }"
-        onclick="" >
-
+        <NuxtLink :to="'/areas/' + title"
+                    class="area-button"
+                    :style="{ width: isHovered ? '360px' : '500px' ,
+                    borderBottomRightRadius: isHovered ? '0px' : 'var(--big-round)' }"
+                    onclick="" >
             <div class="icon-image">
                 <img :src="iconUrl" alt="Icon Image">
             </div>
@@ -16,11 +15,10 @@
                 <h4 class="area-title">{{ title }}</h4>
                 <div class="area-caption">{{ caption }}</div>
             </div>
-
-        </button>
+        </NuxtLink>
         <button 
         class="projects-button"
-        :style="{ width: isHovered ? '100px' : '0' }">
+        :style="{ width: isHovered ? '125px' : '0' }">
 
             <div 
             class="project-content"
@@ -68,13 +66,13 @@
   
   <style scoped>
   .mega-container {
-    width: 400px;
-    height: 100px;
+    width: 500px;
+    height: 140px;
     display: grid;
     grid-template-columns: auto auto;
-    gap: 1.5%;
-    justify-content: center;
-    align-items: center;
+    gap: 3%;
+    justify-content: left;
+    align-items: left;
   }
   
   .area-button {
@@ -82,15 +80,16 @@
     border-top-left-radius: var(--big-round);
     border: none;
     background-color: var(--clickable-color);
-    height: 100px;
-    width: 400px;
+    height: 140px;
+    width: 500px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     align-items: center;
     transition: 0.3s ease;
+    overflow : hidden;
   }
 
   .projects-button {
-    height: 100px;
+    height: 140px;
     width: 0px;
     border-bottom-right-radius: var(--big-round);
     border: none;
@@ -104,8 +103,8 @@
   .icon-image img {
     margin-left: 20px;
     margin-right: 20px;
-    width: 75px;
-    height: 75px;
+    width: 90px;
+    height: 90px;
     object-fit: cover;
   }
   
@@ -127,22 +126,31 @@
   text-align: left;
   width: 100%;
   align-self: flex-start;
-  font-size: medium;
+  font-size: large;
+  font-weight: bold;
 }
 
 .area-caption {
   padding-top: 2%;
+  padding-right: 2%;
   color: var(--white-color);
   text-align: left;
   width: 100%;
   align-self: flex-start;
-  font-size: xx-small;
+  font-size: small;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Specify the number of lines you want to display before ellipsis */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
 }
+
 .project-content {
   padding: 5%;
   color: var(--white-color);
   align-self: flex-start;
-  font-size: xx-small;
+  font-size: small;
   align-items: flex-start;
   overflow-wrap: break-word;
   word-wrap: break-word;

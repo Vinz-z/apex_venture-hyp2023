@@ -97,8 +97,8 @@ import AreaPreview from '~/components/AreaPreview.vue';
   align-items: center;
   justify-content: center;
   background-color: var(--primary-color);
-  width: 400px;
-  height: 100px;
+  width: 500px;
+  height: 110px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 0px var(--big-round);
   margin-bottom: 10px;
@@ -112,7 +112,7 @@ import AreaPreview from '~/components/AreaPreview.vue';
 .separator {
   grid-column: 2; /* Place the separator in the second column */
   height: auto;
-  margin-top: 135px;
+  margin-top: 150px;
   position: relative;
   width: 1px; /* Set the width of the separator */
   background-color: gray; /* Adjust the color of the separator */
