@@ -1,5 +1,5 @@
 <template>
-    <div class="circle" :style="{ top: top + '%', left: left + '%' ,width: size + 'px', height: size + 'px', backgroundColor: color}"></div>
+    <div class="circle hidden desktop:block" :style="{ top: top + '%', left: left + '%' ,width: size + 'px', height: size + 'px', backgroundColor: color}"></div>
   </template>
   
   <script>
@@ -19,7 +19,7 @@
       },
       color: {
       type: String,
-      default: "var(--clickable-color)" // Valore predefinito per il colore è rosso (#ff0000)
+      default: "var(--clickable-color)"
     }
     }
   }

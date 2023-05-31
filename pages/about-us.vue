@@ -7,8 +7,8 @@
   />
 
   <div class="flex justify-center items-center mt-20 mb-20">
-    <div class="grid grid-rows-2 grid-col-2 grid-flow-col gap-4">
-      <div class="row-span-2 w-5/6" id="strategy">
+    <div class="grid grid-cols-1 desktop:grid-cols-2 gap-6">
+      <div class="row-span-2 w-5/6 justify-self-center" id="strategy">
         <titled-card title="Investment Strategy" :left=true>
           <p class="mt-5">
             At Apex Venture, we are driven by a forward-thinking investment
@@ -44,8 +44,7 @@
 import Banner from "~/components/Banner.vue";
 import TitledCard from "~/components/TitledCard.vue";
 import animatedCharts from "~/components/AnimatedCharts.vue";
-import dataCard from "~/components/SingleDataCard.vue";
-import groupCard from "~/components/GroupDataCard.vue";
+import groupDataCard from "~/components/GroupDataCard.vue";
 </script>
 
 <style scoped>
@@ -57,5 +56,6 @@ import groupCard from "~/components/GroupDataCard.vue";
 #graph {
   min-width: fit-content;
   justify-content: center;
+  z-index: 1;
 }
 </style>
