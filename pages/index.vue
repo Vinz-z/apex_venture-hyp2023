@@ -1,8 +1,7 @@
 <template>
-  <Banner
+  <banner-home
     imageUrl="/images/banners/homepage.jpg"
-    title="Banner Title"
-    caption="Banner Caption"
+    caption="Empowering entrepreneurs to turn their dreams into reality, one investment at a time"
   />
   <div class="description self-center flex px-60 py-20">
     <p class="text-center text-2xl">
@@ -103,7 +102,7 @@
 </template>
 
 <script setup>
-import Banner from "@/components/Banner.vue";
+import BannerHome from "@/components/BannerHome.vue";
 import TitledCard from "@/components/TitledCard.vue";
 import ProjectLogo from "@/components/ProjectLogo.vue";
 import ApexButton from "@/components/ApexButton.vue";
