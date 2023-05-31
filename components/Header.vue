@@ -1,5 +1,8 @@
 <template>
-  <nav class="w-full p-4 bg-[var(--primary-color)] fixed top-0 z-10" id="header">
+  <nav
+    class="w-full p-4 bg-[var(--primary-color)] fixed top-0 z-10"
+    id="header"
+  >
     <div class="flex items-center justify-between">
       <!-- Header logo -->
       <div>
@@ -39,8 +42,7 @@
               class="hovered-link"
               @mouseenter="handleMouseEnter"
               @mouseleave="handleMouseLeave"
-            >
-              Team
+              >Our Team
             </NuxtLink>
           </li>
           <li>
@@ -152,7 +154,7 @@
               style="color: var(--white-color)"
               class="my-4 inline-block"
               @click="isOpen = false"
-              >Team</NuxtLink
+              >Our Team</NuxtLink
             >
           </li>
           <li>
@@ -218,10 +220,10 @@ export default {
       this.isHovered = false;
     },
     calculateSpacerHeight() {
-      const headerElement = document.getElementById('header');
+      const headerElement = document.getElementById("header");
       const headerHeight = headerElement.offsetHeight - 5;
       this.spacerHeight = `${headerHeight}px`;
-    }
+    },
   },
   watch: {
     isOpen: {
@@ -232,7 +234,6 @@ export default {
           else document.body.style.removeProperty("overflow");
         }
       },
-      
     },
   },
   mounted() {
