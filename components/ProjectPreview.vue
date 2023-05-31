@@ -1,21 +1,23 @@
 <template>
-    <div class="project-preview justify-self-center">
+    <div class="project-preview">
         <nuxt-link :to="project2route(name)" class="image-container">
             <div class="project-image" :style="`background-image: url(${logo_path});`"></div>
         </nuxt-link>
         <div class="project-info">
-            <h2 class="text-2xl font-medium leading-normal mt-0 mb-2 p-2">{{ name }}</h2>
+            <h2 class="text-2xl font-bold leading-normal">{{ name }}</h2>
             <div class="area-container">
-                <NuxtLink :to="`/areas/${area.name}`" v-for="area in areas">
+                <nuxt-link :to="`/areas/${area.name}`" v-for="area in areas">
                     <img :src="area.icon" alt="area icon" height="30px" width="30px"/>
-                </NuxtLink>
+                </nuxt-link>
             </div>
-            <p>{{ short_overview }}</p>
+            <p class="text-justify">{{ short_overview }}</p>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
+import { PropType } from 'vue';
+
 const props = defineProps({
     logo_path: {
         type: String,
@@ -30,7 +32,7 @@ const props = defineProps({
         required: true,
     },
     areas: {
-        type: Array<Area>,
+        type: Object as PropType<Area[]>,
         default: () => [],
     },
 });
@@ -81,12 +83,12 @@ const project2route = (name: string) => `/projects/${name.toLowerCase().replace(
     top: -50px;
     padding-top: 50px;
     width: 100%;
-    height: 60%;
+    height: 290px;
     color: var(--white-color);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     position: relative;
     z-index: -1;
 }

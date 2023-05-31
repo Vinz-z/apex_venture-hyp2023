@@ -10,23 +10,37 @@
         :sectors="sectors"
         :selectedOne="Number($route.query.filter_by) ?? -1"
         />
-        <projects-grid :projects="projects" :areas="areas"/>
+        <div class="w-full grid grid-cols-4 g-4 m-4 place-items-center place-content-start">
+            <project-preview
+            v-for="item in projects"
+            :logo_path="item.logo_path"
+            :name="item.name"
+            :areas="areasOfProject(item)"
+            :short_overview="item.short_overview"
+            class="place-self-center"
+            />
+        </div>
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import Banner from '~/components/Banner.vue'
 import FilterBy from '~/components/FilterBy.vue'
-import ProjectsGrid from '~/components/ProjectsGrid.vue'
+import ProjectPreview from '~/components/ProjectPreview.vue';
+
 let { projects, areas } = getProjectsData(useSupabaseClient());
 let technologies = areas.filter((area) => area.type === 'technology');
 let sectors = areas.filter((area) => area.type === 'sector');
+
+const areasOfProject = function (project) {
+    return areas.filter((area) => project.areas.includes(area.id))
+};
 </script>
 
 <style scoped>
 .shadowed-box {
     box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
-        z-index: 2;
+    z-index: 2;
     background-color: var(--white-color)
 }
 

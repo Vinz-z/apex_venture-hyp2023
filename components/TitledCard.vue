@@ -50,7 +50,7 @@ const props = defineProps({
 .content-box {
   background-color: var(--secondary-color);
   padding: 30px;
-  padding-top: 50px;
+  padding-top: 60px;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -64,11 +64,5 @@ const props = defineProps({
 
 .content-box-left {
   border-radius: var(--big-round) 0px;
-}
-
-.content {
-  padding-top: 5%;
-  display: flex;
-  flex-wrap: wrap;
 }
 </style>

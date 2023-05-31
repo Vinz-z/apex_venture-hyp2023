@@ -1,31 +1,31 @@
 <template>
-    <div class="left-0 flex flex-col p-6">
+    <div class="flex flex-col p-6">
         <div>
             <div class="flex justify-between">
                 <div class="font-bold">Filter By</div>
-                <NuxtLink to="/projects" style="color: var(--clickable-color)">reset</NuxtLink>
+                <nuxt-link to="/projects" style="color: var(--clickable-color)">reset</nuxt-link>
             </div>
             <hr>
         </div>
-        <NuxtLink to="/projects?filter_by=0" class="flex items-center justify-start gap-4 m-1 p-2" :id="selectedOne == 0 ? 'active' : ''">
+        <nuxt-link to="/projects?filter_by=0" class="flex items-center justify-start gap-4 m-1 p-2" :id="selectedOne == 0 ? 'active' : ''">
             <div class="w-3"></div>
             Most Relevant Project
             <div class="w-3"></div>
-        </NuxtLink>
+        </nuxt-link>
         <div style="font-size: smaller;">Technologies</div>
-        <NuxtLink v-for="tech of technologies" :to="`/projects?filter_by=${tech.id}`" class="flex items-center justify-start gap-4 m-1 p-2" :id="selectedOne == tech.id ? 'active' : ''">
+        <nuxt-link v-for="tech of technologies" :to="`/projects?filter_by=${tech.id}`" class="flex items-center justify-start gap-4 m-1 p-2" :id="selectedOne == tech.id ? 'active' : ''">
             <div class="w-3"></div>
             <img :src="tech.icon" class="w-6 h-6pl">
             <div>{{ tech.name }}</div>
             <div class="w-3"></div>
-        </NuxtLink>
+        </nuxt-link>
         <div style="font-size: smaller;">Sectors</div>
-        <NuxtLink v-for="sect in sectors" :to="`/projects?filter_by=${sect.id}`" class="flex items-center justify-start gap-4 m-1 p-2" :id="selectedOne == sect.id ? 'active' : ''">
+        <nuxt-link v-for="sect in sectors" :to="`/projects?filter_by=${sect.id}`" class="flex items-center justify-start gap-4 m-1 p-2" :id="selectedOne == sect.id ? 'active' : ''">
             <div class="w-3"></div>
             <img :src="sect.icon" class="w-6 h-6">
             <div>{{ sect.name }}</div>
             <div class="w-3"></div>
-        </NuxtLink>
+        </nuxt-link>
     </div>
 </template>
 
