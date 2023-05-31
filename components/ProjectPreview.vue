@@ -4,11 +4,9 @@
             <div class="project-image" :style="`background-image: url(${logo_path});`"></div>
         </nuxt-link>
         <div class="project-info">
-            <h2 class="text-2xl font-bold leading-normal">{{ name }}</h2>
-            <div class="area-container">
-                <nuxt-link :to="`/areas/${area.name}`" v-for="area in areas">
-                    <img :src="area.icon" alt="area icon" height="30px" width="30px"/>
-                </nuxt-link>
+            <h2 class="w-full text-center text-2xl font-bold leading-normal">{{ name }}</h2>
+            <div class="h-[30px] w-full flex flex-row gap-4 align-center justify-center">
+                <img :src="area.icon" alt="area icon" class="object-contain w-[30px]" v-for="area in areas"/>
             </div>
             <p class="text-justify">{{ short_overview }}</p>
         </div>
@@ -54,12 +52,13 @@ const project2route = (name: string) => `/projects/${name.toLowerCase().replace(
 
 .image-container {
     width: 100%;
-    height: 40%;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--clickable-color);
     border-radius: var(--big-round) 0px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .project-image {
@@ -70,20 +69,20 @@ const project2route = (name: string) => `/projects/${name.toLowerCase().replace(
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--medium-round) 0px;
-    width: 80%;
-    height: 70%;
+    border-radius: var(--big-round);
+    height: 160px;
+    width: 245px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .project-info {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     border-radius: var(--big-round) 0px;
     position: relative;
     top: -50px;
     padding-top: 50px;
     width: 100%;
-    height: 290px;
+    height: 250px;
     color: var(--white-color);
     display: flex;
     flex-direction: column;
@@ -91,11 +90,6 @@ const project2route = (name: string) => `/projects/${name.toLowerCase().replace(
     justify-content: space-evenly;
     position: relative;
     z-index: -1;
-}
-
-.project-info h2 {
-    width: 100%;
-    text-align: center;
 }
 
 .area-container {
