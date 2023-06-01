@@ -13,9 +13,9 @@ module.exports = {
   ],
   theme: {
     screens: {
-      'smartphone': "400px",
-      'tablet': '640px',
-      'desktop': "1024px",
+      'smartphone': "375px",
+      'tablet': '820px',
+      'desktop': "1280px",
       ...defaultTheme.screens,
     },
     extend: {},

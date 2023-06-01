@@ -12,10 +12,14 @@
       possibilities, and create a brighter future together.
     </p>
   </div>
-  <div class="projects-container flex flex-column justify-center">
-    <TitledCard title="Supervised Projects" :left="true">
+  <div class="projects-container flex justify-center self-center w-3/5">
+    <TitledCard
+      title="Most Relevant Projects"
+      class="w-full justify-center"
+      :left="true"
+    >
       <div>
-        <div class="mid-container flex flex-wrap justify-start gap-4">
+        <div class="mid-container justify-center flex flex-wrap">
           <div class="project-item">
             <ProjectLogo
               project_image="~/../../images/logos/sample.png"
@@ -55,15 +59,29 @@
     </TitledCard>
   </div>
 
-  <div class="separator self-center h-[1px] w-1/3 my-10"></div>
+  <div class="separator bg-black h-[1px] self-center w-1/3 my-10"></div>
 
-  <div class="about-us-container flex flex-column justify-center px-60">
+  <div class="about-us-container flex-wrap self-center w-3/5">
     <TitledCard title="About Us" :left="true">
       <div>
-        <div class="white-cards-container flex flex-wrap justify-center gap-20 pb-10">
-          <data-card data="35+" description="COMPANY INVESTMENTS" color="var(--primary-color)"/>
-          <data-card data="150+" description="FUND INVESTMENTS" color="var(--clickable-color)"/>
-          <data-card data="$30M" description="REALIZED" color="var(--decoration-color)"/>
+        <div
+          class="white-cards-container flex flex-wrap justify-center gap-20 pb-10"
+        >
+          <data-card
+            data="35+"
+            description="COMPANY INVESTMENTS"
+            color="var(--primary-color)"
+          />
+          <data-card
+            data="150+"
+            description="FUND INVESTMENTS"
+            color="var(--clickable-color)"
+          />
+          <data-card
+            data="$30M"
+            description="REALIZED"
+            color="var(--decoration-color)"
+          />
         </div>
         <div class="caption text-center text-lg">
           At Apex Venture, we believe in the power of innovation and are
@@ -82,10 +100,10 @@
     </TitledCard>
   </div>
 
-  <div class="separator self-center h-[1px] w-1/3 mt-10 mb-20"></div>
+  <div class="separator bg-gray-400 h-[1px] self-center w-1/3 my-10"></div>
 
   <div class="our-team">
-    <img class="photo" src="/images/banners/hometeam.jpeg" />
+    <img class="photo w-3/5" src="/images/banners/hometeam.jpeg" />
     <div class="green-box">
       <h2 class="text-xl mb-4"><b>Our Team</b></h2>
       <p class="mb-5">
@@ -111,23 +129,23 @@ import DataCard from "~/components/SingleDataCard.vue";
 
 <style scoped>
 .our-team {
+  position: relative;
   display: flex;
   justify-content: center;
-  margin-bottom: 10%;
+  margin-bottom: 20%;
 }
 
 .photo {
-  max-width: 50%;
   border-radius: var(--big-round) 0px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .green-box {
+  top: 70%;
   color: var(--white-color);
   border-radius: var(--big-round) 0px;
   position: absolute;
   background-color: var(--secondary-color);
-  bottom: 90px;
   width: 30%;
   height: 300px;
   justify-content: center;
