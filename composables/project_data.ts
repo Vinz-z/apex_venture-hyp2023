@@ -1,6 +1,6 @@
-export default defineEventHandler((event) => {
+export default function(project_name: String, supabase: any) {
     return {
-        name: event.context.params!.name,
+        name: project_name,
         logo: "/images/logos/sample.png",
         banner: "/images/banners/sports.png",
         office: "London",
@@ -46,4 +46,4 @@ export default defineEventHandler((event) => {
             banner: "/images/banners/sample.png",
         },
     }
-})
+}
