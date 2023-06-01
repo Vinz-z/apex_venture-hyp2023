@@ -2,12 +2,15 @@
   <div class="banner">
     <div class="banner-image">
       <div class="banner-content">
-      <div class="banner-caption">{{ caption }}</div>
-    </div>
-      <img :src="imageUrl" alt="Banner Image" :style="`object-position: center ${percentage}%;`"/>
+        <div class="banner-caption">{{ caption }}</div>
+      </div>
+      <img
+        :src="imageUrl"
+        alt="Banner Image"
+        :style="`object-position: center ${percentage}%;`"
+      />
       <div class="banner-overlay"></div>
     </div>
-    
   </div>
 </template>
 
@@ -22,7 +25,7 @@ export default {
     caption: {
       type: String,
       required: false,
-      default: ""
+      default: "",
     },
     percentage: {
       type: Number,
@@ -57,7 +60,6 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: cover;
- 
 }
 
 .banner-overlay {

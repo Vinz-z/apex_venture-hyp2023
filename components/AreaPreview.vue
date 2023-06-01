@@ -1,115 +1,121 @@
 <template>
-    <div 
+  <div
     class="mega-container"
     @mouseover="expandComponents"
-    @mouseout="collapseComponents">
-        <NuxtLink :to="'/areas/' + title"
-                    class="area-button"
-                    :style="{ width: isHovered ? '360px' : '500px' ,
-                    borderBottomRightRadius: isHovered ? '0px' : 'var(--big-round)' }"
-                    onclick="" >
-            <div class="icon-image">
-                <img :src="iconUrl" alt="Icon Image">
-            </div>
-            <div class="area-content">
-                <h4 class="area-title">{{ title }}</h4>
-                <div class="area-caption">{{ caption }}</div>
-            </div>
-        </NuxtLink>
-        <button 
-        class="projects-button"
-        :style="{ width: isHovered ? '125px' : '0' }">
+    @mouseout="collapseComponents"
+  >
+    <NuxtLink
+      :to="'/areas/' + title"
+      class="area-button"
+      :style="{
+        width: isHovered ? '360px' : '500px',
+        borderBottomRightRadius: isHovered ? '0px' : 'var(--big-round)',
+      }"
+      onclick=""
+    >
+      <div class="icon-image">
+        <img :src="iconUrl" alt="Icon Image" />
+      </div>
+      <div class="area-content">
+        <h4 class="area-title">{{ title }}</h4>
+        <div class="area-caption">{{ caption }}</div>
+      </div>
+    </NuxtLink>
+    <NuxtLink
+      :to="'/areas/' + title + '/projects'"
+      class="projects-button"
+      :style="{ width: isHovered ? '125px' : '0' }"
+    >
+      <div
+        class="project-content"
+        :style="{ visibility: isHovered ? 'visible' : 'hidden' }"
+      >
+        See all {{ title }} projects
+      </div>
+    </NuxtLink>
+  </div>
+</template>
 
-            <div 
-            class="project-content"
-            :style="{ visibility: isHovered ? 'visible' : 'hidden' }">
-
-            See all {{ title }} projects</div>
-
-        </button>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        isHovered: false
-      };
+<script>
+export default {
+  data() {
+    return {
+      isHovered: false,
+    };
+  },
+  methods: {
+    expandComponents() {
+      this.isHovered = true;
     },
-    methods: {
-      expandComponents() {
-        this.isHovered = true;
-      },
-      collapseComponents() {
-        this.isHovered = false;
-      }
+    collapseComponents() {
+      this.isHovered = false;
     },
+  },
 
-    name: "AreaPreview",
-    props: {
-      iconUrl: {
-        type: String,
-        required: true,
-      },
-      title: {
-        type: String,
-        required: true,
-      },
-      caption: {
-        type: String,
-        required: true,
-      },
+  name: "AreaPreview",
+  props: {
+    iconUrl: {
+      type: String,
+      required: true,
     },
-  };
-  </script>
-  
-  <style scoped>
-  .mega-container {
-    width: 500px;
-    height: 140px;
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 3%;
-    justify-content: left;
-    align-items: left;
-  }
-  
-  .area-button {
-    display: flex;
-    border-top-left-radius: var(--big-round);
-    border: none;
-    background-color: var(--clickable-color);
-    height: 140px;
-    width: 500px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    align-items: center;
-    transition: 0.3s ease;
-    overflow : hidden;
-  }
+    title: {
+      type: String,
+      required: true,
+    },
+    caption: {
+      type: String,
+      required: true,
+    },
+  },
+};
+</script>
 
-  .projects-button {
-    height: 140px;
-    width: 0px;
-    border-bottom-right-radius: var(--big-round);
-    border: none;
-    background-color: var(--clickable-color);
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    transition: 0.3s ease;
-    padding: 0; 
-    font-size: 0;
-  }
+<style scoped>
+.mega-container {
+  width: 500px;
+  height: 140px;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 3%;
+  justify-content: left;
+  align-items: left;
+}
 
-  .icon-image img {
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
-  }
-  
-  .area-content {
-  padding-top: 2%; 
+.area-button {
+  display: flex;
+  border-top-left-radius: var(--big-round);
+  border: none;
+  background-color: var(--clickable-color);
+  height: 140px;
+  width: 500px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  align-items: center;
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+.projects-button {
+  height: 140px;
+  width: 0px;
+  border-bottom-right-radius: var(--big-round);
+  border: none;
+  background-color: var(--clickable-color);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.icon-image img {
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+}
+
+.area-content {
+  padding-top: 2%;
   align-self: flex-start;
   width: 60%;
   flex-wrap: wrap;
@@ -120,7 +126,7 @@
   word-wrap: break-word;
 }
 
-.area-title{
+.area-title {
   margin: 0%;
   color: var(--white-color);
   text-align: left;
@@ -147,15 +153,12 @@
 }
 
 .project-content {
+  display: flex;
+  text-align: center;
   padding: 5%;
   color: var(--white-color);
-  align-self: flex-start;
   font-size: small;
-  align-items: flex-start;
-  overflow-wrap: break-word;
   word-wrap: break-word;
   visibility: hidden;
 }
-
-  </style>
-  
+</style>
