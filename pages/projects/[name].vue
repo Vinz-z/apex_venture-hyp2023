@@ -4,7 +4,7 @@
     :title="project.name"
     :caption="project.short_overview"
     />
-    <div class="grid grid-cols-1 gap-4 max-w-6xl my-4 place-item-center m-4 desktop:grid-cols-2 desktop:mx-auto">
+    <div class="grid grid-cols-1 gap-4 max-w-6xl place-item-center m-4 desktop:grid-cols-2 desktop:mx-auto">
         <div class="relative text-[var(--white-color)] desktop:col-span-2">
             <titled-card :title="project.name" class="z-0">
                 <div class="flex flex-col tablet:flex-row items-center">
@@ -72,8 +72,5 @@
 </template>
 
 <script setup>
-import Banner from "~/components/Banner.vue";
-import TitledCard from "~/components/TitledCard.vue";
-import DataGrid from "~/components/DataGrid.vue";
-const project = projectData(useRoute().params.name, useSupabaseClient())
+const project = getProjectData(useRoute().params.name, useSupabaseClient())
 </script>

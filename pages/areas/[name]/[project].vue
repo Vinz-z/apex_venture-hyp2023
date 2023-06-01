@@ -120,11 +120,7 @@
 </template>
 
 <script setup>
-import Banner from "~/components/Banner.vue";
-import ProjectPreview from "~/components/ProjectPreview.vue";
-
-let { projects, areas } = getProjectsData(useSupabaseClient());
-
+let { projects, areas } = getAllProjectsData(useSupabaseClient());
 const areasOfProject = function (project) {
   return areas.filter((area) => project.areas.includes(area.id));
 };

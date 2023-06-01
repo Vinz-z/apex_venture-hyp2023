@@ -8,7 +8,7 @@
             <div class="h-[30px] w-full flex flex-row gap-4 align-center justify-center">
                 <img :src="area.icon" alt="area icon" class="object-contain w-[30px]" v-for="area in areas"/>
             </div>
-            <p class="text-justify">{{ short_overview }}</p>
+            <div class="text-justify m-4">{{ short_overview }}</div>
         </div>
     </nuxt-link>
 </template>

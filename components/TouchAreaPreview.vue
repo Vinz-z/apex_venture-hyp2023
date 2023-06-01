@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-[500px] flex flex-col gap-1 text-center text-[var(--white-color)]">
+    <div class="max-w-[500px] flex flex-col gap-1 text-center text-[var(--white-color)] drop-shadow">
         <div class="flex gap-4 bg-[var(--secondary-color)] rounded-tl-2xl p-6 items-center">
             <img :src="iconUrl" class="w-16 h-16">
             <div class="text-justify">

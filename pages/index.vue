@@ -13,56 +13,29 @@
     </p>
   </div>
   <div class="projects-container flex justify-center self-center w-3/5">
-    <TitledCard
+    <titled-card
       title="Most Relevant Projects"
       class="w-full justify-center"
       :left="true"
     >
       <div>
         <div class="mid-container justify-center flex flex-wrap">
-          <div class="project-item">
-            <ProjectLogo
-              project_image="~/../../images/logos/sample.png"
-              project_name="Project1"
-            ></ProjectLogo>
-          </div>
-          <div class="project-item">
-            <ProjectLogo
-              project_image="~/../../images/logos/sample.png"
-              project_name="Project2"
-            ></ProjectLogo>
-          </div>
-          <div class="project-item">
-            <ProjectLogo
-              project_image="~/../../images/logos/sample.png"
-              project_name="Project3"
-            ></ProjectLogo>
-          </div>
-          <div class="project-item">
-            <ProjectLogo
-              project_image="~/../../images/logos/sample.png"
-              project_name="Project5"
-            ></ProjectLogo>
-          </div>
-          <div class="project-item">
-            <ProjectLogo
-              project_image="~/../../images/logos/sample.png"
-              project_name="Project5"
-            ></ProjectLogo>
-          </div>
+          <project-logo v-for="project in most_relevant" class="project-item"
+          :project_image="project.image"
+          :project_name="project.name"
+          />
         </div>
-
         <div class="flex justify-center h-[35px]">
-          <ApexButton caption="See all Projects" />
+          <apex-button caption="See all Projects" />
         </div>
       </div>
-    </TitledCard>
+    </titled-card>
   </div>
 
   <div class="separator bg-black h-[1px] self-center w-1/3 my-10"></div>
 
   <div class="about-us-container flex-wrap self-center w-3/5">
-    <TitledCard title="About Us" :left="true">
+    <titled-card title="About Us" :left="true">
       <div>
         <div
           class="white-cards-container flex flex-wrap justify-center gap-20 pb-10"
@@ -94,10 +67,10 @@
           together.
         </div>
         <div class="flex justify-center h-[35px] mt-10">
-          <ApexButton caption="See More" />
+          <apex-button caption="See More" />
         </div>
       </div>
-    </TitledCard>
+    </titled-card>
   </div>
 
   <div class="separator bg-gray-400 h-[1px] self-center w-1/3 my-10"></div>
@@ -113,18 +86,14 @@
         happen.
       </p>
       <div class="button">
-        <NuxtLink :to="'/team'"><ApexButton caption="See more" /></NuxtLink>
+        <nuxt-link :to="'/team'"><apex-button caption="See more" /></nuxt-link>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import BannerHome from "@/components/BannerHome.vue";
-import TitledCard from "@/components/TitledCard.vue";
-import ProjectLogo from "@/components/ProjectLogo.vue";
-import ApexButton from "@/components/ApexButton.vue";
-import DataCard from "~/components/SingleDataCard.vue";
+const most_relevant = getMostRelevant(useSupabaseClient());
 </script>
 
 <style scoped>

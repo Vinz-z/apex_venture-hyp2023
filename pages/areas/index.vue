@@ -4,7 +4,7 @@
         title="Areas"
         caption="Explore diverse investment areas, empowering visionary entrepreneurs across industries to shape the future."
     />
-    <div class="flex flex-col desktop:flex-row gap-8 w-auto m-8 desktop:items-stretch desktop:justify-center">
+    <div class="flex flex-col desktop:flex-row gap-8 w-auto m-4 desktop:items-stretch desktop:justify-center">
         <div class="flex-col gap-6 items-center hidden desktop:flex">
             <div class="title max-w-[500px] w-full">Sectors</div>
             <area-preview v-for="sector in sectors"
