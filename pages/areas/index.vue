@@ -5,61 +5,26 @@
         caption="Explore diverse investment areas, empowering visionary entrepreneurs across industries to shape the future."
     />
     <div class="giga-container">
-        <div class="grid">
+        <div class="flex flex-col desktop:flex-row gap-8">
             <div class="sectors">
                 <div class="title">
                     <div>Sectors</div>
                 </div>
-                <AreaPreview
-                    iconUrl="/icons/areas/healthcare.png"
-                    title="Health"
-                    caption="Invest in medical devices, telemedicine solutions, and software to improve healthcare outcomes and manage health data."
-                />
-                <AreaPreview
-                    iconUrl="/icons/areas/planet-earth.png"
-                    title="Green"
-                    caption="Invest in clean energy production, waste management, and sustainable mobility solutions to address environmental challenges."
-                />
-                <AreaPreview
-                    iconUrl="/icons/areas/education.png"
-                    title="Education"
-                    caption="Invest in online learning, professional training, and education management software to improve access to education."
-                />
-                <AreaPreview
-                    iconUrl="/icons/areas/e-commerce.png"
-                    title="Finance"
-                    caption="Invest in digital payment solutions, fintech, and trading platforms to promote efficient and secure financial transactions."
-                />
-                <AreaPreview
-                    iconUrl="/icons/areas/balls-sports.png"
-                    title="Sports"
-                    caption="Invest in technologies to improve athlete performance, manage the fan experience, and commercialize sports rights for a better sports industry."
+                <AreaPreview v-for="sector in sectors"
+                    :iconUrl="sector.iconUrl"
+                    :title="sector.title"
+                    :caption="sector.caption"
                 />
             </div>
-            <div class="separator"></div>
+            <div class="hidden desktop:block separator"></div>
             <div class="technologies">
                 <div class="title">
                     <div>Technologies</div>
                 </div>
-                <AreaPreview
-                    iconUrl="/icons/areas/iot.png"
-                    title="IoT"
-                    caption="Invest in solutions for smart homes, Industry 4.0, and mobility that leverage the connection of physical objects to the internet for data collection and exchange."
-                />
-                <AreaPreview
-                    iconUrl="/icons/areas/analytics.png"
-                    title="Artificial Intelligence"
-                    caption="Invest in machine learning algorithms, robotics, and automation software to create intelligent machines capable of tasks that require human intelligence."
-                />
-                <AreaPreview
-                    iconUrl="/icons/areas/blockchain.png"
-                    title="Blockchain"
-                    caption="Invest in decentralized applications, cryptocurrencies, and supply chain management solutions using an immutable and secure digital record-keeping system."
-                />
-                <AreaPreview
-                    iconUrl="/icons/areas/vr.png"
-                    title="Augmented Reality"
-                    caption="Invest in applications that overlay digital elements onto the real world for gaming, education, and tourism."
+                <AreaPreview v-for="technology in technologies"
+                    :iconUrl="technology.iconUrl"
+                    :title="technology.title"
+                    :caption="technology.caption"
                 />
             </div>
         </div>
@@ -67,8 +32,9 @@
     
 </template>
 
-<script>
+<script setup>
 import AreaPreview from '~/components/AreaPreview.vue';
+const { technologies, sectors } = getAreasData(useSupabaseClient());
 </script>
 
 <style scoped>
@@ -81,15 +47,16 @@ import AreaPreview from '~/components/AreaPreview.vue';
     margin-top: 50px;
     margin-bottom: 50px
 }
-
+/*
 .grid {
     display: grid;
-    grid-template-columns: 1fr auto 1fr; /* Three columns: equal, separator, equal */
-    grid-gap: 50px; /* Define spaces between grid items */
+    grid-template-columns: 1fr auto 1fr;
+    grid-gap: 50px;
     background-color: var(--white-color);
     margin-top: 50px;
     justify-content: center;
 }
+*/
 
 
 .title {

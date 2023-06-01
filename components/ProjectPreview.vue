@@ -1,8 +1,8 @@
 <template>
-    <div class="project-preview">
-        <nuxt-link :to="project2route(name)" class="image-container">
+    <nuxt-link :to="project2route(name)" class="project-preview">
+        <div class="image-container">
             <div class="project-image" :style="`background-image: url(${logo_path});`"></div>
-        </nuxt-link>
+        </div>
         <div class="project-info">
             <h2 class="w-full text-center text-2xl font-bold leading-normal">{{ name }}</h2>
             <div class="h-[30px] w-full flex flex-row gap-4 align-center justify-center">
@@ -10,7 +10,7 @@
             </div>
             <p class="text-justify">{{ short_overview }}</p>
         </div>
-    </div>
+    </nuxt-link>
 </template>
 
 <script setup lang="ts">
