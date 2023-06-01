@@ -4,7 +4,7 @@
     @mouseover="expandComponents"
     @mouseout="collapseComponents"
   >
-    <NuxtLink
+    <nuxt-link
       :to="'/areas/' + title"
       class="area-button"
       :style="{
@@ -20,8 +20,8 @@
         <h4 class="area-title">{{ title }}</h4>
         <div class="area-caption">{{ caption }}</div>
       </div>
-    </NuxtLink>
-    <NuxtLink
+    </nuxt-link>
+    <nuxt-link
       :to="'/areas/' + title + '/projects'"
       class="projects-button"
       :style="{ width: isHovered ? '125px' : '0' }"
@@ -32,41 +32,34 @@
       >
         See all {{ title }} projects
       </div>
-    </NuxtLink>
+    </nuxt-link>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      isHovered: false,
-    };
+<script setup>
+const props = defineProps({
+  iconUrl: {
+    type: String,
+    required: true,
   },
-  methods: {
-    expandComponents() {
-      this.isHovered = true;
-    },
-    collapseComponents() {
-      this.isHovered = false;
-    },
+  title: {
+    type: String,
+    required: true,
   },
+  caption: {
+    type: String,
+    required: true,
+  },
+});
 
-  name: "AreaPreview",
-  props: {
-    iconUrl: {
-      type: String,
-      required: true,
-    },
-    title: {
-      type: String,
-      required: true,
-    },
-    caption: {
-      type: String,
-      required: true,
-    },
-  },
+const isHovered = ref(false);
+
+const expandComponents = function () {
+  isHovered.value = true;
+};
+
+const collapseComponents = function () {
+  isHovered.value = false;
 };
 </script>
 
