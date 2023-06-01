@@ -1,42 +1,41 @@
 <template>
   <NuxtLink to="/projects/project-1">
-    <div class="shape-container"
+    <div
+      class="shape-container"
       @mouseover="expandComponents"
       @mouseout="collapseComponents"
+    >
+      <div class="shape">
+        <img class="project-logo" :src="project_image" />
+      </div>
+
+      <div
+        class="project-button flex justify-center text-center items-end"
+        :style="{ top: isHovered ? '-40px' : '-100px' }"
       >
-        <div class="shape">
-            <img class="project-logo" :src="project_image">
+        <div class="project-content mb-3 wrap text-ellipsis overflow-hidden">
+          {{ project_name }}
         </div>
-        
-          <div class="project-button"
-            :style="{ top: isHovered ? '-40px' : '-100px' }">
-            <div 
-                class="project-content text-center">
-                {{ project_name }}
-            </div>
-          </div>
-        
+      </div>
     </div>
   </NuxtLink>
-
 </template>
 
 <script>
-
 export default {
-    data() {
-      return {
-        isHovered: false
-      };
+  data() {
+    return {
+      isHovered: false,
+    };
+  },
+  methods: {
+    expandComponents() {
+      this.isHovered = true;
     },
-    methods: {
-      expandComponents() {
-        this.isHovered = true;
-      },
-      collapseComponents() {
-        this.isHovered = false;
-      }
+    collapseComponents() {
+      this.isHovered = false;
     },
+  },
   props: {
     project_image: {
       type: String,
@@ -51,8 +50,7 @@ export default {
 </script>
 
 <style scoped>
-
-.shape-container{
+.shape-container {
   height: 230px;
   width: 190px;
   margin-left: auto;
@@ -62,6 +60,7 @@ export default {
   padding-left: 20px;
   padding-right: 20px;
 }
+
 .shape {
   border-bottom-right-radius: var(--big-round);
   display: flex;
@@ -90,7 +89,4 @@ export default {
   background-color: var(--clickable-color);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
-
-
-
 </style>

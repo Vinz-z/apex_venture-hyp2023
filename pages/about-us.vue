@@ -7,7 +7,7 @@
   />
 
   <div class="flex justify-center items-center mt-20 mb-20">
-    <div class="grid grid-cols-1 desktop:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 desktop:grid-cols-2 gap-6 place-items-center">
       <div class="row-span-2 w-5/6 justify-self-center" id="strategy">
         <titled-card title="Investment Strategy" :left=true>
           <p class="mt-5">
@@ -35,7 +35,7 @@
       <div class="justify-center flex items-center">
         <group-data-card/>
       </div>
-      <div id="graph"><animated-charts /></div>
+      <div id="graph" class="w-5/6"><animated-charts /></div>
     </div>
   </div>
 </template>

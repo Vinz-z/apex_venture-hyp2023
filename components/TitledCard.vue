@@ -52,8 +52,6 @@ const props = defineProps({
   padding: 30px;
   padding-top: 60px;
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
   top: -40px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
