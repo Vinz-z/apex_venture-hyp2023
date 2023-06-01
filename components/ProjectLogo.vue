@@ -1,4 +1,5 @@
 <template>
+  <NuxtLink to="/projects/project-1">
     <div class="shape-container"
       @mouseover="expandComponents"
       @mouseout="collapseComponents"
@@ -6,17 +7,17 @@
         <div class="shape">
             <img class="project-logo" :src="project_image">
         </div>
-        <NuxtLink to="/projects/project-1">
-          <button class="project-button"
-            :style="{ height: isHovered ? '85px' : '0' }">
+        
+          <div class="project-button"
+            :style="{ top: isHovered ? '-40px' : '-100px' }">
             <div 
-                class="project-content"
-                :style="{ visibility: isHovered ? 'visible' : 'hidden' }">
+                class="project-content text-center">
                 {{ project_name }}
             </div>
-          </button>
-        </NuxtLink>
+          </div>
+        
     </div>
+  </NuxtLink>
 
 </template>
 
@@ -63,7 +64,6 @@ export default {
 }
 .shape {
   border-bottom-right-radius: var(--big-round);
-  position: relative;
   display: flex;
   justify-content: center;
   margin-bottom: 0;
@@ -75,7 +75,6 @@ export default {
 }
 
 .project-logo {
-  position: relative;
   z-index: 2;
   max-height: 100%;
   max-width: 100%;
@@ -84,17 +83,14 @@ export default {
 .project-button {
   position: relative;
   z-index: -1;
-  margin-top: -25px;
-  transition: 0.3s ease;
+  transition: 0.2s ease;
   width: 100%;
+  height: 100px;
   border-bottom-right-radius: var(--big-round);
   background-color: var(--clickable-color);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.project-content {
-  padding-top: 20px;
-}
 
 
 </style>

@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="w-full p-4 bg-[var(--primary-color)] fixed top-0 z-10"
+    class="w-full p-4 bg-[var(--primary-color)] fixed top-0 z-20"
     id="header"
   >
     <div class="flex items-center justify-between">
