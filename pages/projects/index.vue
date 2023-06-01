@@ -4,13 +4,15 @@
     title="All Projects"
     caption="Banner Caption"
     />
-    <div class="flex">
-        <filter-by class="shadowed-box"
+    <div class="flex flex-col tablet:flex-row">
+        <!--div @click="$event => console.log($filter)" class="tablet:hidden rounded-full text-center text-[var(--white-color)] py-3 px-6 m-4 bg-[var(--clickable-color)]">Filter By Area</div-->
+        <filter-by class="shadow-md bg-[var(--white-color)]"
         :technologies="technologies"
         :sectors="sectors"
         :selectedOne="Number($route.query.filter_by) ?? -1"
+        ref="filter"
         />
-        <div class="w-auto grid grid-cols-4 g-4 m-4 place-items-center place-content-start">
+        <div class="w-auto flex flex-wrap justify-center content-start m-4">
             <project-preview
             v-for="item in projects"
             :logo_path="item.logo_path"
@@ -35,13 +37,7 @@ let sectors = areas.filter((area) => area.type === 'sector');
 const areasOfProject = function (project) {
     return areas.filter((area) => project.areas.includes(area.id))
 };
+
+const filter = ref(null);
+
 </script>
-
-<style scoped>
-.shadowed-box {
-    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
-    z-index: 2;
-    background-color: var(--white-color)
-}
-
-</style>

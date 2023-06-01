@@ -60,7 +60,7 @@
                     <div class="h-full w-full">a</div>
                     <div class="h-full w-full">a</div>
                 </div>
-                <div class="h-2/3 w-0 border-2 border-gray-500 m-1 place-self-center"></div>
+                <div class="separator h-2/3 w-[1px] m-1 place-self-center"></div>
                 <div class="col-span-4 bg-blue" :style="`background-image: url(\'${project.next.banner}\');`">
                     <div>a</div>
                     <div>a</div>

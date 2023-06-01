@@ -44,6 +44,10 @@ const props = defineProps({
         required: true
     }
 })
+
+const toggle = function () {
+    console.log('toggle')
+}
 </script>
 
 <style scoped>
