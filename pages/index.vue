@@ -40,17 +40,17 @@
         <div
           class="white-cards-container flex flex-wrap justify-center gap-20 pb-10"
         >
-          <data-card
+          <single-data-card
             data="35+"
             description="COMPANY INVESTMENTS"
             color="var(--primary-color)"
           />
-          <data-card
+          <single-data-card
             data="150+"
             description="FUND INVESTMENTS"
             color="var(--clickable-color)"
           />
-          <data-card
+          <single-data-card
             data="$30M"
             description="REALIZED"
             color="var(--decoration-color)"
