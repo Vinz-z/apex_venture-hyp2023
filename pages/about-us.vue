@@ -6,7 +6,7 @@
     :percentage=10
   />
 
-  <div class="flex justify-center items-center mt-20 mb-20">
+  <div class="flex justify-center items-center mt-4 mb-4 tablet:mt-20 tablet:mb-20">
     <div class="grid grid-cols-1 desktop:grid-cols-2 gap-6 place-items-center">
       <div class="row-span-2 w-5/6 justify-self-center" id="strategy">
         <titled-card title="Investment Strategy" :left=true>

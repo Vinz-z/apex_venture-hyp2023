@@ -2,7 +2,7 @@
   <div class="banner">
     <div class="banner-image">
       <div class="banner-content">
-        <div class="banner-caption">{{ caption }}</div>
+        <div class="banner-caption text-2xl desktop:text-4xl">{{ caption }}</div>
       </div>
       <img
         :src="imageUrl"
@@ -81,7 +81,6 @@ export default {
 
 .banner-caption {
   font-weight: bold;
-  font-size: 2rem;
   display: flex-wrap;
   text-align: center;
 }

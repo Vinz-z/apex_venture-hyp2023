@@ -5,13 +5,19 @@
     caption="Sign up for our newsletter to receive the latest news and updates. To get in touch with us, reach out to us via landline phone or email."
     percentage="80"
   />
-  <div class="main-container">
-    <div class="card">
-      <div class="card-body">
-        <div class="contacts-container">
-          <div class="phone-container">
-            <div class="phone-text-icon-container tablet:mr-20">
-              <div class="phone-icon">
+  <div class="main-container mt-4 tablet:mt-20 mb-4 tablet:mb-20">
+    <div class="card rounded-br-3xl rounded-tl-3xl">
+      <div class="card-body ml-[10%] mr-[10%]">
+        <div class="contacts-container grid grid-rows-2 gap-10">
+          <div
+            class="phone-container grid place-items-center grid-cols-1 tablet:grid-cols-2"
+          >
+            <div
+              class="phone-text-icon-container grid place-items-center gap-5 grid-cols-1 tablet:grid-cols-2"
+            >
+              <div
+                class="phone-icon flex justify-self-center tablet:place-self-end"
+              >
                 <img
                   src="~/assets/icons/telephone.svg"
                   alt="phone"
@@ -19,13 +25,23 @@
                   height="30px"
                 />
               </div>
-              <h3>Landline Phone:</h3>
+              <div
+                class="flex whitespace-nowrap font-bold text-[var(--white-color)] justify-self-center"
+              >
+                Landline Phone:
+              </div>
             </div>
-            <span class="phone-number">+00 123 456 789</span>
+            <span class="phone-number text-[var(--white-color)]"
+              >+00 123 456 789</span
+            >
           </div>
-          <div class="email-container">
-            <div class="email-text-icon-container tablet:mr-20">
-              <div class="mail-icon">
+          <div
+            class="email-container grid place-items-center grid-cols-1 tablet:grid-cols-2"
+          >
+            <div
+              class="email-text-icon-container grid place-items-center gap-5 grid-cols-1 tablet:grid-cols-2"
+            >
+              <div class="mail-icon flex justify-self-center">
                 <img
                   src="~/assets/icons/email.svg"
                   alt="email"
@@ -33,9 +49,15 @@
                   height="30px"
                 />
               </div>
-              <h3>Mail:</h3>
+              <div
+                class="flex whitespace-nowrap font-bold text-[var(--white-color)] justify-self-center"
+              >
+                Mail:
+              </div>
             </div>
-            <span class="email-address">example@apex-venture.com</span>
+            <span class="email-address text-[var(--white-color)]"
+              >example@apex-venture.com</span
+            >
           </div>
         </div>
       </div>
@@ -44,14 +66,18 @@
         <h2 style="color: var(--white-color)">Newsletter</h2>
         <div class="field-row grid desktop:grid-cols-2 gap-x-36">
           <div class="field">
-            <span class="text-[var(--white-color)]">Name</span>
+            <span class="text-[var(--white-color)]"
+              >Name <b class="text-[var(--decoration-color)]">*</b></span
+            >
             <input type="text" class="input-field" name="name" v-model="name" />
             <span v-if="errors.name" class="text-yellow-500"
               >Please enter your name.</span
             >
           </div>
           <div class="field">
-            <span class="text-[var(--white-color)]">Surname</span>
+            <span class="text-[var(--white-color)]"
+              >Surname <b class="text-[var(--decoration-color)]">*</b></span
+            >
             <input
               type="text"
               class="input-field"
@@ -64,7 +90,9 @@
           </div>
         </div>
         <div class="field">
-          <span class="text-[var(--white-color)]">Email</span>
+          <span class="text-[var(--white-color)]"
+            >Email <b class="text-[var(--decoration-color)]">*</b>
+          </span>
           <input
             type="email"
             class="input-field"
@@ -81,18 +109,24 @@
         </div>
       </div>
       <div class="informative-checkbox">
-        <input
-          type="checkbox"
-          name="informative"
-          v-model="checkBoxValue"
-          @change="handleChangeCheckbox"
-        />
+        <div class="flex gap-1">
+          <input
+            type="checkbox"
+            name="informative"
+            v-model="checkBoxValue"
+            @change="handleChangeCheckbox"
+          />
+          <b class="text-[var(--decoration-color)]">*</b>
+        </div>
         <span class="informative-text"
           >I declare that I have read the privacy policy and consent to the
           processing of my personal data for the purposes of service delivery
           and for the fulfillment of contractual and legal obligations
         </span>
       </div>
+      <span v-if="checkboxError" class="text-yellow-500"
+        >Please check the box</span
+      >
       <div class="mt-10">
         <apex-button caption="Submit" @click="checkIfCorrect" />
       </div>
@@ -121,6 +155,7 @@ export default {
       name: "",
       surname: "",
       email: "",
+      checkbox: "",
       checkBoxValue: false,
       checkboxError: false,
       errors: {},
@@ -141,6 +176,12 @@ export default {
         this.errors.email = true;
       }
 
+      if (!this.checkBoxValue) {
+        this.checkboxError = true;
+      } else {
+        this.checkboxError = false;
+      }
+
       if (Object.keys(this.errors).length === 0 && this.checkBoxValue) {
         console.log("Tutti i campi sono validi.");
         this.handleClick();
@@ -158,6 +199,10 @@ export default {
       console.log("Button clicked");
       alert("Thank you for subscribing to our newsletter!");
     },
+
+    handleChangeCheckbox() {
+      this.checkboxError = false;
+    },
   },
 };
 </script>
@@ -168,14 +213,11 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin-top: 2%;
+  z-index: 1;
 }
 
 .card {
   position: relative;
-  border-top-left-radius: 50px;
-  border-bottom-right-radius: 50px;
   background-color: var(--secondary-color);
   padding: 5%;
   min-height: 600px;
@@ -186,40 +228,6 @@ export default {
   justify-content: centers;
   align-items: center;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-/* Contacts */
-
-.phone-container,
-.email-container {
-  padding: 3%;
-  flex-wrap: wrap;
-  justify-content: center;
-  display: flex;
-  color: var(--white-color);
-  text-align: center;
-  align-items: center;
-  font-size: large;
-}
-
-.phone-text-icon-container,
-.email-text-icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.phone-number {
-  flex-wrap: nowrap;
-}
-
-.phone-icon,
-.mail-icon {
-  justify-self: start;
-  display: inline;
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
 }
 
 /* Form */

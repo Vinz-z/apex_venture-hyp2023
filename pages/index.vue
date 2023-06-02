@@ -3,7 +3,7 @@
     imageUrl="/images/banners/homepage.jpg"
     caption="Empowering entrepreneurs to turn their dreams into reality, one investment at a time"
   />
-  <div class="description self-center flex px-60 py-20">
+  <div class="description self-center flex px-10 desktop:px-60 py-20">
     <p class="text-center text-2xl">
       Welcome to <b>Apex Venture</b> where <b>innovation</b> meets
       <b>opportunity</b>. As a leading venture capital firm, we fuel the growth
@@ -12,7 +12,7 @@
       possibilities, and create a brighter future together.
     </p>
   </div>
-  <div class="projects-container flex justify-center self-center w-3/5">
+  <div class="projects-container flex justify-center self-center px-10 desktop:px-0">
     <titled-card
       title="Most Relevant Projects"
       class="w-full justify-center"
@@ -34,7 +34,7 @@
 
   <div class="separator bg-black h-[1px] self-center w-1/3 my-10"></div>
 
-  <div class="about-us-container flex-wrap self-center w-3/5">
+  <div class="about-us-container flex-wrap self-center px-10 max-w-[1090px]">
     <titled-card title="About Us" :left="true">
       <div>
         <div
@@ -74,9 +74,9 @@
   </div>
 
   <div class="separator bg-gray-400 h-[1px] self-center w-1/3 my-10"></div>
-
+<div class="h-screen" id="team-container">
   <div class="our-team">
-    <img class="photo w-3/5" src="/images/banners/hometeam.jpeg" />
+    <img class="photo" src="/images/banners/hometeam.jpeg" />
     <div class="green-box">
       <h2 class="text-xl mb-4"><b>Our Team</b></h2>
       <p class="mb-5">
@@ -90,6 +90,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script setup>
@@ -101,12 +102,25 @@ const most_relevant = getMostRelevant(useSupabaseClient());
   position: relative;
   display: flex;
   justify-content: center;
-  margin-bottom: 20%;
 }
 
 .photo {
+  width: 80%;
   border-radius: var(--big-round) 0px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  max-width: 1000px;
+}
+
+@media screen and (max-width: 450px) {
+  #team-container {
+    max-height: 60vh;
+  } 
+}
+
+@media screen and (min-width: 450px) and (max-width: 1000px) {
+  #team-container {
+    max-height: 80vh;
+  } 
 }
 
 .green-box {
@@ -116,10 +130,12 @@ const most_relevant = getMostRelevant(useSupabaseClient());
   position: absolute;
   background-color: var(--secondary-color);
   width: 30%;
-  height: 300px;
+  min-width: 220px;
   justify-content: center;
   text-align: center;
   padding: 2%;
   align-items: center;
+  font-display: flex-wrap;
+  overflow: hidden;
 }
 </style>
