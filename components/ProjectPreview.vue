@@ -1,7 +1,7 @@
 <template>
     <nuxt-link :to="project2route(name)" class="project-preview">
         <div class="image-container">
-            <div class="project-image" :style="`background-image: url(${logo_path});`"></div>
+            <div class="project-image drop-shadow-lg" :style="`background-image: url(${logo_path});`"></div>
         </div>
         <div class="project-info">
             <h2 class="w-full text-center text-2xl font-bold leading-normal">{{ name }}</h2>
@@ -47,7 +47,12 @@ const project2route = (name: string) => `/projects/${name.toLowerCase().replace(
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    transition: all 0.2s ease-in-out;
+}
+
+.project-preview:hover {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    transform: scale(1.03);
 }
 
 .image-container {
@@ -58,7 +63,8 @@ const project2route = (name: string) => `/projects/${name.toLowerCase().replace(
     justify-content: center;
     background-color: var(--clickable-color);
     border-radius: var(--big-round) 0px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    z-index: 1;
+    position: relative;
 }
 
 .project-image {
@@ -72,7 +78,6 @@ const project2route = (name: string) => `/projects/${name.toLowerCase().replace(
     border-radius: var(--big-round);
     height: 160px;
     width: 245px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .project-info {
@@ -89,7 +94,6 @@ const project2route = (name: string) => `/projects/${name.toLowerCase().replace(
     align-items: center;
     justify-content: space-evenly;
     position: relative;
-    z-index: -1;
 }
 
 .area-container {
