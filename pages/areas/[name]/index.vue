@@ -4,12 +4,10 @@
     :title="$route.params.name"
     caption="Explore diverse investment areas, empowering visionary entrepreneurs across industries to shape the future."
   />
-  <div class="ultra-container flex gap-20 mt-10 justify-center">
-    <TitledCard
+  <div class="ultra-container self-center grid grid-cols-1 gap-4 max-w-6xl place-item-center m-4 desktop:grid-cols-2 desktop:mx-auto">
+    <titled-card
       :title="`Investing in ${$route.params.name}`"
-      :left="false"
-      class="max-w-[600px] max-h-[500px]"
-    >
+      :left="false" class="max-w-2xl">
       <div class="caption mt-[-15px]">
         Investing in finance offers a pathway to financial growth and security.
         Through prudent allocation of funds, individuals can seize opportunities
@@ -20,8 +18,8 @@
         prosperous future, achieve long-term goals, and enjoy financial
         independence.
       </div>
-    </TitledCard>
-    <DataGrid
+    </titled-card>
+    <data-grid
       dataTopLeft="1"
       captionTopLeft="caption Top Left"
       dataTopRight="2"
@@ -35,9 +33,9 @@
 
   <div class="separator self-center h-[1px] w-1/3 my-10"></div>
 
-  <div class="projects-container flex justify-center">
-    <TitledCard :title="$route.params.name + ' Projects'" :left="true">
-      <div class="mid-container flex flex-wrap justify-start gap-4">
+  <div class="projects-container flex justify-center self-center px-10 desktop:px-0">
+    <TitledCard :title="$route.params.name + ' Projects'" :left="true" class="w-full justify-center">
+      <div class="mid-container justify-center flex flex-wrap">
         <div class="project-item">
           <project-logo
             project_image="/images/logos/sample.png"
