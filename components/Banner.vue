@@ -5,7 +5,7 @@
       <div class="banner-overlay"></div>
     </div>
     <div class="banner-content">
-      <h1 class="banner-title">{{ title }}</h1>
+      <h1 class="banner-title text-5xl tablet:text-7xl">{{ title }}</h1>
       <p class="banner-caption">{{ caption }}</p>
     </div>
   </div>
@@ -84,7 +84,6 @@ export default {
 
 .banner-title {
   margin-bottom: 30px;
-  font-size: 4rem;
 }
 
 .banner-caption {
