@@ -73,10 +73,8 @@ const props = defineProps({
         position: relative;
         padding-left: 3%;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
         flex-wrap: wrap;
         width: 200px;
     }
@@ -133,7 +131,6 @@ const props = defineProps({
 
     
     .bg-shape1-left {
-        padding: 5%;
         position: absolute;
         top: 50%;
         left: 40%;
@@ -146,7 +143,6 @@ const props = defineProps({
     }
 
     .bg-shape1-right {
-        padding: 5%;
         position: absolute;
         top: 50%;
         left: 70%;
@@ -159,10 +155,8 @@ const props = defineProps({
     }
     
     .bg-shape2-left {
-        margin: 10%;
         top: 35%;
         left: 10%;
-        padding: 5%;
         position: absolute;
         width: 50%;
         height: 50%;
@@ -172,10 +166,8 @@ const props = defineProps({
     }
 
     .bg-shape2-right {
-        margin: 10%;
         top: 35%;
         left: 35%;
-        padding: 5%;
         position: absolute;
         width: 50%;
         height: 50%;

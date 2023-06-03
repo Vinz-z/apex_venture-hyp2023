@@ -40,18 +40,7 @@ import Banner from "~/components/Banner.vue";
 import TitledCard from "~/components/TitledCard.vue";
 
 const route = useRoute();
-// this is the data that i should fetch from the api
-const person = {
-    name: route2person(route.params.name),
-    image: "/images/team/Luigi-Capello.png",
-    role: "Role",
-    address: "Address",
-    phone: "+39 012 34 56 789",
-    email: route.params.name + "@apexventure.com",
-    birthday: "01/01/1970",
-    nationality: "Italian",
-    longcv: "Long CV",
-}
+let person = getPersonData(useSupabaseClient(), 'Taddeo Curreri');
 </script>
 
 
