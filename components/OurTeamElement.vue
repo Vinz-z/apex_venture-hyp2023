@@ -85,6 +85,7 @@ const props = defineProps({
     }
 
     .data-column {
+        display: flex;
         position: relative;
         align-items: center;
         justify-content: center;
@@ -94,12 +95,13 @@ const props = defineProps({
         max-width: 300px;
         width: 100%;
         min-height: 300px;
+        padding-bottom: 20%;
     }
 
     .name {
         font-weight: bold;
         position: relative;
-        margin-bottom: 3%;
+        margin-bottom: 0%;
         width: 100%;
         font-size: 150%;
         color: var(--white-color);

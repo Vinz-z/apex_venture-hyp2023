@@ -3,7 +3,7 @@
         :imageUrl="'/images/banners/person.png'"
         :title=person.name
     />
-    <div class="grid-box">
+    <div class="grid-box mt-32">
     <div class="first-column">
       <div class="image-box">
         <PictureTitledCard :image="person.image" :role="person.role">
@@ -49,7 +49,7 @@ import TitledCard from "~/components/TitledCard.vue";
 
 const route = useRoute();
 const person = await getPersonData(route2name(route.params.name));
-const supervised = await getSupervised(person.id);
+const supervised = await getSupervised(person.name);
 const toShow = supervised.length > 0;
 
 </script>
@@ -57,15 +57,13 @@ const toShow = supervised.length > 0;
 
 <style scoped>
     .grid-box {
-      margin-top: 5%;
-      padding-top: 5%;
-      height: 100%;
       display: flex;
       flex-wrap: wrap;
       position: relative;
       text-align: center;
       justify-content: center;
       vertical-align: top;
+      max-height: 90%;
 
     }
     .first-column {
@@ -74,6 +72,7 @@ const toShow = supervised.length > 0;
       margin-right: 5%;
       padding-bottom: 40px;
       width: 500px;
+      max-height: 90%;
       display: grid;
     }
 
@@ -91,12 +90,10 @@ const toShow = supervised.length > 0;
     .projects {
       justify-content: center;
       display: wrap;
-      margin-left: 20%;
-      margin-right: 20%;
+      margin-left: 5%;
+      margin-right: 5%;
       margin-bottom: 5%;
       height: fit-content;
-      min-width: 500px;
-      width: fit-content;
     }
 
 </style>
