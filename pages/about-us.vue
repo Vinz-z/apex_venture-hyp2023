@@ -6,9 +6,9 @@
     :percentage=10
   />
 
-  <div class="flex justify-center items-center mt-20 mb-20">
-    <div class="grid grid-rows-2 grid-col-2 grid-flow-col gap-4">
-      <div class="row-span-2 w-5/6" id="strategy">
+  <div class="flex justify-center items-center mt-4 mb-4 tablet:mt-20 tablet:mb-20">
+    <div class="grid grid-cols-1 desktop:grid-cols-2 gap-6 place-items-center">
+      <div class="row-span-2 w-5/6 justify-self-center" id="strategy">
         <titled-card title="Investment Strategy" :left=true>
           <p class="mt-5">
             At Apex Venture, we are driven by a forward-thinking investment
@@ -32,27 +32,19 @@
           </p>
         </titled-card>
       </div>
-      <div class="bg-blue-500">
-        
+      <div class="justify-center flex items-center">
+        <group-data-card/>
       </div>
-      <div id="graph"><animated-charts /></div>
+      <div id="graph" class="w-5/6"><animated-charts /></div>
     </div>
   </div>
 </template>
 
-<script>
+<script setup>
 import Banner from "~/components/Banner.vue";
 import TitledCard from "~/components/TitledCard.vue";
 import animatedCharts from "~/components/AnimatedCharts.vue";
-
-export default {
-  components: {
-    Banner,
-    TitledCard,
-    animatedCharts,
-  },
-};
-
+import groupDataCard from "~/components/GroupDataCard.vue";
 </script>
 
 <style scoped>
@@ -64,5 +56,6 @@ export default {
 #graph {
   min-width: fit-content;
   justify-content: center;
+  z-index: 1;
 }
 </style>

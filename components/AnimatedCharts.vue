@@ -73,7 +73,7 @@ export default {
 .chartBarsWrap {
   padding-left: 40px;
   margin: 0 30px 0 20px;
-  min-width: 400px;
+  min-width: 320px;
 }
 
 .chartBars {

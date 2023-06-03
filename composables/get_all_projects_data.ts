@@ -19,7 +19,7 @@ export default function(supabase: any) {
             {
                 name: 'Project 2',
                 logo_path: '/images/logos/sample.png',
-                areas: [4,7],
+                areas: [8,7],
                 short_overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros vitae nisl ultricies aliquam.',
             },
             {
@@ -28,12 +28,29 @@ export default function(supabase: any) {
                 areas: [1,5,9],
                 short_overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros vitae nisl ultricies aliquam.',
             },
+            {
+                name: 'Project 4',
+                logo_path: '/images/logos/sample.png',
+                areas: [2,3,6],
+                short_overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros vitae nisl ultricies aliquam.',
+            },
+            {
+                name: 'Project 5',
+                logo_path: '/images/logos/sample.png',
+                areas: [1,9],
+                short_overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros vitae nisl ultricies aliquam.',
+            },
+            {
+                name: 'Project 6',
+                logo_path: '/images/logos/sample.png',
+                areas: [2,3,4],
+                short_overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros vitae nisl ultricies aliquam.',
+            }
         ],
         areas: [
             {id: 1, name: 'Education', icon: '/icons/areas/education.png', type: 'sector'},
             {id: 2, name: 'Health', icon: '/icons/areas/healthcare.png', type: 'sector'},
             {id: 3, name: 'Finance', icon: '/icons/areas/budget.png', type: 'sector'},
-            {id: 4, name: 'Tourism', icon: '/icons/areas/tourism.png', type: 'sector'},
             {id: 5, name: 'E-Commerce', icon: '/icons/areas/e-commerce.png', type: 'sector'},
 
             {id: 6, name: 'Green', icon: '/icons/areas/planet-earth.png', type: 'technology'},

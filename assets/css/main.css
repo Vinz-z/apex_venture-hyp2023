@@ -2,3 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind screens;
+
+.shadow {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.big-round-right {
+    border-radius: var(--big-round) 0px;
+}
+
+.big-round-left {
+    border-radius: 0px var(--big-round);
+}
+
+.medium-round-right {
+    border-radius: var(--medium-round) 0px;
+}
+
+.medium-round-left {
+    border-radius: 0px var(--medium-round);
+}

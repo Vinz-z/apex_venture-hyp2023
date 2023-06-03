@@ -1,6 +1,6 @@
 <template>
   <div class="titled-card">
-    <div :class="['title', `title-${left ? 'left' : 'right'}`]">
+    <div class="font-bold text-3xl" :class="['title', `title-${left ? 'left' : 'right'}`]">
       <h2>{{ title }}</h2>
     </div>
     <div :class="['content-box', `content-box-${left ? 'left' : 'right'}`,]">
@@ -13,29 +13,19 @@
 
 <script setup>
 const props = defineProps({
-  title: {
-    type: String,
-    required: true,
-    default: 'title'
-  },
-  left: {
-    type: Boolean,
-    required: false,
-    default: true,
-  },
+  title: { type: String, required: true },
+  left: { type: Boolean, default: true, },
 })
 </script>
 
 <style scoped>
 .title div {
   margin: 0;
-  font-size: x-large;
 }
 
 .titled-card {
   color: var(--white-color);
   position: relative;
-  font-size: medium;
 }
 
 .title {
@@ -45,7 +35,6 @@ const props = defineProps({
   width: fit-content;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   z-index: 1;
-  font-size: larger;
 }
 
 .title-right {
@@ -61,10 +50,8 @@ const props = defineProps({
 .content-box {
   background-color: var(--secondary-color);
   padding: 30px;
-  padding-top: 50px;
+  padding-top: 60px;
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
   top: -40px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
@@ -75,11 +62,5 @@ const props = defineProps({
 
 .content-box-left {
   border-radius: var(--big-round) 0px;
-}
-
-.content {
-  padding-top: 5%;
-  display: flex;
-  flex-wrap: wrap;
 }
 </style>

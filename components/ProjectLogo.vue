@@ -1,41 +1,41 @@
 <template>
-    <div class="shape-container"
+  <NuxtLink to="/projects/project-1">
+    <div
+      class="shape-container"
       @mouseover="expandComponents"
       @mouseout="collapseComponents"
-      >
-        <div class="shape">
-            <img class="project-logo" :src="project_image">
-        </div>
-        <NuxtLink to="/projects/project-1">
-          <button class="project-button"
-            :style="{ height: isHovered ? '85px' : '0' }">
-            <div 
-                class="project-content"
-                :style="{ visibility: isHovered ? 'visible' : 'hidden' }">
-                {{ project_name }}
-            </div>
-          </button>
-        </NuxtLink>
-    </div>
+    >
+      <div class="shape">
+        <img class="project-logo" :src="project_image" />
+      </div>
 
+      <div
+        class="project-button flex justify-center text-center items-end"
+        :style="{ top: isHovered ? '-40px' : '-100px' }"
+      >
+        <div class="project-content mb-3 wrap text-ellipsis overflow-hidden">
+          {{ project_name }}
+        </div>
+      </div>
+    </div>
+  </NuxtLink>
 </template>
 
 <script>
-
 export default {
-    data() {
-      return {
-        isHovered: false
-      };
+  data() {
+    return {
+      isHovered: false,
+    };
+  },
+  methods: {
+    expandComponents() {
+      this.isHovered = true;
     },
-    methods: {
-      expandComponents() {
-        this.isHovered = true;
-      },
-      collapseComponents() {
-        this.isHovered = false;
-      }
+    collapseComponents() {
+      this.isHovered = false;
     },
+  },
   props: {
     project_image: {
       type: String,
@@ -50,8 +50,7 @@ export default {
 </script>
 
 <style scoped>
-
-.shape-container{
+.shape-container {
   height: 230px;
   width: 190px;
   margin-left: auto;
@@ -61,9 +60,9 @@ export default {
   padding-left: 20px;
   padding-right: 20px;
 }
+
 .shape {
   border-bottom-right-radius: var(--big-round);
-  position: relative;
   display: flex;
   justify-content: center;
   margin-bottom: 0;
@@ -75,7 +74,6 @@ export default {
 }
 
 .project-logo {
-  position: relative;
   z-index: 2;
   max-height: 100%;
   max-width: 100%;
@@ -84,17 +82,11 @@ export default {
 .project-button {
   position: relative;
   z-index: -1;
-  margin-top: -25px;
-  transition: 0.3s ease;
+  transition: 0.2s ease;
   width: 100%;
+  height: 100px;
   border-bottom-right-radius: var(--big-round);
   background-color: var(--clickable-color);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
-
-.project-content {
-  padding-top: 20px;
-}
-
-
 </style>

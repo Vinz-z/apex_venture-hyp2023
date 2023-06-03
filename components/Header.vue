@@ -1,5 +1,8 @@
 <template>
-  <nav class="w-full p-4 bg-[var(--primary-color)] fixed top-0 z-10" id="header">
+  <nav
+    class="w-full p-4 bg-[var(--primary-color)] fixed top-0 z-20 mb-[spacerHeight]"
+    id="header"
+  >
     <div class="flex items-center justify-between">
       <!-- Header logo -->
       <div>
@@ -39,13 +42,12 @@
               class="hovered-link"
               @mouseenter="handleMouseEnter"
               @mouseleave="handleMouseLeave"
-            >
-              Team
+              >Our Team
             </NuxtLink>
           </li>
           <li>
             <NuxtLink
-              to="/aboutUs"
+              to="/about-us"
               style="color: var(--white-color)"
               class="hovered-link"
               @mouseenter="handleMouseEnter"
@@ -137,59 +139,81 @@
           class="flex w-full items-center p-4 border-b"
         >
           <div>
-            <img
-              src="~/assets/logos/apex_venture_logo.svg"
-              alt="logo"
-              class="h-auto w-20"
-            />
+            <nuxt-link to="/">
+              <img
+                src="~/assets/logos/apex_venture_logo.svg"
+                alt="logo"
+                class="h-auto w-20"
+              />
+            </nuxt-link>
           </div>
         </span>
 
         <ul class="divide-y font-sans">
           <li>
-            <NuxtLink
-              to="/team"
-              style="color: var(--white-color)"
-              class="my-4 inline-block"
-              @click="isOpen = false"
-              >Team</NuxtLink
-            >
+            <nuxt-link to="/team">
+              <div class="w-full">
+                <div
+                  style="color: var(--white-color)"
+                  class="my-4 inline-block w-full"
+                  @click="isOpen = false"
+                >
+                  Our Team
+                </div>
+              </div>
+            </nuxt-link>
           </li>
           <li>
-            <NuxtLink
-              to="/aboutUs"
-              style="color: var(--white-color)"
-              class="my-4 inline-block"
-              @click="isOpen = false"
-              >About us</NuxtLink
-            >
+            <nuxt-link to="/about-us">
+              <div class="w-full">
+                <div
+                  style="color: var(--white-color)"
+                  class="my-4 inline-block w-full"
+                  @click="isOpen = false"
+                >
+                  About us
+                </div>
+              </div>
+            </nuxt-link>
           </li>
           <li>
-            <NuxtLink
-              to="/projects"
-              style="color: var(--white-color)"
-              class="my-4 inline-block"
-              @click="isOpen = false"
-              >Projects</NuxtLink
-            >
+            <nuxt-link to="/projects">
+              <div class="w-full">
+                <div
+                  style="color: var(--white-color)"
+                  class="my-4 inline-block w-full"
+                  @click="isOpen = false"
+                >
+                  Projects
+                </div>
+              </div>
+            </nuxt-link>
           </li>
           <li>
-            <NuxtLink
-              to="/areas"
-              style="color: var(--white-color)"
-              class="my-4 inline-block"
-              @click="isOpen = false"
-              >Areas</NuxtLink
-            >
+            <nuxt-link to="/areas">
+              <div class="w-full">
+                <div
+                  style="color: var(--white-color)"
+                  class="my-4 inline-block w-full"
+                  @click="isOpen = false"
+                >
+                  Areas
+                </div>
+              </div>
+            </nuxt-link>
           </li>
           <li>
-            <NuxtLink
-              to="/contacts"
-              style="color: var(--white-color)"
-              class="my-4 inline-block"
-              @click="isOpen = false"
-              >Contacts</NuxtLink
-            >
+            <nuxt-link to="/contacts">
+              <div class="w-full">
+                <div
+                  style="color: var(--white-color)"
+                  class="my-4 inline-block w-full"
+                  @click="isOpen = false"
+                >
+                  Contacts
+                </div>
+              </div>
+            </nuxt-link>
           </li>
         </ul>
       </aside>
@@ -218,10 +242,10 @@ export default {
       this.isHovered = false;
     },
     calculateSpacerHeight() {
-      const headerElement = document.getElementById('header');
+      const headerElement = document.getElementById("header");
       const headerHeight = headerElement.offsetHeight - 5;
       this.spacerHeight = `${headerHeight}px`;
-    }
+    },
   },
   watch: {
     isOpen: {
@@ -232,7 +256,6 @@ export default {
           else document.body.style.removeProperty("overflow");
         }
       },
-      
     },
   },
   mounted() {
