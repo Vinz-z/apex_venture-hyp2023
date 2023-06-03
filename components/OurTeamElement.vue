@@ -8,16 +8,19 @@
             </div>
         </div>
         <div class="data-column">
-            <div class="name">
-                {{ person_name }}
+            <div class="w-full mb-1">
+                <div class="name">
+                    {{ person_name }}
+                </div>
+                <div class="role">
+                    {{ person_role }}
+                </div>
             </div>
-            <div class="role">
-                {{ person_role }}
-            </div>
+            
             <div class="cv">
                 {{ person_shortcv }}
             </div>
-            <div class="button mt-10">
+            <div class="button mt-5">
                 <NuxtLink :to="person2route(person_name)"><ApexButton
           caption="See more"/></NuxtLink>
             </div>
@@ -61,7 +64,7 @@ const props = defineProps({
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
         text-align: center;
         justify-content: center;
-        align-items: flex-end;
+        
         flex-wrap: wrap;
         height: auto;
         flex: 1 1 50%;
@@ -89,19 +92,17 @@ const props = defineProps({
         position: relative;
         align-items: center;
         justify-content: center;
-        padding: 5%;
         text-align: left;
         flex-wrap: wrap;
         max-width: 300px;
         width: 100%;
         min-height: 300px;
-        padding-bottom: 20%;
+        padding: 5%;
     }
 
     .name {
         font-weight: bold;
         position: relative;
-        margin-bottom: 0%;
         width: 100%;
         font-size: 150%;
         color: var(--white-color);
@@ -109,6 +110,7 @@ const props = defineProps({
     
     .role {
         font-weight: bold;
+        text-align: start;
         position: relative;
         width: 100%;
         font-size: 120%;
@@ -118,17 +120,16 @@ const props = defineProps({
     .cv {
         position: relative;
         font-size: 80%;
+        display: flex;
+        justify-content: center;
         width: 100%;
-        height: fit-content;
-        padding-right: 5%;
         color: var(--white-color);
     }
 
     .button {
-        top: 68%;
         margin-left: auto;
         margin-right: auto;
-        position: absolute;
+        height: fit-content;
     }
 
     
