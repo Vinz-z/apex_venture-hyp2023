@@ -1,7 +1,7 @@
 <template>
   <NuxtLink to="/projects/project-1">
     <div
-      class="shape-container"
+      class="shape-container group"
       @mouseover="expandComponents"
       @mouseout="collapseComponents"
     >
@@ -10,8 +10,7 @@
       </div>
 
       <div
-        class="project-button flex justify-center text-center items-end"
-        :style="{ top: isHovered ? '-40px' : '-100px' }"
+        class="project-button flex justify-center text-center items-end top-[-40px] group-hover:top-[-40px] desktop:top-[-100px]"
       >
         <div class="project-content mb-3 wrap text-ellipsis overflow-hidden">
           {{ project_name }}
@@ -27,14 +26,6 @@ export default {
     return {
       isHovered: false,
     };
-  },
-  methods: {
-    expandComponents() {
-      this.isHovered = true;
-    },
-    collapseComponents() {
-      this.isHovered = false;
-    },
   },
   props: {
     project_image: {

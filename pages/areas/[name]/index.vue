@@ -39,28 +39,28 @@
     <TitledCard :title="$route.params.name + ' Projects'" :left="true">
       <div class="mid-container flex flex-wrap justify-start gap-4">
         <div class="project-item">
-          <ProjectLogo
+          <project-logo
             project_image="/images/logos/sample.png"
             project_name="Project1"
-          ></ProjectLogo>
+          ></project-logo>
         </div>
         <div class="project-item">
-          <ProjectLogo
+          <project-logo
             project_image="/images/logos/sample.png"
             project_name="Project2"
-          ></ProjectLogo>
+          ></project-logo>
         </div>
         <div class="project-item">
-          <ProjectLogo
+          <project-logo
             project_image="/images/logos/sample.png"
             project_name="Project3"
-          ></ProjectLogo>
+          ></project-logo>
         </div>
         <div class="project-item">
-          <ProjectLogo
+          <project-logo
             project_image="/images/logos/sample.png"
             project_name="Project5"
-          ></ProjectLogo>
+          ></project-logo>
         </div>
         <div class="little-container w-[190px] h-[150px] flex justify-center">
           <button
