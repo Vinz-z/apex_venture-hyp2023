@@ -23,8 +23,8 @@
         </TitledCard>
     </div>
     <div v-if="toShow" class="separator self-center h-[1px] w-2/3 mb-10"></div>
-    <div v-if="toShow" class="projects">
-      <div class="projects-container flex justify-center self-center desktop:px-0">
+    <div class="projects">
+      <div v-if="toShow" class="projects-container flex justify-center self-center desktop:px-0">
         <titled-card
           title="Supervised Projects"
           class="w-full justify-center"
