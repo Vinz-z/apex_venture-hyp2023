@@ -8,34 +8,34 @@
         <div class="flex-col gap-6 items-center hidden desktop:flex">
             <div class="title max-w-[500px] w-full">Sectors</div>
             <area-preview v-for="sector in sectors"
-                :icon-url="sector.iconUrl"
-                :title="sector.title"
-                :caption="sector.caption"
+                :icon-url="sector.icon"
+                :title="sector.name"
+                :caption="sector.short_overview"
             />
         </div>
         <div class="flex flex-col gap-6 items-center desktop:hidden">
             <div class="title max-w-[500px] w-full">Sectors</div>
             <touch-area-preview v-for="sector in sectors"
-                :icon-url="sector.iconUrl"
-                :title="sector.title"
-                :caption="sector.caption"
+                :icon-url="sector.icon"
+                :title="sector.name"
+                :caption="sector.short_overview"
             />
         </div>
         <div class="hidden desktop:block separator"></div>
         <div class="flex-col gap-6 items-center hidden desktop:flex">
             <div class="title max-w-[500px] w-full">Technologies</div>
             <area-preview v-for="technology in technologies"
-                :icon-url="technology.iconUrl"
-                :title="technology.title"
-                :caption="technology.caption"
+                :icon-url="technology.icon"
+                :title="technology.name"
+                :caption="technology.short_overview"
             />
         </div>
         <div class="flex flex-col gap-6 items-center desktop:hidden">
             <div class="title max-w-[500px] w-full">Technologies</div>
             <touch-area-preview v-for="technology in technologies"
-                :icon-url="technology.iconUrl"
-                :title="technology.title"
-                :caption="technology.caption"
+                :icon-url="technology.icon"
+                :title="technology.name"
+                :caption="technology.short_overview"
             />
         </div>
     </div>
@@ -43,11 +43,12 @@
 </template>
 
 <script setup>
-const { technologies, sectors } = getAreasData(useSupabaseClient());
+    const { data, error } = await getAreasData();
+    const sectors = data.filter(area => area.type === 'sector');
+    const technologies = data.filter(area => area.type === 'technology');
 </script>
 
 <style scoped>
-
 .title {
     display: flex;
     align-items: center;

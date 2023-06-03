@@ -72,5 +72,6 @@
 </template>
 
 <script setup>
-const project = getProjectData(useRoute().params.name, useSupabaseClient())
+const name_param = useRoute().params.name
+const project = getProjectData(route2name(name_param), useSupabaseClient())
 </script>

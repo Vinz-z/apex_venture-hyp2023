@@ -1,6 +1,6 @@
 <template>
     <banner
-    imageUrl="images/banners/all-projects.png"
+    image-url="images/banners/all-projects.png"
     title="All Projects"
     caption="Explore our venture capital firm's portfolio to discover the diverse range of innovative and promising companies we've invested in."
     />
@@ -41,9 +41,11 @@
 </template>
 
 <script setup>
-let { projects, areas } = getAllProjectsData(useSupabaseClient());
-let technologies = areas.filter((area) => area.type === 'technology');
-let sectors = areas.filter((area) => area.type === 'sector');
+const projects = await getAllProjectsData();
+const { data, error } = await getAreasData();
+const areas = data;
+const technologies = data.filter((area) => area.type === 'technology');
+const sectors = data.filter((area) => area.type === 'sector');
 
 const areasOfProject = function (project) {
     return areas.filter((area) => project.areas.includes(area.id))

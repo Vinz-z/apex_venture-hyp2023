@@ -74,7 +74,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .see-all {
   background-color: var(--clickable-color);
 }
