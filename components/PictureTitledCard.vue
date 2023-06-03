@@ -1,7 +1,7 @@
 <template>
     <div class="person-box">
-        <div class="title-left-bottom">
-            {{ role }}
+        <div class="title-left-bottom font-bold text-3xl">
+            <h2>{{ role }}</h2>
         </div>
         <div class="person-content">
             <img class="person-image" :src="image">
@@ -36,7 +36,6 @@
   
   .title-left-bottom {
     position: absolute;
-    font-size: larger;
     bottom: 10%;
     background-color: var(--primary-color);
     padding: 20px 60px;

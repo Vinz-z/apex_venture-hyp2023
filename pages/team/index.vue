@@ -19,8 +19,7 @@
 
 <script setup>
 import left_right from '~/composables/left_right';
-
-    let { team } = getTeamData(useSupabaseClient());
+    const team = await getTeamData();
 </script>
 
 <style scoped>

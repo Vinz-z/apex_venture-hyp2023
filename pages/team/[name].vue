@@ -1,7 +1,7 @@
 <template>
     <banner 
         :imageUrl="'/images/banners/person.png'"
-        :title="person.name"
+        :title=person.name
     />
     <div class="grid-box">
     <div class="first-column">
@@ -22,15 +22,23 @@
         {{ person.longcv }}
         </TitledCard>
     </div>
-    <div class="separator self-center h-[1px] w-2/3 my-10"></div>
-    <div class="projects">
-      <TitledCard title="Supervised Projects" :left="true">
-        <ProjectLogo project_image=/images/logos/sample.png project_name="Project1"></ProjectLogo>
-        <ProjectLogo project_image=/images/logos/sample.png project_name="Project2"></ProjectLogo>
-        <ProjectLogo project_image=/images/logos/sample.png project_name="Project3"></ProjectLogo>
-        <ProjectLogo project_image=/images/logos/sample.png project_name="Project4"></ProjectLogo>
-        <ProjectLogo project_image=/images/logos/sample.png project_name="Project5"></ProjectLogo>
-      </TitledCard>
+    <div v-if="toShow" class="separator self-center h-[1px] w-2/3 mb-10"></div>
+    <div v-if="toShow" class="projects">
+      <div class="projects-container flex justify-center self-center desktop:px-0">
+        <titled-card
+          title="Supervised Projects"
+          class="w-full justify-center"
+          :left="true"
+        >
+          <div class="mid-container justify-center flex flex-wrap">
+            <ProjectLogo
+              v-for="project in supervised"
+              :project_image=project.logo_path
+              :project_name=project.name>
+            </ProjectLogo>
+          </div>
+        </titled-card>
+      </div>
     </div>
   </div>
 </template>
@@ -40,7 +48,10 @@ import Banner from "~/components/Banner.vue";
 import TitledCard from "~/components/TitledCard.vue";
 
 const route = useRoute();
-let person = getPersonData(useSupabaseClient(), 'Taddeo Curreri');
+const person = await getPersonData(route2name(route.params.name));
+const supervised = await getSupervised(person.id);
+const toShow = supervised.length > 0;
+
 </script>
 
 
@@ -61,13 +72,12 @@ let person = getPersonData(useSupabaseClient(), 'Taddeo Curreri');
       padding-top: 5%;
       margin-left: 5%;
       margin-right: 5%;
-      padding-bottom: 0%;
+      padding-bottom: 40px;
       width: 500px;
       display: grid;
     }
 
     .cv-box {
-      padding-bottom: 5%;
       margin-left: 5%;
       margin-right: 5%;
       width: 500px;
@@ -83,7 +93,7 @@ let person = getPersonData(useSupabaseClient(), 'Taddeo Curreri');
       display: wrap;
       margin-left: 20%;
       margin-right: 20%;
-      margin-bottom: 10%;
+      margin-bottom: 5%;
       height: fit-content;
       min-width: 500px;
       width: fit-content;

@@ -76,7 +76,7 @@
   <div class="separator bg-gray-400 h-[1px] self-center w-1/3 my-10"></div>
 <div class="h-screen" id="team-container">
   <div class="our-team">
-    <img class="photo" src="/images/banners/hometeam.jpeg" />
+    <img class="photo mt-10" src="/images/banners/hometeam.jpeg" />
     <div class="green-box">
       <h2 class="text-xl mb-4"><b>Our Team</b></h2>
       <p class="mb-5">
