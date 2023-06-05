@@ -233,6 +233,7 @@
   </div>
 </template>
 
+
 <script setup>
 /*
 let { projects, areas } = getAllProjectsData(useSupabaseClient());
@@ -248,7 +249,9 @@ const areas = data;
 const areasOfProject = function (project) {
   return areas.filter((area) => project.areas.includes(area.id));
 };
+
 </script>
+
 
 <style scoped>
 .upper-icon {
