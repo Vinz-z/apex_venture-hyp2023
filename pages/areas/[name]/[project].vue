@@ -32,7 +32,7 @@
       </div>
     </div>
   </div>
-  <div class="w-auto flex flex-wrap justify-start content-start m-4">
+  <div class="w-auto flex flex-wrap">
     <project-preview
       v-for="item in projects"
       :logo_path="item.logo_path"
@@ -119,12 +119,24 @@
   </div>
 </template>
 
+
 <script setup>
+/*
 let { projects, areas } = getAllProjectsData(useSupabaseClient());
 const areasOfProject = function (project) {
   return areas.filter((area) => project.areas.includes(area.id));
 };
+*/
+
+const projects = await getAllProjectsData();
+const { data, error } = await getAreasData();
+const areas = data;
+
+const areasOfProject = function (project) {
+    return areas.filter((area) => project.areas.includes(area.id))
+};
 </script>
+
 
 <style scoped>
 
