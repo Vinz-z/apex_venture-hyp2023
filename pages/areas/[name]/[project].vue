@@ -235,21 +235,10 @@
 
 
 <script setup>
-/*
 let { projects, areas } = getAllProjectsData(useSupabaseClient());
 const areasOfProject = function (project) {
   return areas.filter((area) => project.areas.includes(area.id));
 };
-*/
-
-const projects = await getAllProjectsData();
-const { data, error } = await getAreasData();
-const areas = data;
-
-const areasOfProject = function (project) {
-  return areas.filter((area) => project.areas.includes(area.id));
-};
-
 </script>
 
 

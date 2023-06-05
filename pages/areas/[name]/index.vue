@@ -38,25 +38,25 @@
       <div class="mid-container justify-center flex flex-wrap">
         <div class="project-item">
           <project-logo
-            project_image="/images/logos/sample.png"
+            project_image="/images/projects/logos/sample.png"
             project_name="Project1"
           ></project-logo>
         </div>
         <div class="project-item">
           <project-logo
-            project_image="/images/logos/sample.png"
+          project_image="/images/projects/logos/sample.png"
             project_name="Project2"
           ></project-logo>
         </div>
         <div class="project-item">
           <project-logo
-            project_image="/images/logos/sample.png"
+          project_image="/images/projects/logos/sample.png"
             project_name="Project3"
           ></project-logo>
         </div>
         <div class="project-item">
           <project-logo
-            project_image="/images/logos/sample.png"
+          project_image="/images/projects/logos/sample.png"
             project_name="Project5"
           ></project-logo>
         </div>

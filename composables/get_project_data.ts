@@ -1,7 +1,7 @@
 export default function(project_name: String, supabase: any) {
     return {
         name: project_name,
-        logo: "/images/logos/sample.png",
+        logo: "/images/projects/logos/sample.png",
         banner: "/images/banners/sports.png",
         office: "London",
         supervisor: "Taddeo Curreri",
@@ -24,7 +24,7 @@ export default function(project_name: String, supabase: any) {
             ],
             'Customer Support': ['Liam Davis'],
         },
-        team_image: "/images/project-team/sample.jpg",
+        team_image: "/images/projects/teams/sample.jpg",
         statistics: [
             { key: 'Customer Satisfaction Rating', value: '95%' },
             { key: 'New Products Launched', value: '3' },

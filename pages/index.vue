@@ -25,7 +25,7 @@
           :project_name="project.name"
           />
         </div>
-        <div class="flex justify-center mt-10">
+        <div class="flex justify-center mt-5">
           <nuxt-link to="/projects">
           <apex-button caption="See all Projects"/>
           </nuxt-link>
