@@ -2,8 +2,6 @@
   <NuxtLink to="/projects/project-1">
     <div
       class="shape-container group"
-      @mouseover="expandComponents"
-      @mouseout="collapseComponents"
     >
       <div class="shape">
         <img class="project-logo" :src="project_image" />
@@ -22,11 +20,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      isHovered: false,
-    };
-  },
   props: {
     project_image: {
       type: String,
@@ -42,21 +35,14 @@ export default {
 
 <style scoped>
 .shape-container {
-  height: 230px;
-  width: 190px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2%;
-  margin-top: 2%;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .shape {
   border-bottom-right-radius: var(--big-round);
   display: flex;
   justify-content: center;
-  margin-bottom: 0;
   padding: 3%;
   height: 150px;
   border-radius: var(--big-round) 0px;

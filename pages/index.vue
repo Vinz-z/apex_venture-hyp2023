@@ -25,8 +25,10 @@
           :project_name="project.name"
           />
         </div>
-        <div class="flex justify-center h-[35px]">
-          <apex-button caption="See all Projects" />
+        <div class="flex justify-center mt-10">
+          <nuxt-link to="/projects">
+          <apex-button caption="See all Projects"/>
+          </nuxt-link>
         </div>
       </div>
     </titled-card>
@@ -67,7 +69,9 @@
           together.
         </div>
         <div class="flex justify-center h-[35px] mt-10">
+          <nuxt-link to="/about-us">
           <apex-button caption="See More" />
+          </nuxt-link>
         </div>
       </div>
     </titled-card>

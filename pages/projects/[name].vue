@@ -23,7 +23,7 @@
                 <nuxt-link v-for="area in project.areas" :to="area2route(area.name)" class="
                     flex flex-row content-center justify-start items-center 
                     w-60 my-4 py-2 medium-round-right 
-                    bg-[var(--clickable-color)] drop-shadow-lg">
+                    bg-[var(--clickable-color)] drop-shadow-lg hover:drop-shadow-xl hover:scale-105 transition duration-100 ease-out hover:ease-in">
                     <img :src="area.icon" class="w-10 h-10 mx-6">
                     <div class="text-xl font-bold">{{ area.name }}</div>
                 </nuxt-link>

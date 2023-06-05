@@ -26,6 +26,7 @@
 }
 
 .rectangle-button:hover {
+  transition: 0.3s ease-in-out;
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   background-color: var(--clickable-color);

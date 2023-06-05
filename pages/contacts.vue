@@ -69,7 +69,12 @@
             <span class="text-[var(--white-color)]"
               >Name <b class="text-[var(--decoration-color)]">*</b></span
             >
-            <input type="text" class="input-field" name="name" v-model="name" />
+            <input
+              type="text"
+              class="input-field focus:outline-none focus:ring-2 focus:ring-[var(--clickable-color)]"
+              name="name"
+              v-model="name"
+            />
             <span v-if="errors.name" class="text-yellow-500"
               >Please enter your name.</span
             >
@@ -80,7 +85,7 @@
             >
             <input
               type="text"
-              class="input-field"
+              class="input-field focus:outline-none focus:ring-2 focus:ring-[var(--clickable-color)]"
               name="surname"
               v-model="surname"
             />
@@ -95,7 +100,7 @@
           </span>
           <input
             type="email"
-            class="input-field"
+            class="input-field focus:outline-none focus:ring-2 focus:ring-[var(--clickable-color)]"
             name="email"
             v-model="email"
           />
@@ -105,7 +110,11 @@
         </div>
         <div class="field">
           <span class="text-[var(--white-color)]">Company</span>
-          <input type="text" class="input-field" name="company" />
+          <input
+            type="text"
+            class="input-field focus:outline-none focus:ring-2 focus:ring-[var(--clickable-color)]"
+            name="company"
+          />
         </div>
       </div>
       <div class="informative-checkbox">
@@ -251,6 +260,7 @@ export default {
 }
 
 .input-field {
+  padding-left: 1%;
   background-color: var(--white-color);
   border: transparent;
   width: 100%;
