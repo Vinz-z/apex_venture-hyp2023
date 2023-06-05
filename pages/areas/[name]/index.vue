@@ -60,7 +60,7 @@
             project_name="Project5"
           ></project-logo>
         </div>
-        <div class="little-container w-[190px] h-[150px] flex justify-center">
+        <nuxt-link :to="'/areas/' + $route.params.name + '/projects'" class="little-container w-[190px] h-[150px] flex justify-center">
           <button
             class="see-all h-[150px] w-[150px] rounded-br-[var(--big-round)] rounded-tl-[var(--big-round)] justify-center mb-0 p-3 shadow-md"
           >
@@ -68,7 +68,7 @@
               See All Projects
             </div>
           </button>
-        </div>
+        </nuxt-link>
       </div>
     </TitledCard>
   </div>
