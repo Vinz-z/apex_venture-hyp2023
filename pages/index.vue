@@ -21,7 +21,7 @@
       <div>
         <div class="mid-container justify-center flex flex-wrap">
           <project-logo v-for="project in most_relevant" class="project-item"
-          :project_image="project.image"
+          :project_image="project.logo_path"
           :project_name="project.name"
           />
         </div>
@@ -98,7 +98,7 @@
 </template>
 
 <script setup>
-const most_relevant = getMostRelevant(useSupabaseClient());
+const most_relevant = await getMostRelevantProjects();
 </script>
 
 <style scoped>

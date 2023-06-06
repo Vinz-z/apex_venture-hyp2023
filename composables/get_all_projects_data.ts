@@ -38,3 +38,11 @@ export default async function() {
         }
     ];
 }
+/*export default async function() {
+    const supabase = useSupabaseClient();
+    const all_projects = await supabase.from('Project').select('*').order('name', { ascending: true }).then(({data, error}) => {
+        return error ? [] : data;
+    });
+    console.log(all_projects);
+    return all_projects;
+}*/

@@ -1,4 +1,4 @@
-export default function(project_name: String, supabase: any) {
+export default function(project_name: String) {
     return {
         name: project_name,
         logo: "/images/projects/logos/sample.png",
@@ -47,3 +47,11 @@ export default function(project_name: String, supabase: any) {
         },
     }
 }
+
+/*export default async function(project: String) {
+    const supabase = useSupabaseClient();
+    const projects = await supabase.from('Project').select('*').eq('name', project).then(({data, error}) => {
+        return error ? [] : data;
+    });
+    return projects[0];
+}*/

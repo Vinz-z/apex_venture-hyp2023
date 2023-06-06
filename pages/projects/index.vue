@@ -32,20 +32,20 @@
             v-for="item in filteredProjects"
             :logo_path="item.logo_path"
             :name="item.name"
-            :areas="areasOfProject(item)"
+            :areas="areasOfProject(item)" 
             :short_overview="item.short_overview"
             class="place-self-center"
             />
+            <!--:areas="getAreasOfProject(item.id)"-->
         </div>
     </div>
 </template>
 
 <script setup>
 const projects = await getAllProjectsData();
-const { data, error } = await getAreasData();
-const areas = data;
-const technologies = data.filter((area) => area.type === 'technology');
-const sectors = data.filter((area) => area.type === 'sector');
+const areas = await getAreasData();
+const technologies = areas.filter((area) => area.type === 'technology');
+const sectors = areas.filter((area) => area.type === 'sector');
 
 const areasOfProject = function (project) {
     return areas.filter((area) => project.areas.includes(area.id))

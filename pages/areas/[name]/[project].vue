@@ -85,6 +85,7 @@
       :short_overview="item.short_overview"
       class="place-self-center"
     />
+    <!--:areas="getAreasOfProject(item.id)"-->
   </div>
   <div class="buttons-phone w-full h-auto my-20 tablet:hidden">
     <div class="flex justify-center">
@@ -235,7 +236,10 @@
 
 
 <script setup>
-let { projects, areas } = getAllProjectsData(useSupabaseClient());
+const projects = await getAllProjectsData();
+const route = useRoute();
+//const projects = await getProjectsOfArea(route.params.name);
+const areas = await getAreasData();
 const areasOfProject = function (project) {
   return areas.filter((area) => project.areas.includes(area.id));
 };

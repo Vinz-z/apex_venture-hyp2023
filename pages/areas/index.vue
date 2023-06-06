@@ -43,9 +43,9 @@
 </template>
 
 <script setup>
-    const { data, error } = await getAreasData();
-    const sectors = data.filter(area => area.type === 'sector');
-    const technologies = data.filter(area => area.type === 'technology');
+    const areas = await getAreasData();
+    const sectors = areas.filter(area => area.type === 'sector');
+    const technologies = areas.filter(area => area.type === 'technology');
 </script>
 
 <style scoped>
