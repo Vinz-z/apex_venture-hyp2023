@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink to="/projects/project-1">
+  <NuxtLink :to="project2route(props.project_name)">
     <div
       class="shape-container group"
     >
@@ -18,9 +18,8 @@
   </NuxtLink>
 </template>
 
-<script>
-export default {
-  props: {
+<script setup lang="ts">
+const props = defineProps( {
     project_image: {
       type: String,
       required: true,
@@ -30,7 +29,8 @@ export default {
       required: true,
     },
   },
-};
+);
+const project2route = (name: string) => `/projects/${name.toLowerCase().replace(/ /g, "-")}`;
 </script>
 
 <style scoped>

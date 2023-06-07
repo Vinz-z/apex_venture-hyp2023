@@ -6,7 +6,7 @@
         <div class="project-info">
             <h2 class="w-full text-center text-2xl font-bold leading-normal">{{ name }}</h2>
             <div class="h-[30px] w-full flex flex-row gap-4 align-center justify-center">
-                <img :src="area.icon" alt="area icon" class="object-contain w-[30px]" v-for="area in areas"/>
+                <img v-for="area in areas" :src="area.icon" alt="area icon" class="object-contain w-[30px]"/>
             </div>
             <div class="text-justify m-4">{{ short_overview }}</div>
         </div>
@@ -14,8 +14,6 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue';
-
 const props = defineProps({
     logo_path: {
         type: String,
@@ -29,14 +27,13 @@ const props = defineProps({
         type: String,
         required: true,
     },
-    areas: {
-        type: Object as PropType<Area[]>,
-        default: () => [],
+    id: {
+        type: Number,
+        required: true,
     },
 });
-console.log(props.areas);
 const project2route = (name: string) => `/projects/${name.toLowerCase().replace(/ /g, "-")}`;
-
+const areas = await getAreasOfProject(props.id);
 </script>
 
 <style scoped>

@@ -30,10 +30,10 @@
         <div class="w-auto flex flex-wrap justify-center tablet:justify-start content-start m-4">
             <project-preview
             v-for="item in filteredProjects"
-            :logo_path="item.logo_path"
+            :logo_path="item.logo"
             :name="item.name"
-            :areas="areasOfProject(item)" 
-            :short_overview="item.short_overview"
+            :id="item.id"
+            :short_overview="item.short_description"
             class="place-self-center"
             />
             <!--:areas="getAreasOfProject(item.id)"-->
@@ -46,10 +46,6 @@ const projects = await getAllProjectsData();
 const areas = await getAreasData();
 const technologies = areas.filter((area) => area.type === 'technology');
 const sectors = areas.filter((area) => area.type === 'sector');
-
-const areasOfProject = function (project) {
-    return areas.filter((area) => project.areas.includes(area.id))
-};
 
 const state = reactive({ activeFilter: -1 })
 
