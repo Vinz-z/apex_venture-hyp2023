@@ -1,6 +1,6 @@
 export default async function(id: number) {
     const supabase = useSupabaseClient();
-    const areas_of_project = await supabase.from('Project_Area_mapping').select('area_id').eq('project_id', id).then(({data, error}) => {
+    const areas_of_project = await supabase.from('project_areas_mapping').select('area_id').eq('project_id', id).then(({data, error}) => {
         return error ? [] : data;
     });
     const all_areas = await supabase.from('areas').select('*').order('id', { ascending: true }).then(({data, error}) => {

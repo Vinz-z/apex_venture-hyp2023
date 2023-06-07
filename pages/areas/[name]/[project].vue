@@ -45,8 +45,7 @@
   <div class="upper-container flex w-full h-[100px] mb-10 hidden tablet:flex">
     <div class="upper-caption flex h-auto items-start justify-start">
       <div class="mx-5 my-3 text-2xl text-white">
-        Invest in digital payment solutions, fintech, and trading platforms to
-        promote efficient and secure financial transactions.
+        {{ area.short_overview }}
       </div>
     </div>
     <nuxt-link
@@ -54,7 +53,7 @@
       class="area-button flex h-auto rounded-br-[50px]"
     >
       <div class="upper-icon flex justify-center items-center">
-        <img src="/icons/areas/healthcare.png" alt="Icon Image" />
+        <img :src="area.icon" alt="Icon Image" />
       </div>
       <div class="upper-arrow flex justify-center items-center">
         <svg
@@ -79,13 +78,12 @@
   >
     <project-preview
       v-for="item in projects"
-      :logo_path="item.logo_path"
+      :logo_path="item.logo"
       :name="item.name"
-      :areas="areasOfProject(item)"
-      :short_overview="item.short_overview"
+      :id="item.id"
+      :short_overview="item.short_description"
       class="place-self-center"
     />
-    <!--:areas="getAreasOfProject(item.id)"-->
   </div>
   <div class="buttons-phone w-full h-auto my-20 tablet:hidden">
     <div class="flex justify-center">
@@ -128,7 +126,7 @@
         <div class="banner w-4/6">
           <div class="banner-image-right">
             <div class="banner-content">
-              <div class="banner-caption-phone">next area projects</div>
+              <div class="banner-caption-phone"> {{ next.name }} projects</div>
             </div>
             <img
               src="/images/banners/sports.png"
@@ -182,7 +180,7 @@
       <div class="banner w-4/6">
         <div class="banner-image-left">
           <div class="banner-content">
-            <div class="banner-caption">previous area projects</div>
+            <div class="banner-caption">{{ previous.name }} projects</div>
           </div>
           <img
             src="/images/banners/education.jpg"
@@ -202,7 +200,7 @@
       <div class="banner w-4/6">
         <div class="banner-image-right">
           <div class="banner-content">
-            <div class="banner-caption">next area projects</div>
+            <div class="banner-caption">{{ next.name }} projects</div>
           </div>
           <img
             src="/images/banners/sports.png"
@@ -236,13 +234,12 @@
 
 
 <script setup>
-const projects = await getAllProjectsData();
+//const projects = await getAllProjectsData();
 const route = useRoute();
-//const projects = await getProjectsOfArea(route.params.name);
-const areas = await getAreasData();
-const areasOfProject = function (project) {
-  return areas.filter((area) => project.areas.includes(area.id));
-};
+const projects = await getProjectsOfArea(route.params.name);
+const area = await getAreaData(route.params.name);
+const previous = await getPreviousArea(area.id, area.type);
+const next = await getNextArea(area.id, area.type);
 </script>
 
 
