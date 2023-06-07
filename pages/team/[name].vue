@@ -79,6 +79,7 @@
   const person = await getPersonData(target);
   const supervised = await getSupervised(person.name);
   const toShow = supervised.length > 0;
+  useHead({title: `Apex Venture | ${person.name}`});
 </script>
 
 

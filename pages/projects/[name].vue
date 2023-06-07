@@ -77,4 +77,5 @@ const project = await getProjectData(route2name(name_param))
 const areas = await getAreasOfProject(project.id)
 const previous = await getPreviousProject(project.id)
 const next = await getNextProject(project.id)
+useHead({title: `Apex Venture | ${project.name}`});
 </script>

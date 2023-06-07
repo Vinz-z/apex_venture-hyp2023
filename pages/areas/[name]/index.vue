@@ -51,6 +51,7 @@
 const route = useRoute();
 const area_projects = (await getProjectsOfArea(route.params.name)).slice(0, 4);
 const area = await getAreaData(route.params.name);
+useHead({title: `Apex Venture | ${area.name}`});
 </script>
 
 <style scoped>

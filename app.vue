@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page">
     <apex-header />
     <nuxt-page />
     <apex-footer />

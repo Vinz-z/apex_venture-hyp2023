@@ -240,6 +240,7 @@ const projects = await getProjectsOfArea(route.params.name);
 const area = await getAreaData(route.params.name);
 const previous = await getPreviousArea(area.id, area.type);
 const next = await getNextArea(area.id, area.type);
+useHead({title: `Apex Venture | ${area.name} Projects`});
 </script>
 
 

@@ -46,6 +46,7 @@
     const areas = await getAreasData();
     const sectors = areas.filter(area => area.type === 'sector');
     const technologies = areas.filter(area => area.type === 'technology');
+    useHead({title: "Apex Venture | Areas"});
 </script>
 
 <style scoped>

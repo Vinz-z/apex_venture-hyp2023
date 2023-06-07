@@ -41,10 +41,7 @@
 </template>
 
 <script setup>
-import Banner from "~/components/Banner.vue";
-import TitledCard from "~/components/TitledCard.vue";
-import animatedCharts from "~/components/AnimatedCharts.vue";
-import groupDataCard from "~/components/GroupDataCard.vue";
+useHead({title: "Apex Venture | Contact Us"});
 </script>
 
 <style scoped>

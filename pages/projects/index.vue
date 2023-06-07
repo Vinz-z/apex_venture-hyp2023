@@ -70,6 +70,8 @@ const filteredProjects = computed(() => {
 
     return projects
 })
+
+useHead({title: "Apex Venture | All Projects"});
 </script>
 
 <style scoped>

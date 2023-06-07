@@ -11,15 +11,15 @@
             :person_image=item.image
             :person_role=item.role
             :person_shortcv=item.shortcv
-            :left=left_right(item.id)>
+            :left=leftRight(item.id)>
         </OurTeamElement>
 
     </div>
 </template>
 
 <script setup>
-import left_right from '~/composables/left_right';
     const team = await getTeamData();
+    useHead({title: "Apex Venture | Our Team"});
 </script>
 
 <style scoped>

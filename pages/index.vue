@@ -99,6 +99,7 @@
 
 <script setup>
 const most_relevant = await getMostRelevantProjects();
+useHead({title: "Apex Venture | Homepage"});
 </script>
 
 <style scoped>

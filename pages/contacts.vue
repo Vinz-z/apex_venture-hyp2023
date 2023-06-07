@@ -214,6 +214,8 @@ export default {
     },
   },
 };
+
+useHead({title: "Apex Venture | Contact Us"});
 </script>
 
 <style scoped>
