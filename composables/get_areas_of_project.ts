@@ -7,6 +7,5 @@ export default async function(id: number) {
         return error ? [] : data;
     });
     const filtered_areas = all_areas.filter((area) => areas_of_project.some((area_of_project) => area_of_project.area_id === area.id));
-    console.log(filtered_areas);
     return filtered_areas;
 }

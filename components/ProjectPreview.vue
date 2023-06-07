@@ -34,7 +34,7 @@ const props = defineProps({
         default: () => [],
     },
 });
-
+console.log(props.areas);
 const project2route = (name: string) => `/projects/${name.toLowerCase().replace(/ /g, "-")}`;
 
 </script>
