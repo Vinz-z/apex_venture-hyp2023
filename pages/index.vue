@@ -20,12 +20,12 @@
     >
       <div>
         <div class="mid-container justify-center flex flex-wrap">
-          <project-logo v-for="project in most_relevant" class="project-item"
-          :project_image="project.logo_path"
+          <project-logo v-for="project in most_relevant" class="project-item my-5"
+          :project_image="project.logo"
           :project_name="project.name"
           />
         </div>
-        <div class="flex justify-center mt-5">
+        <div class="flex justify-center mt-10">
           <nuxt-link to="/projects">
           <apex-button caption="See all Projects"/>
           </nuxt-link>

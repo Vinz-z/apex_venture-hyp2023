@@ -35,6 +35,7 @@ export default {
 
 <style scoped>
 .shape-container {
+  height: 210px;
   padding-left: 30px;
   padding-right: 30px;
 }
@@ -51,6 +52,9 @@ export default {
 }
 
 .project-logo {
+  height: 150px;
+  width: 150px;
+  object-fit: contain;
   z-index: 2;
   max-height: 100%;
   max-width: 100%;

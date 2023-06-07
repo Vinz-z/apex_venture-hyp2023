@@ -3,7 +3,7 @@
     imageUrl="images/banners/contacts.jpeg"
     title="Contact us"
     caption="Sign up for our newsletter to receive the latest news and updates. To get in touch with us, reach out to us via landline phone or email."
-    percentage="80"
+    percentage=80
   />
   <div class="main-container mt-4 tablet:mt-20 mb-4 tablet:mb-20">
     <div class="card rounded-br-3xl rounded-tl-3xl">
