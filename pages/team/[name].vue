@@ -6,19 +6,18 @@
   <div class="grid-box mt-32">
     <div class="first-column">
       <div class="image-box">
-        <PictureTitledCard :image="person.image" :role="person.role">
-        </PictureTitledCard>
+        <picture-titled-card :image="person.image" :role="person.role"/>
       </div>
-      <WhiteBox>
+      <white-box>
         <p><b>Address: </b>{{ person.address }}</p>
         <p><b>Phone: </b>{{ person.phone }}</p>
         <p><b>Email: </b>{{ person.email }}</p>
         <p><b>Date of Birth: </b>{{ person.birthday }}</p>
         <p><b>Nationality: </b>{{ person.nationality }}</p>
-      </WhiteBox>
+      </white-box>
     </div>
     <div class="cv-box">
-        <TitledCard title="Curriculum Vitae" :left=true>
+        <titled-card title="Curriculum Vitae" :left=true>
           <p class="my-4">
             <h2 class="text-xl font-bold">Education:</h2>
             <ul class="list-disc ml-5">
@@ -51,7 +50,7 @@
               </li>
             </ul>
           </p>
-        </TitledCard>
+        </titled-card>
     </div>
     <div v-if="toShow" class="separator self-center h-[1px] w-2/3 mb-10"></div>
     <div class="projects">
@@ -62,11 +61,11 @@
           :left="true"
         >
           <div class="mid-container justify-center flex flex-wrap">
-            <ProjectLogo
+            <project-logo
               v-for="project in supervised"
               :project_image=project.logo_path
               :project_name=project.name>
-            </ProjectLogo>
+            </project-logo>
           </div>
         </titled-card>
       </div>
@@ -75,14 +74,11 @@
 </template>
 
 <script setup>
-import Banner from "~/components/Banner.vue";
-import TitledCard from "~/components/TitledCard.vue";
-
-const route = useRoute();
-const person = await getPersonData(route2name(route.params.name));
-const supervised = await getSupervised(person.name);
-const toShow = supervised.length > 0;
-
+  const route = useRoute();
+  const target = route2name(route.params.name)
+  const person = await getPersonData(target);
+  const supervised = await getSupervised(person.name);
+  const toShow = supervised.length > 0;
 </script>
 
 
