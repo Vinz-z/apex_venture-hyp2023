@@ -110,7 +110,7 @@
               <div class="banner-caption-phone">previous area projects</div>
             </div>
             <img
-              src="/images/banners/education.jpg"
+              src="/images/ares/banners/education.jpg"
               alt="Banner Image"
               :style="`object-position: center ${percentage}%;`"
             />
@@ -183,7 +183,7 @@
             <div class="banner-caption">{{ previous.name }} projects</div>
           </div>
           <img
-            src="/images/banners/education.jpg"
+            src="/images/areas/banners/education.jpg"
             alt="Banner Image"
             :style="`object-position: center ${percentage}%;`"
           />
