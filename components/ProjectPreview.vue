@@ -8,7 +8,7 @@
             <div class="h-[30px] w-full flex flex-row gap-4 align-center justify-center">
                 <img v-for="area in areas" :src="area.icon" alt="area icon" class="object-contain w-[30px]"/>
             </div>
-            <div class="text-justify m-4">{{ short_overview }}</div>
+            <div class="text-wrap m-4">{{ truncateText(short_overview, 95) }}</div>
         </div>
     </nuxt-link>
 </template>
@@ -34,6 +34,15 @@ const props = defineProps({
 });
 const project2route = (name: string) => `/projects/${name.toLowerCase().replace(/ /g, "-")}`;
 const areas = await getAreasOfProject(props.id);
+
+const truncateText = (text: string, maxLength: number) => {
+  if (text.length <= maxLength) {
+    return text;
+  } else {
+    return text.substring(0, maxLength) + '...';
+  }
+};
+
 </script>
 
 <style scoped>

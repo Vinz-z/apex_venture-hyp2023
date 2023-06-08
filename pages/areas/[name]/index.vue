@@ -1,6 +1,6 @@
 <template>
   <Banner
-    imageUrl="/images/banners/finance.jpg"
+    :imageUrl= "area.banner"
     :title="area.name"
     :caption="area.short_overview"
   />
@@ -9,18 +9,18 @@
       :title="`Investing in ${area.name}`"
       :left="false" class="max-w-2xl">
       <div class="caption mt-[-15px]">
-        {{ area.short_overview }}
+        {{ area.long_description }}
       </div>
     </titled-card>
     <data-grid
-      dataTopLeft="1"
-      captionTopLeft="caption Top Left"
-      dataTopRight="2"
-      captionTopRight="caption Top Right"
-      dataBottomLeft="3"
-      captionBottomLeft="caption Bottom Left"
-      dataBottomRight="4"
-      captionBottomRight="caption Bottom Right"
+      :dataTopLeft="area_statistics[0].value"
+      :captionTopLeft="area_statistics[0].caption"
+      :dataTopRight="area_statistics[1].value"
+      :captionTopRight="area_statistics[1].caption"
+      :dataBottomLeft="area_statistics[2].value"
+      :captionBottomLeft="area_statistics[2].caption"
+      :dataBottomRight="area_statistics[3].value"
+      :captionBottomRight="area_statistics[3].caption"
     />
   </div>
 
@@ -52,6 +52,8 @@ const route = useRoute();
 const area_projects = (await getProjectsOfArea(route.params.name)).slice(0, 4);
 const area = await getAreaData(route.params.name);
 useHead({title: `Apex Venture | ${area.name}`});
+const area_statistics = await getAreaStatistics(area.id);
+console.log(area_statistics);
 </script>
 
 <style scoped>

@@ -1,6 +1,6 @@
 <template>
     <banner
-        image-url="/images/banners/collage.png"
+        image-url="/images/areas/banners/collage.png"
         title="Areas"
         caption="Explore diverse investment areas, empowering visionary entrepreneurs across industries to shape the future."
     />

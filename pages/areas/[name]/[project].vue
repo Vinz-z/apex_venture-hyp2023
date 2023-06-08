@@ -1,7 +1,7 @@
 <template>
   <Banner
     :title="`${$route.params.name} Projects`"
-    imageUrl="/images/banners/finance.jpg"
+    :imageUrl= area.banner
   />
   <div class="w-full h-auto mb-10 tablet:hidden">
     <div

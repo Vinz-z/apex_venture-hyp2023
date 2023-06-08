@@ -10,9 +10,9 @@
                 <div class="flex flex-col tablet:flex-row items-center">
                     <div class="m-4 tablet:w-1/5">
                         <img :src="project.logo" class="w-40 h-40 p-2 my-2 bg-white object-contain drop-shadow-lg rounded-tl-2xl rounded-br-2xl">
-                        <!--<div class="text-xl font-bold">Office</div>
+                        <div class="text-xl font-bold">Office</div>
                         <div class="text-xl">{{ project.office }}</div>
-                        <div class="text-xl font-bold">Supervisor</div>
+                        <!--<div class="text-xl font-bold">Supervisor</div>
                         <nuxt-link :to="person2route(project.supervisor)" class="text-xl" style="color: var(--clickable-color)">{{ project.supervisor }}</nuxt-link>-->
                     </div>
                     <p class="m-4 tablet:w-4/5 text-xl">{{ project.long_description }}</p>
