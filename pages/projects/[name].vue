@@ -52,8 +52,6 @@
     />
     
     <img :src="project.team_image" class="my-auto big-round-left shadow" />
-    
-    
     <titled-card :title="`${project.name} Team`" class="object-contain">
       <div class="grid grid-cols-2 gap-4">
         <div

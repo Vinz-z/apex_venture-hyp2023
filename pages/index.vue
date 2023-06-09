@@ -12,7 +12,9 @@
       possibilities, and create a brighter future together.
     </p>
   </div>
-  <div class="projects-container flex justify-center self-center px-10 desktop:px-0">
+  <div
+    class="projects-container flex justify-center self-center px-10 desktop:px-0"
+  >
     <titled-card
       title="Most Relevant Projects"
       class="w-full justify-center"
@@ -20,14 +22,16 @@
     >
       <div>
         <div class="mid-container justify-center flex flex-wrap">
-          <project-logo v-for="project in most_relevant" class="project-item my-5"
-          :project_image="project.logo"
-          :project_name="project.name"
+          <project-logo
+            v-for="project in most_relevant"
+            class="project-item my-5"
+            :project_image="project.logo"
+            :project_name="project.name"
           />
         </div>
         <div class="flex justify-center mt-10">
           <nuxt-link to="/projects">
-          <apex-button caption="See all Projects"/>
+            <apex-button caption="See all Projects" />
           </nuxt-link>
         </div>
       </div>
@@ -70,7 +74,7 @@
         </div>
         <div class="flex justify-center h-[35px] mt-10">
           <nuxt-link to="/about-us">
-          <apex-button caption="See More" />
+            <apex-button caption="See More" />
           </nuxt-link>
         </div>
       </div>
@@ -78,28 +82,46 @@
   </div>
 
   <div class="separator bg-gray-400 h-[1px] self-center w-1/3 my-10"></div>
-<div class="h-screen" id="team-container">
-  <div class="our-team">
-    <img class="photo mt-10" src="/images/banners/hometeam.jpeg" />
-    <div class="green-box">
-      <h2 class="text-xl mb-4"><b>Our Team</b></h2>
-      <p class="mb-5">
-        When investors, operators, founders, and specialists align under one
-        mission and commit as a team, each with their own unique set of
-        experiences, accomplishments, and failures, great things are bound to
-        happen.
-      </p>
-      <div class="button">
-        <nuxt-link :to="'/team'"><apex-button caption="See more" /></nuxt-link>
+  <div id="team-container">
+    <div
+      class="our-team"
+      id="our-team"
+      :style="{ marginBottom: responsiveMarginBottom }"
+    >
+      <img class="photo mt-10" src="/images/banners/hometeam.jpeg" />
+      <div class="green-box" id="green-box">
+        <h2 class="text-xl mb-4"><b>Our Team</b></h2>
+        <p class="mb-5">
+          When investors, operators, founders, and specialists align under one
+          mission and commit as a team, each with their own unique set of
+          experiences, accomplishments, and failures, great things are bound to
+          happen.
+        </p>
+        <div class="button">
+          <nuxt-link :to="'/team'"
+            ><apex-button caption="See more"
+          /></nuxt-link>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script setup>
+import { ref, onMounted } from "vue";
+
+const responsiveMarginBottom = ref(0);
+
+function calculateOurTeamMargin() {
+  const greenBox = document.getElementById("green-box");
+  const ourTeamMargin = greenBox.offsetHeight + 10;
+  responsiveMarginBottom.value = `${ourTeamMargin}px`;
+}
+
+onMounted(calculateOurTeamMargin);
+
 const most_relevant = await getMostRelevantProjects();
-useHead({title: "Apex Venture | Homepage"});
+useHead({ title: "Apex Venture | Homepage" });
 </script>
 
 <style scoped>
@@ -119,17 +141,25 @@ useHead({title: "Apex Venture | Homepage"});
 @media screen and (max-width: 450px) {
   #team-container {
     max-height: 60vh;
-  } 
+  }
+
+  #green-box {
+    transform: translateY(80%);
+  }
 }
 
 @media screen and (min-width: 450px) and (max-width: 1000px) {
   #team-container {
     max-height: 80vh;
-  } 
+  }
+
+  #green-box {
+    transform: translateY(60%);
+  }
 }
 
 .green-box {
-  top: 70%;
+  bottom: 0;
   color: var(--white-color);
   border-radius: var(--big-round) 0px;
   position: absolute;
@@ -141,6 +171,7 @@ useHead({title: "Apex Venture | Homepage"});
   padding: 2%;
   align-items: center;
   font-display: flex-wrap;
-  overflow: hidden;
+  transform: translateY(50%);
+
 }
 </style>
