@@ -50,17 +50,33 @@
       :dataBottomRight="project_statistics[3].value"
       :captionBottomRight="project_statistics[3].caption"
     />
+    
     <img :src="project.team_image" class="my-auto big-round-left shadow" />
+    
+    
     <titled-card :title="`${project.name} Team`" class="object-contain">
       <div class="grid grid-cols-2 gap-4">
-        <!--<div v-for="[ key, value ] of Object.entries(project.team)" class="align-self-center object-contain">
-                    <div class="text-xl font-bold">{{ key }}</div>
-                    <div class="flex flex-wrap flex-col text-xl">
-                        <div  v-for="person in value">{{ person }}</div>
-                    </div>
-                </div>-->
+        <div
+          v-for="[role, people] of Object.entries(
+            project_team.reduce((acc, { person_role, person_name }) => {
+              if (!acc[person_role]) {
+                acc[person_role] = [];
+              }
+              acc[person_role].push(person_name);
+              return acc;
+            }, {})
+          )"
+          :key="role"
+          class="align-self-center object-contain"
+        >
+          <div class="text-xl font-bold">{{ role }}</div>
+          <div class="flex flex-wrap flex-col text-xl">
+            <div v-for="person in people">{{ person }}</div>
+          </div>
+        </div>
       </div>
     </titled-card>
+    
     <div class="desktop:col-span-2">
       <div class="grid grid-cols-9 h-80 place-content-center">
         <div
@@ -93,4 +109,12 @@ const previous = await getPreviousProject(project.id);
 const next = await getNextProject(project.id);
 useHead({ title: `Apex Venture | ${project.name}` });
 const project_statistics = await getProjectStatistics(project.id);
+
+const project_team = await useSupabaseClient()
+  .from("project_team")
+  .select("person_role, person_name")
+  .eq("project_id", project.id)
+  .then(({ data, error }) => {
+    return error ? [] : data;
+  });
 </script>
