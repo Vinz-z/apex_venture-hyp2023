@@ -203,7 +203,7 @@
             <div class="banner-caption">{{ next.name }} projects</div>
           </div>
           <img
-            src="/images/banners/sports.png"
+            src="/images/areas/banners/farm.png"
             alt="Banner Image"
             :style="`object-position: center ${percentage}%;`"
           />
