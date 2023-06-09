@@ -129,7 +129,7 @@
               <div class="banner-caption-phone"> {{ next.name }} projects</div>
             </div>
             <img
-              src="/images/banners/sports.png"
+              src="/images/areas/banners/sports.png"
               alt="Banner Image"
               :style="`object-position: center ${percentage}%;`"
             />
