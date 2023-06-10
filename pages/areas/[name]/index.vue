@@ -13,14 +13,14 @@
       </div>
     </titled-card>
     <data-grid
-      :dataTopLeft="area_statistics[0].value"
-      :captionTopLeft="area_statistics[0].caption"
-      :dataTopRight="area_statistics[1].value"
-      :captionTopRight="area_statistics[1].caption"
-      :dataBottomLeft="area_statistics[2].value"
-      :captionBottomLeft="area_statistics[2].caption"
-      :dataBottomRight="area_statistics[3].value"
-      :captionBottomRight="area_statistics[3].caption"
+      :dataTopLeft="area.stats[0].value"
+      :captionTopLeft="area.stats[0].caption"
+      :dataTopRight="area.stats[1].value"
+      :captionTopRight="area.stats[1].caption"
+      :dataBottomLeft="area.stats[2].value"
+      :captionBottomLeft="area.stats[2].caption"
+      :dataBottomRight="area.stats[3].value"
+      :captionBottomRight="area.stats[3].caption"
     />
   </div>
 
@@ -29,7 +29,7 @@
   <div class="projects-container flex justify-center self-center px-10 desktop:px-0">
     <TitledCard :title="area.name + ' Projects'" :left="true" class="w-full justify-center">
       <div class="mid-container justify-center flex flex-wrap">
-        <project-logo v-for="project in area_projects" class="project-item"
+        <project-logo v-for="project in area.projects" class="project-item"
           :project_image="project.logo"
           :project_name="project.name"
           />
@@ -48,12 +48,17 @@
 </template>
 
 <script setup>
-const route = useRoute();
-const area_projects = (await getProjectsOfArea(route.params.name)).slice(0, 4);
-const area = await getAreaData(route.params.name);
+const target = route2name(useRoute().params.name);
+const area = await useSupabaseClient().from('areas')
+    .select('*, stats:area_statistics(*), projects:projects(name, logo)')
+    .eq('name', target)
+    .single()
+    .then(({data, error}) => {
+        if (error) throw createError({statusCode: 404, stastusMessage: 'Area not found.', message : error.message});
+        return data;
+    });
+setProjectList(area.projects.map(project => project.name));
 useHead({title: `Apex Venture | ${area.name}`});
-const area_statistics = await getAreaStatistics(area.id);
-console.log(area_statistics);
 </script>
 
 <style scoped>

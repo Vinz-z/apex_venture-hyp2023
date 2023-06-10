@@ -121,7 +121,8 @@ function calculateOurTeamMargin() {
 onMounted(calculateOurTeamMargin);
 
 const most_relevant = await getMostRelevantProjects();
-useHead({ title: "Apex Venture | Homepage" });
+setProjectList(most_relevant.map((project) => project.name));
+useHead({title: "Apex Venture | Homepage"});
 </script>
 
 <style scoped>

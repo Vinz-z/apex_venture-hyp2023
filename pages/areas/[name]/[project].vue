@@ -42,7 +42,7 @@
       </div>
     </nuxt-link>
   </div>
-  <div class="upper-container flex w-full h-[100px] mb-10 hidden tablet:flex">
+  <div class="upper-container w-full h-[100px] mb-10 hidden tablet:flex">
     <div class="upper-caption flex h-auto items-start justify-start">
       <div class="mx-5 my-3 text-2xl text-white">
         {{ area.short_overview }}
@@ -78,9 +78,9 @@
   >
     <project-preview
       v-for="item in projects"
-      :logo_path="item.logo"
+      :logo="item.logo"
       :name="item.name"
-      :id="item.id"
+      :areas_icons="items.areas.map((area) => area.icon)"
       :short_overview="item.short_description"
       class="place-self-center"
     />
@@ -156,7 +156,7 @@
     </div>
   </div>
   <div
-    class="buttons flex w-full h-[10vw] justify-center my-20 hidden tablet:flex"
+    class="buttons w-full h-[10vw] justify-center my-20 hidden tablet:flex"
   >
     <div
       class="previous-button flex w-1/3 bg-blue-500 rounded-tr-[50px] rounded-bl-[50px] hover:scale-105 hover:shadow-2xl duration-300"
@@ -234,12 +234,21 @@
 
 
 <script setup>
-//const projects = await getAllProjectsData();
-const route = useRoute();
-const projects = await getProjectsOfArea(route.params.name);
-const area = await getAreaData(route.params.name);
-const previous = await getPreviousArea(area.id, area.type);
-const next = await getNextArea(area.id, area.type);
+const target = route2name(useRoute().params.name);
+const areas_list = await useSupabaseClient().from('areas')
+    .select('*, projects(*)')
+    .then(({ data, error}) => {
+      if (error) throw createError({statusCode: 404, statusMessage: 'Area not found'});
+      return data;
+    });
+const area = areas_list.find(area => area.name === target);
+
+let index = areas_list.findIndex(area => area.name === target);
+const previous = areas_list[(index - 1) % areas_list.length];
+
+index = areas_list.findIndex(area => area.name === target);
+const next = areas_list[(index + 1) % areas_list.length];
+
 useHead({title: `Apex Venture | ${area.name} Projects`});
 </script>
 

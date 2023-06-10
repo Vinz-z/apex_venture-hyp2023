@@ -11,14 +11,20 @@
             :person_image=item.image
             :person_role=item.role
             :person_shortcv=item.shortcv
-            :left=leftRight(item.id)>
+            :left="item.id % 2 !== 0">
         </OurTeamElement>
 
     </div>
 </template>
 
 <script setup>
-    const team = await getTeamData();
+    const team = await useSupabaseClient().from('persons')
+        .select('name, image, role, shortcv, id')
+        .order('id', { ascending: true })
+        .then(({ data, error }) => {
+            if (error) throw createError({ statusCode: 404, statusMessage: `Team non found` })
+            return data;
+        });
     useHead({title: "Apex Venture | Our Team"});
 </script>
 

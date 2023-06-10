@@ -1,12 +1,12 @@
 <template>
-    <nuxt-link :to="project2route(name)" class="project-preview">
+    <nuxt-link :to="`/projects/${name2route(name)}`" class="project-preview">
         <div class="image-container">
-            <div class="project-image drop-shadow-lg" :style="`background-image: url(${logo_path});`"></div>
+            <div class="project-image drop-shadow-lg" :style="`background-image: url(${logo});`"></div>
         </div>
         <div class="project-info">
             <h2 class="w-full text-center text-2xl font-bold leading-normal">{{ name }}</h2>
             <div class="h-[30px] w-full flex flex-row gap-4 align-center justify-center">
-                <img v-for="area in areas" :src="area.icon" alt="area icon" class="object-contain w-[30px]"/>
+                <img v-for="area in areas_icons" :src="area" alt="area icon" class="object-contain w-[30px]"/>
             </div>
             <div class="text-wrap m-4">{{ truncateText(short_overview, 95) }}</div>
         </div>
@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 const props = defineProps({
-    logo_path: {
+    logo: {
         type: String,
         required: true,
     },
@@ -27,13 +27,11 @@ const props = defineProps({
         type: String,
         required: true,
     },
-    id: {
-        type: Number,
+    areas_icons: {
+        type: Array<string>,
         required: true,
     },
 });
-const project2route = (name: string) => `/projects/${name.toLowerCase().replace(/ /g, "-")}`;
-const areas = await getAreasOfProject(props.id);
 
 const truncateText = (text: string, maxLength: number) => {
   if (text.length <= maxLength) {

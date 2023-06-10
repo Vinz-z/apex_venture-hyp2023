@@ -50,7 +50,6 @@
             :short_overview="item.short_description"
             class="place-self-center"
             />
-            <!--:areas="getAreasOfProject(item.id)"-->
         </div>
     </div>
 </template>
@@ -60,10 +59,16 @@ const supabase = useSupabaseClient();
 
 const areas = await supabase.from('areas')
     .select('id, name, type, icon')
-    .then(filterData);
+    .then(( {data, error} ) => {
+        if (error) throw createError({ statusCode: 404, statusMessage: error.message })
+        return data;
+    });
 const projects = await supabase.from('projects')
     .select('logo, name, id, short_description, areas(id)')
-    .then(filterData);
+    .then(( {data, error} ) => {
+        if (error) throw createError({ statusCode: 404, statusMessage: error.message })
+        return data;
+    });
 
 const state = reactive({ activeFilter: -1 })
 
@@ -87,15 +92,17 @@ function getAreasIcons(ids) {
 }
 
 const filteredProjects = computed(() => {
-    if (state.activeFilter === "most-relevant") 
-        return getMostRelevantProjects()
+    let result = projects
 
-    if (state.activeFilter > 0)
-        return projects.filter((project) => project.areas
+    if (state.activeFilter === "most-relevant") 
+        result = getMostRelevantProjects()
+    else if (state.activeFilter > 0)
+        result = projects.filter((project) => project.areas
             .map((o) => o.id)
             .includes(state.activeFilter))
 
-    return projects
+    setProjectList(result.map((project) => project.name))
+    return result
 })
 
 useHead({title: "Apex Venture | All Projects"});
