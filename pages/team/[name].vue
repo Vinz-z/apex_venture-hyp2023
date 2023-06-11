@@ -54,8 +54,7 @@
     </div>
     <div v-if="person.supervised.length > 0" class="w-full flex flex-col">
       <div class="separator self-center h-[1px] w-2/3 mb-10"></div>
-      <div class="projects">
-        <div class="projects-container flex justify-center self-center desktop:px-0">
+      <div class="projects-container flex justify-center self-center px-10 desktop:px-0">
           <titled-card
             title="Supervised Projects"
             class="w-full justify-center"
@@ -64,12 +63,12 @@
             <div class="mid-container justify-center flex flex-wrap">
               <project-logo
                 v-for="project in person.supervised"
+                class="project-item my-5"
                 :project_image=project.logo
                 :project_name=project.name>
               </project-logo>
             </div>
           </titled-card>
-        </div>
       </div>
     </div>
   </div>
@@ -121,13 +120,6 @@
 
     .separator {
       background-color: gray;
-    }
-
-    .projects {
-      justify-content: center;
-      display: wrap;
-      margin-bottom: 5%;
-      height: fit-content;
     }
 
 </style>

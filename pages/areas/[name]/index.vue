@@ -24,18 +24,18 @@
     />
   </div>
 
-  <div class="separator self-center h-[1px] w-1/3 my-10"></div>
+  <div class="bg-[gray] self-center h-[1px] w-1/3 my-10"></div>
 
   <div class="projects-container flex justify-center self-center px-10 desktop:px-0">
     <TitledCard :title="area.name + ' Projects'" :left="true" class="w-full justify-center">
       <div class="mid-container justify-center flex flex-wrap">
-        <project-logo v-for="project in area.projects" class="project-item"
+        <project-logo v-for="project in area.projects" class="project-item my-5"
           :project_image="project.logo"
           :project_name="project.name"
           />
         <nuxt-link :to="'/areas/' + area.name + '/projects'" class="little-container w-[190px] h-[150px] flex justify-center">
           <button
-            class="see-all h-[150px] w-[150px] rounded-br-[var(--big-round)] rounded-tl-[var(--big-round)] justify-center mb-0 p-3 shadow-md"
+            class="bg-[var(--clickable-color)] h-[150px] w-[150px] rounded-br-[var(--big-round)] rounded-tl-[var(--big-round)] justify-center p-3 shadow-md my-5"
           >
             <div class="text-xl font-bold text-white break-word">
               See All Projects
@@ -60,13 +60,3 @@ const area = await useSupabaseClient().from('areas')
 setProjectList(area.projects.map(project => project.name));
 useHead({title: `Apex Venture | ${area.name}`});
 </script>
-
-<style scoped>
-.see-all {
-  background-color: var(--clickable-color);
-}
-
-.separator {
-  background-color: gray;
-}
-</style>
