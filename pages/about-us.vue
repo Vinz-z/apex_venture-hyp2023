@@ -3,7 +3,7 @@
     title="About us"
     caption="At Apex Venture, we believe in the power of innovation and are committed to supporting visionary founders in their quest to disrupt industries and drive transformative change. "
     imageUrl="/images/banners/strategy.jpg"
-    :percentage=10
+    percentage="10"
   />
 
   <div class="flex justify-center items-center mt-4 mb-4 tablet:mt-20 tablet:mb-20">

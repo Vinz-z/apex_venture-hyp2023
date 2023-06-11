@@ -3,6 +3,7 @@
     image-url="images/banners/all-projects.png"
     title="All Projects"
     caption="Explore our venture capital firm's portfolio to discover the diverse range of innovative and promising companies we've invested in."
+    percentage="20"
     />
     <div class="flex flex-col tablet:flex-row ">
         <div class="min-w-fit	 flex flex-col p-6 shadow-lg shadow-gray-400">

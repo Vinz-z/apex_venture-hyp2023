@@ -43,7 +43,7 @@ const props = defineProps( {
   border-bottom-right-radius: var(--big-round);
   display: flex;
   justify-content: center;
-  padding: 3%;
+  padding: 6%;
   height: 150px;
   border-radius: var(--big-round) 0px;
   background-color: var(--white-color);

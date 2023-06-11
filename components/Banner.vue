@@ -29,9 +29,9 @@ export default {
       default: ""
     },
     percentage: {
-      type: Number,
+      type: String,
       required: false,
-      default: 50,
+      default: "50",
     },
   },
 };
