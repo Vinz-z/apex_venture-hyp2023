@@ -114,7 +114,7 @@ const responsiveMarginBottom = ref(0);
 
 function calculateOurTeamMargin() {
   const greenBox = document.getElementById("green-box");
-  const ourTeamMargin = greenBox.offsetHeight + 10;
+  const ourTeamMargin = greenBox.offsetHeight + 20;
   responsiveMarginBottom.value = `${ourTeamMargin}px`;
 }
 
@@ -144,7 +144,7 @@ useHead({ title: "Apex Venture | Homepage" });
   }
 
   #green-box {
-    transform: translateY(80%);
+    transform: translateY(90%);
   }
 }
 
@@ -154,7 +154,7 @@ useHead({ title: "Apex Venture | Homepage" });
   }
 
   #green-box {
-    transform: translateY(60%);
+    transform: translateY(70%);
   }
 }
 
@@ -171,7 +171,7 @@ useHead({ title: "Apex Venture | Homepage" });
   padding: 2%;
   align-items: center;
   font-display: flex-wrap;
-  transform: translateY(50%);
+  transform: translateY(40%);
 
 }
 </style>
