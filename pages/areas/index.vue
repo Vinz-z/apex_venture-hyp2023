@@ -43,7 +43,13 @@
 </template>
 
 <script setup>
-    const areas = await getAreasData();
+    const areas = await useSupabaseClient().from('areas')
+        .select('icon, name, short_overview, type')
+        .order('name', { ascending: true })
+        .then(({data, error}) => {
+            if (error) throw createError({statusCode: 404, message: 'No areas found.'});
+            return data;
+        });
     const sectors = areas.filter(area => area.type === 'sector');
     const technologies = areas.filter(area => area.type === 'technology');
     useHead({title: "Apex Venture | Areas"});

@@ -21,7 +21,7 @@
                 {{ person_shortcv }}
             </div>
             <div class="button mt-5">
-                <NuxtLink :to="person2route(person_name)"><ApexButton
+                <NuxtLink :to="`/team/${name2route(person_name)}`"><ApexButton
           caption="See more"/></NuxtLink>
             </div>
         </div>

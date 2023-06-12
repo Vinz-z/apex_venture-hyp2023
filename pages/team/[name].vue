@@ -52,33 +52,39 @@
           </p>
         </titled-card>
     </div>
-    <div v-if="toShow" class="separator self-center h-[1px] w-2/3 mb-10"></div>
-    <div class="projects">
-      <div v-if="toShow" class="projects-container flex justify-center self-center desktop:px-0">
-        <titled-card
-          title="Supervised Projects"
-          class="w-full justify-center"
-          :left="true"
-        >
-          <div class="mid-container justify-center flex flex-wrap">
-            <project-logo
-              v-for="project in supervised"
-              :project_image=project.logo_path
-              :project_name=project.name>
-            </project-logo>
-          </div>
-        </titled-card>
+    <div v-if="person.supervised.length > 0" class="w-full flex flex-col">
+      <div class="separator self-center h-[1px] w-2/3 mb-10"></div>
+      <div class="projects-container flex justify-center self-center px-10 desktop:px-0">
+          <titled-card
+            title="Supervised Projects"
+            class="w-full justify-center"
+            :left="true"
+          >
+            <div class="mid-container justify-center flex flex-wrap">
+              <project-logo
+                v-for="project in person.supervised"
+                class="project-item my-5"
+                :project_image=project.logo
+                :project_name=project.name>
+              </project-logo>
+            </div>
+          </titled-card>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-  const route = useRoute();
-  const target = route2name(route.params.name)
-  const person = await getPersonData(target);
-  const supervised = await getSupervised(person.name);
-  const toShow = supervised.length > 0;
+  const target = route2name(useRoute().params.name)
+  const person = await useSupabaseClient().from('persons')
+    .select('*, supervised:projects(name, logo)')
+    .eq('name', target)
+    .single()
+    .then(( {data, error} ) => {
+        if (error) throw createError({ statusCode: 404, statusMessage: error.message })
+        return data;
+    });
+  setProjectList(person.supervised.map(project => project.name))
   useHead({title: `Apex Venture | ${person.name}`});
 </script>
 
@@ -114,13 +120,6 @@
 
     .separator {
       background-color: gray;
-    }
-
-    .projects {
-      justify-content: center;
-      display: wrap;
-      margin-bottom: 5%;
-      height: fit-content;
     }
 
 </style>

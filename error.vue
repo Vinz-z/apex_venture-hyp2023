@@ -2,6 +2,7 @@
   <div>
     <apex-header />
     <banner image-url="/images/banners/error.jpg" :title="`Oops! ${error.statusCode}`" :caption="error.statusMessage"/>
+    <p>{{ error.message }}</p>
   </div>
 </template>
 

@@ -12,10 +12,10 @@
             </div>
         </div>
         <div class="grid grid-cols-2 gap-1">
-            <nuxt-link :to="area2route(title)" class="bg-[var(--clickable-color)] p-4 font-bold justify-center flex flex-col">
+            <nuxt-link :to="`/areas/${name2route(title)}`" class="bg-[var(--clickable-color)] p-4 font-bold justify-center flex flex-col">
                 See more
             </nuxt-link>
-            <nuxt-link :to="area2projects(title)" class="bg-[var(--clickable-color)] rounded-br-2xl p-4 font-bold">
+            <nuxt-link :to="`/areas/${name2route(title)}/projects`" class="bg-[var(--clickable-color)] rounded-br-2xl p-4 font-bold">
                 {{ title }} Projects
             </nuxt-link>
         </div>
