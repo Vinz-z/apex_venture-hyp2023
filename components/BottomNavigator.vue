@@ -98,8 +98,6 @@ const props = defineProps({
         required: true,
     },
 });
-
-console.log(props.previous, props.next);
 </script>
 
 <style scoped>
