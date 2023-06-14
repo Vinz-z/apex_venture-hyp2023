@@ -41,7 +41,7 @@
         >
             <div class="mid-container justify-center flex flex-wrap">
                 <project-logo
-                    v-for="project in area.projects"
+                    v-for="project in area.projects.slice(0, 3)"
                     class="project-item my-5"
                     :project_image="project.logo"
                     :project_name="project.name"
