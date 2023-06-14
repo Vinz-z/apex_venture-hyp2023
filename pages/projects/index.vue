@@ -64,12 +64,15 @@ const areas = await supabase.from('areas')
         if (error) throw createError({ statusCode: 404, statusMessage: error.message })
         return data;
     });
+
 const projects = await supabase.from('projects')
     .select('logo, name, id, short_description, areas(id)')
     .then(( {data, error} ) => {
         if (error) throw createError({ statusCode: 404, statusMessage: error.message })
         return data;
     });
+
+const most_relevant = (await getMostRelevantProjects()).map((project) => project.name);
 
 const state = reactive({ activeFilter: -1 })
 
@@ -95,8 +98,9 @@ function getAreasIcons(ids) {
 const filteredProjects = computed(() => {
     let result = projects
 
-    if (state.activeFilter === "most-relevant") 
-        result = getMostRelevantProjects()
+    if (state.activeFilter === "most-relevant") {
+        result = projects.filter((project) => most_relevant.includes(project.name))
+    }
     else if (state.activeFilter > 0)
         result = projects.filter((project) => project.areas
             .map((o) => o.id)
