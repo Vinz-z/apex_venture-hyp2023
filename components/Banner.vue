@@ -16,7 +16,7 @@
                     class="hovered-link"
                     v-for="(elem, index) in breadcrumbs"
                     :to="buildLink(index)"
-                    >{{ elem }} ></nuxt-link
+                    >{{ route2name(elem) }} ></nuxt-link
                 >
             </div>
             <h1 class="my-7 text-5xl tablet:text-7xl">{{ title }}</h1>

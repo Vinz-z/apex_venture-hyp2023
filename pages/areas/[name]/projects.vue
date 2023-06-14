@@ -1,6 +1,6 @@
 <template>
-    <Banner :title="`${$route.params.name} Projects`" :imageUrl="area.banner" />
-    <div class="w-full mb-10 flex flex-col tablet:flex-row">
+    <Banner :title="`${target} Projects`" :imageUrl="area.banner" />
+    <div class="mb-10 flex flex-col tablet:flex-row">
         <div class="bg-[var(--secondary-color)] w-full drop-shadow-md">
             <div class="mx-5 my-3 text-2xl text-white">
                 {{ area.short_overview }}
@@ -31,7 +31,7 @@
         </nuxt-link>
     </div>
     <div
-        class="w-auto flex flex-wrap justify-center tablet:justify-start content-center"
+        class="max-w-7xl mx-auto flex flex-wrap justify-center content-center"
     >
         <project-preview
             v-for="item in area.projects"

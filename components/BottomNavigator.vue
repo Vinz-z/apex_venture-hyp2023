@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex flex-col gap-4 tablet:gap-8 tablet:flex-row items-center justify-center m-4"
+        class="flex flex-col gap-4 tablet:gap-8 tablet:flex-row items-center justify-center mx-4 my-12"
     >
         <nuxt-link
             v-if="!(previous.name === next.name)"
