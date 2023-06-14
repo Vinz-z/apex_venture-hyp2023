@@ -32,7 +32,8 @@
 .container {
     margin-left: auto;
     margin-right: auto;
-    padding: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     flex-wrap: wrap;
     justify-content: center;
     display: flex;
