@@ -13,6 +13,7 @@
                     <div class="m-4 tablet:w-1/5">
                         <img
                             :src="project.logo"
+                            alt="Project Logo Image"
                             class="w-40 h-40 p-2 my-2 bg-white object-contain drop-shadow-lg rounded-tl-2xl rounded-br-2xl"
                         />
                         <div class="text-xl font-bold">Office</div>
@@ -39,7 +40,7 @@
                     :to="`/areas/${name2route(area.name)}`"
                     class="flex flex-row content-center justify-start items-center w-60 my-4 py-2 medium-round-right bg-[var(--clickable-color)] drop-shadow-lg hover:drop-shadow-xl hover:scale-105 transition duration-100 ease-out hover:ease-in"
                 >
-                    <img :src="area.icon" class="w-10 h-10 mx-6" />
+                    <img :src="area.icon" alt="Area Icon Image" class="w-10 h-10 mx-6" />
                     <div class="text-xl font-bold">{{ area.name }}</div>
                 </nuxt-link>
             </div>
@@ -57,7 +58,7 @@
             :dataBottomRight="project.stats[3].value"
             :captionBottomRight="project.stats[3].caption"
         />
-        <img :src="project.team_image" class="my-auto big-round-left shadow" />
+        <img :src="project.team_image" alt="Project Team Image" class="my-auto big-round-left shadow" />
         <titled-card :title="`${project.name} Team`" class="object-contain">
             <div class="grid grid-cols-2 gap-4">
                 <div

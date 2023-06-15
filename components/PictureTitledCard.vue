@@ -4,7 +4,7 @@
             <h2>{{ role }}</h2>
         </div>
         <div class="person-content">
-            <img class="person-image" :src="image">
+            <img class="person-image" alt="Person Image" :src="image">
             <div class="bg1-left"></div>
             <div class="bg2-right"></div>
         </div>

@@ -29,6 +29,7 @@
                 <div class="banner-content">
                     <img
                         :src="previous.banner"
+                        alt="Previous Banner Image"
                         class="w-full h-full object-cover rounded-tr-3xl"
                     />
                 </div>
@@ -53,6 +54,7 @@
                 <div class="banner-content">
                     <img
                         :src="next.banner"
+                        alt="Next Banner Image" 
                         class="w-full h-full object-cover rounded-tl-3xl"
                     />
                 </div>
