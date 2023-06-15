@@ -1,7 +1,7 @@
 <template>
     <div class="max-w-[500px] flex flex-col gap-1 text-center text-[var(--white-color)] drop-shadow">
         <div class="flex gap-4 bg-[var(--secondary-color)] rounded-tl-2xl p-6 items-center">
-            <img :src="iconUrl" alt="Icon Image" class="w-16 h-16">
+            <nuxt-img :src="iconUrl" alt="Icon Image" class="w-16 h-16" sizes="sm:100vw md:50vw lg:400px" format="webp" />
             <div>
             <div class="text-start text-xl font-bold">
                 {{ title }}

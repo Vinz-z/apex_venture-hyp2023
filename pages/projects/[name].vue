@@ -62,10 +62,12 @@
             :dataBottomRight="project.stats[3].value"
             :captionBottomRight="project.stats[3].caption"
         />
-        <img
+        <nuxt-img
             :src="project.team_image"
             alt="Project Team Image"
-            class="my-auto big-round-left shadow"
+            class="my-auto big-round-left shadow justify-self-center"
+            sizes="sm:100vw lg:800px"
+            format="webp"
         />
         <titled-card :title="`${project.name} Team`" class="object-contain">
             <div class="grid grid-cols-2 gap-4">
@@ -149,7 +151,10 @@ const previous =
     project_list[(index - 1 + project_list.length) % project_list.length];
 const next = project_list[(index + 1) % project_list.length];
 
-useHead({htmlAttrs: {lang: "en"},  title: `Apex Venture | ${project.name ?? ":("}` });
+useHead({
+    htmlAttrs: { lang: "en" },
+    title: `Apex Venture | ${project.name ?? ":("}`,
+});
 useSeoMeta({
     title: `Apex Venture | ${project.name ?? ":("}`,
     description: project.short_description,

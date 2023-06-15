@@ -27,10 +27,12 @@
             </div>
             <div class="w-4/6 relative">
                 <div class="banner-content">
-                    <img
+                    <nuxt-img
                         :src="previous.banner"
                         alt="Previous Banner Image"
                         class="w-full h-full object-cover rounded-tr-3xl"
+                        sizes="sm:100vw md:50vw lg:400px"
+                        format="webp"
                     />
                 </div>
                 <div
@@ -52,10 +54,12 @@
         >
             <div class="w-4/6 relative">
                 <div class="banner-content">
-                    <img
+                    <nuxt-img
                         :src="next.banner"
                         alt="Next Banner Image" 
                         class="w-full h-full object-cover rounded-tl-3xl"
+                        sizes="sm:100vw md:50vw lg:400px"
+                        format="webp"
                     />
                 </div>
                 <div

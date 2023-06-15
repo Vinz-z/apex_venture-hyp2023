@@ -6,7 +6,7 @@
         <div class="project-info">
             <h2 class="w-full text-center text-2xl font-bold leading-normal">{{ name }}</h2>
             <div class="h-[30px] w-full flex flex-row gap-4 align-center justify-center">
-                <img v-for="area in areas_icons" :src="area" alt="area icon" class="object-contain w-[30px]"/>
+                <nuxt-img v-for="area in areas_icons" :src="area" alt="area icon" class="object-contain w-[30px]" sizes="sm:100vw md:50vw lg:400px"/>
             </div>
             <div class="text-wrap m-4">{{ truncateText(short_overview, 95) }}</div>
         </div>
