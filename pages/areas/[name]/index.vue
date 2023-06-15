@@ -5,7 +5,7 @@
         :caption="area.short_overview"
     />
     <div
-        class="place-items-center grid grid-cols-1 gap-8 max-w-6xl place-item-center m-4 desktop:grid-cols-2 desktop:mx-auto"
+        class="place-items-center grid grid-cols-1 gap-8 max-w-6xl place-item-center m-4 desktop:grid-cols-2 desktop:mx-auto z-10"
     >
         <titled-card
             :title="`Investing in ${area.name}`"
@@ -32,7 +32,7 @@
     <div class="bg-[gray] self-center h-[1px] w-1/3 my-10"></div>
 
     <div
-        class="projects-container flex justify-center self-center px-10 desktop:px-0"
+        class="projects-container flex justify-center self-center px-10 desktop:px-0 z-10"
     >
         <TitledCard
             :title="area.name + ' Projects'"
@@ -61,6 +61,10 @@
             </div>
         </TitledCard>
     </div>
+    <background-circle top="30" left="90" size="400" color="var(--clickable-color)" />
+    <background-circle top="40" left="95" size="350" color="var(--decoration-color)" />
+    <background-circle top="65" left="-10" size="400" color="var(--decoration-color)" />
+    <background-circle top="60" left="-8" size="250" color="var(--clickable-color)" />
 </template>
 
 <script setup>

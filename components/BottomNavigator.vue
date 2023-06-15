@@ -37,7 +37,7 @@
                     class="banner-content overlay rounded-tr-3xl"
                 ></div>
                 <div
-                    class="banner-content font-bold text-2xl text-[var(--white-color)] flex items-center justify-center"
+                    class="banner-content font-bold text-2xl text-[var(--white-color)] flex items-center justify-center text-center"
                 >
                     {{ previous.name }}
                 </div>
@@ -62,7 +62,7 @@
                     class="banner-content overlay rounded-tl-3xl"
                 ></div>
                 <div
-                    class="banner-content font-bold text-2xl text-[var(--white-color)] flex items-center justify-center"
+                    class="banner-content font-bold text-2xl text-[var(--white-color)] flex items-center justify-center text-center"
                 >
                     {{ next.name }}
                 </div>

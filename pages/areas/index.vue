@@ -1,7 +1,7 @@
 <template>
     <banner
         image-url="/images/areas/banners/collage.png"
-        title="Areas"
+        title="All Areas"
         caption="Explore diverse investment areas, empowering visionary entrepreneurs across industries to shape the future."
     />
     <div class="flex flex-col desktop:flex-row gap-8 w-auto m-4 desktop:items-stretch desktop:justify-center">

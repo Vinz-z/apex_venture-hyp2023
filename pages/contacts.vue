@@ -63,10 +63,7 @@
                 </div>
             </div>
             <hr />
-            <div
-                v-if="registrationSuccess"
-                class="flex justify-center"
-            >
+            <div v-if="registrationSuccess" class="flex justify-center">
                 <div
                     class="text-center justify-center flex flex-col p-10 text-[var(--white-color)]"
                 >
@@ -89,7 +86,9 @@
                     <h2 style="color: var(--white-color)">Newsletter</h2>
                     <div class="field-row grid desktop:grid-cols-2 gap-x-36">
                         <div class="field">
-                            <label for="name_field" class="text-[var(--white-color)]"
+                            <label
+                                for="name_field"
+                                class="text-[var(--white-color)]"
                                 >Name
                                 <b class="text-[var(--decoration-color)]"
                                     >*</b
@@ -107,7 +106,9 @@
                             >
                         </div>
                         <div class="field">
-                            <label for="surname_field" class="text-[var(--white-color)]"
+                            <label
+                                for="surname_field"
+                                class="text-[var(--white-color)]"
                                 >Surname
                                 <b class="text-[var(--decoration-color)]"
                                     >*</b
@@ -126,7 +127,9 @@
                         </div>
                     </div>
                     <div class="field">
-                        <label for="email_field" class="text-[var(--white-color)]"
+                        <label
+                            for="email_field"
+                            class="text-[var(--white-color)]"
                             >Email
                             <b class="text-[var(--decoration-color)]">*</b>
                         </label>
@@ -142,7 +145,11 @@
                         >
                     </div>
                     <div class="field">
-                        <label for="company_field" class="text-[var(--white-color)]">Company</label>
+                        <label
+                            for="company_field"
+                            class="text-[var(--white-color)]"
+                            >Company</label
+                        >
                         <input
                             type="text"
                             class="input-field focus:outline-none focus:ring-2 focus:ring-[var(--clickable-color)]"
@@ -167,7 +174,7 @@
                         consent to the processing of my personal data for the
                         purposes of service delivery and for the fulfillment of
                         contractual and legal obligations
-                </label>
+                    </label>
                 </div>
                 <span v-if="checkboxError" class="text-yellow-500"
                     >Please check the box</span
@@ -195,7 +202,6 @@ export default {
         Banner,
         Circle,
     },
-
     data() {
         return {
             name: "",
@@ -265,9 +271,10 @@ export default {
         },
     },
 };
+</script>
 
-useHead({title: "Apex Venture | Contact us"});
-
+<script setup>
+useHead({ title: "Apex Venture | Contacts" });
 </script>
 
 <style scoped>

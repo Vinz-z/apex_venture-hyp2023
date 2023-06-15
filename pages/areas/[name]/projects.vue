@@ -44,12 +44,12 @@
     </div>
     <bottom-navigator
         :previous="{
-            name: previous.name,
+            name: previous.name + ' Projects',
             banner: previous.banner,
             link: '/areas/' + previous.name + '/projects',
         }"
         :next="{
-            name: next.name,
+            name: next.name + ' Projects',
             banner: next.banner,
             link: '/areas/' + next.name + '/projects',
         }"
