@@ -40,7 +40,11 @@
                     :to="`/areas/${name2route(area.name)}`"
                     class="flex flex-row content-center justify-start items-center w-60 my-4 py-2 medium-round-right bg-[var(--clickable-color)] drop-shadow-lg hover:drop-shadow-xl hover:scale-105 transition duration-100 ease-out hover:ease-in"
                 >
-                    <img :src="area.icon" alt="Area Icon Image" class="w-10 h-10 mx-6" />
+                    <img
+                        :src="area.icon"
+                        alt="Area Icon Image"
+                        class="w-10 h-10 mx-6"
+                    />
                     <div class="text-xl font-bold">{{ area.name }}</div>
                 </nuxt-link>
             </div>
@@ -58,7 +62,11 @@
             :dataBottomRight="project.stats[3].value"
             :captionBottomRight="project.stats[3].caption"
         />
-        <img :src="project.team_image" alt="Project Team Image" class="my-auto big-round-left shadow" />
+        <img
+            :src="project.team_image"
+            alt="Project Team Image"
+            class="my-auto big-round-left shadow"
+        />
         <titled-card :title="`${project.name} Team`" class="object-contain">
             <div class="grid grid-cols-2 gap-4">
                 <div
@@ -89,13 +97,41 @@
     <bottom-navigator
         class="desktop:mt-4"
         v-if="project_list.length > 1"
-        :previous="{ name: previous.name, banner: previous.banner, link: `/projects/${name2route(previous.name)}` }"
-        :next="{ name: next.name, banner: next.banner, link: `/projects/${name2route(next.name)}` }"
+        :previous="{
+            name: previous.name,
+            banner: previous.banner,
+            link: `/projects/${name2route(previous.name)}`,
+        }"
+        :next="{
+            name: next.name,
+            banner: next.banner,
+            link: `/projects/${name2route(next.name)}`,
+        }"
     />
-    <background-circle top="30" left="90" size="400" color="var(--clickable-color)" />
-    <background-circle top="40" left="95" size="350" color="var(--decoration-color)" />
-    <background-circle top="65" left="-10" size="400" color="var(--decoration-color)" />
-    <background-circle top="60" left="-8" size="250" color="var(--clickable-color)" />
+    <background-circle
+        top="30"
+        left="90"
+        size="400"
+        color="var(--clickable-color)"
+    />
+    <background-circle
+        top="40"
+        left="95"
+        size="350"
+        color="var(--decoration-color)"
+    />
+    <background-circle
+        top="65"
+        left="-10"
+        size="400"
+        color="var(--decoration-color)"
+    />
+    <background-circle
+        top="60"
+        left="-8"
+        size="250"
+        color="var(--clickable-color)"
+    />
 </template>
 
 <script setup>
@@ -113,7 +149,13 @@ const previous =
     project_list[(index - 1 + project_list.length) % project_list.length];
 const next = project_list[(index + 1) % project_list.length];
 
-useHead({ title: `Apex Venture | ${project.name ?? ":("}` });
+useHead({htmlAttrs: {lang: "en"},  title: `Apex Venture | ${project.name ?? ":("}` });
+useSeoMeta({
+    title: `Apex Venture | ${project.name ?? ":("}`,
+    description: project.short_description,
+    image: project.banner ?? "/images/banners/sports.png",
+    url: `https://apexventure.com/projects/${route2name(project.name)}`,
+});
 </script>
 
 <style scoped>

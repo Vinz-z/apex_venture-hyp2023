@@ -76,7 +76,7 @@
                 </div>
                 <div class="flex justify-center h-[35px] mt-10">
                     <nuxt-link to="/about-us">
-                        <apex-button caption="See More" />
+                        <apex-button caption="See more About us" />
                     </nuxt-link>
                 </div>
             </div>
@@ -90,10 +90,12 @@
             id="our-team"
             :style="{ marginBottom: responsiveMarginBottom }"
         >
-            <img
+            <nuxt-img
                 class="photo mt-10"
                 src="/images/banners/hometeam.jpeg"
                 alt="team photo"
+                sizes="sm:100vw md:50vw lg:800px"
+                format="webp"
             />
             <div class="green-box" id="green-box">
                 <h2 class="text-xl mb-4"><b>Our Team</b></h2>
@@ -105,16 +107,36 @@
                 </p>
                 <div class="button">
                     <nuxt-link :to="'/team'"
-                        ><apex-button caption="See more"
+                        ><apex-button caption="See our Team"
                     /></nuxt-link>
                 </div>
             </div>
         </div>
     </div>
-    <background-circle top="85" left="90" size="450" color="var(--decoration-color)" />
-    <background-circle top="92" left="84" size="300" color="var(--clickable-color)" />
-    <background-circle top="85" left="-10" size="450" color="var(--clickable-color)" />
-    <background-circle top="92" left="0" size="300" color="var(--decoration-color)" />
+    <background-circle
+        top="85"
+        left="90"
+        size="450"
+        color="var(--decoration-color)"
+    />
+    <background-circle
+        top="92"
+        left="84"
+        size="300"
+        color="var(--clickable-color)"
+    />
+    <background-circle
+        top="85"
+        left="-10"
+        size="450"
+        color="var(--clickable-color)"
+    />
+    <background-circle
+        top="92"
+        left="0"
+        size="300"
+        color="var(--decoration-color)"
+    />
 </template>
 
 <script setup>
@@ -132,7 +154,13 @@ onMounted(calculateOurTeamMargin);
 
 const most_relevant = await getMostRelevantProjects();
 setProjectList(most_relevant.map((project) => project.name));
-useHead({ title: "Apex Venture | Homepage" });
+useHead({ htmlAttrs: {lang: "en"}, title: "Apex Venture | Homepage" });
+useSeoMeta({
+    title: "Apex Venture | Homepage",
+    description:
+        "Apex Venture is a leading venture capital firm, we fuel the growth of groundbreaking startups, providing not only capital but also invaluable expertise and guidance. Join us as we reshape industries, redefine possibilities, and create a brighter future together.",
+    image: "/images/banners/homepage.jpg",
+});
 </script>
 
 <style scoped>

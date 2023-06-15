@@ -5,7 +5,7 @@
 <template>
     <footer class="flex items-center">
         <div>
-            <img src="~/assets/logos/tssqlogo.png" alt="tssq-logo" class="w-16 h-auto"/>
+            <nuxt-img src="/logos/tssqlogo.png" alt="tssq-logo" class="w-16 h-auto" sizes="sm:100vw md:50vw lg:400px"/>
         </div>
         <div class="md:flex w-full justify-center flex space-x-20 text-l">
             <p class="text-[var(--white-color)]">Politecnico di Milano</p>

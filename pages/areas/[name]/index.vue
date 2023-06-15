@@ -61,10 +61,30 @@
             </div>
         </TitledCard>
     </div>
-    <background-circle top="30" left="90" size="400" color="var(--clickable-color)" />
-    <background-circle top="40" left="95" size="350" color="var(--decoration-color)" />
-    <background-circle top="65" left="-10" size="400" color="var(--decoration-color)" />
-    <background-circle top="60" left="-8" size="250" color="var(--clickable-color)" />
+    <background-circle
+        top="30"
+        left="90"
+        size="400"
+        color="var(--clickable-color)"
+    />
+    <background-circle
+        top="40"
+        left="95"
+        size="350"
+        color="var(--decoration-color)"
+    />
+    <background-circle
+        top="65"
+        left="-10"
+        size="400"
+        color="var(--decoration-color)"
+    />
+    <background-circle
+        top="60"
+        left="-8"
+        size="250"
+        color="var(--clickable-color)"
+    />
 </template>
 
 <script setup>
@@ -84,5 +104,9 @@ const area = await useSupabaseClient()
         return data;
     });
 setProjectList(area.projects.map((project) => project.name));
-useHead({ title: `Apex Venture | ${area.name}` });
+useHead({ htmlAttrs: {lang: "en"}, title: `Apex Venture | ${area.name}` });
+useSeoMeta({
+    title: `Apex Venture | ${area.name}`,
+    description: area.short_overview,
+});
 </script>

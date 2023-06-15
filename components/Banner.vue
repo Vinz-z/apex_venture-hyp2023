@@ -1,10 +1,12 @@
 <template>
     <div class="banner">
         <div class="banner-image">
-            <img
+            <nuxt-img
                 :src="imageUrl"
                 alt="Banner Image"
                 :style="`object-position: center ${percentage}%;`"
+                sizes="sm:100vw md:50vw lg:400px"
+                format="webp"
             />
             <div class="banner-overlay"></div>
         </div>
@@ -90,6 +92,7 @@ function buildLink(index) {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    clip-path: margin-box;
 }
 
 .banner-overlay {
@@ -116,21 +119,21 @@ function buildLink(index) {
 }
 
 .hovered-link {
-  position: relative;
+    position: relative;
 }
 
 .hovered-link::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--clickable-color);
-  transition: width 0.2s ease;
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--clickable-color);
+    transition: width 0.2s ease;
 }
 
 .hovered-link:hover::after {
-  width: 100%;
+    width: 100%;
 }
 </style>

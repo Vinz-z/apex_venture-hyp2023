@@ -4,10 +4,12 @@
       <div class="banner-content">
         <div class="banner-caption text-2xl desktop:text-4xl">{{ caption }}</div>
       </div>
-      <img
+      <nuxt-img
         :src="imageUrl"
         alt="Banner Image"
         :style="`object-position: center ${percentage}%;`"
+        sizes="sm:100vw md:50vw lg:400px"
+        format="webp"
       />
       <div class="banner-overlay"></div>
     </div>
@@ -57,8 +59,8 @@ export default {
 
 .banner-image img {
   filter: blur(3px);
-  width: 100%;
-  height: 100%;
+  width: 1920px;
+  height: 1080px;
   object-fit: cover;
 }
 

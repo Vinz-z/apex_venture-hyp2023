@@ -110,7 +110,13 @@ const filteredProjects = computed(() => {
     return result
 })
 
-useHead({title: "Apex Venture | All Projects"});
+useHead({htmlAttrs: {lang: "en"}, title: "Apex Venture | All Projects"});
+useSeoMeta({
+    title: "Apex Venture | All Projects",
+    description: "Explore our venture capital firm's portfolio to discover the diverse range of innovative and promising companies we've invested in.",
+    image: "/images/banners/all-projects.png",
+    url: "https://apexventure.com/projects"
+})
 </script>
 
 <style scoped>

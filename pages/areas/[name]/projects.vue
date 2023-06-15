@@ -85,5 +85,11 @@ const next = areas_list[(index + 1) % areas_list.length];
 
 setProjectList(area.projects.map((project) => project.name));
 
-useHead({ title: `Apex Venture | ${area.name} Projects` });
+useHead({htmlAttrs: {lang: "en"},  title: `Apex Venture | ${area.name} Projects` });
+useSeoMeta({
+    title: `Apex Venture | ${area.name} Projects`,
+    description: area.short_overview,
+    image: area.banner,
+    url: `https://apexventure.com/areas/${name2route(area.name)}/projects`,
+});
 </script>

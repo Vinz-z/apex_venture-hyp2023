@@ -52,7 +52,13 @@
         });
     const sectors = areas.filter(area => area.type === 'sector');
     const technologies = areas.filter(area => area.type === 'technology');
-    useHead({title: "Apex Venture | Areas"});
+    useHead({htmlAttrs: {lang: "en"}, title: "Apex Venture | Areas"});
+    useSeoMeta({
+        title: "Apex Venture | Areas",
+        description: "Explore diverse investment areas, empowering visionary entrepreneurs across industries to shape the future.",
+        image: "/images/areas/banners/collage.png",
+        url: "https://apexventure.com/areas"
+    })
 </script>
 
 <style scoped>

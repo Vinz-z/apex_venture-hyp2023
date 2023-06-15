@@ -41,7 +41,13 @@
 </template>
 
 <script setup>
-useHead({title: "Apex Venture | About us"});
+useHead({htmlAttrs: {lang: "en"}, title: "Apex Venture | About us"});
+useSeoMeta({
+  title: "Apex Venture | About us",
+  description: "At Apex Venture, we believe in the power of innovation and are committed to supporting visionary founders in their quest to disrupt industries and drive transformative change. ",
+  image: "/images/banners/strategy.jpg",
+  url: "https://apexventure.com/about-us"
+})
 </script>
 
 <style scoped>

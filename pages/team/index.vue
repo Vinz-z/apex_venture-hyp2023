@@ -25,7 +25,13 @@
             if (error) throw createError({ statusCode: 404, statusMessage: `Team non found` })
             return data;
         });
-    useHead({title: "Apex Venture | Our Team"});
+    useHead({htmlAttrs: {lang: "en"}, title: "Apex Venture | Our Team"});
+    useSeoMeta({
+        title: "Apex Venture | Our Team",
+        description: "When investors, operators, founders and specialists align under one mission and commit as a team, great things are bound to happen",
+        image: "/images/banners/ourTeam.png",
+        url: "https://apexventure.com/team"
+    })
 </script>
 
 <style scoped>

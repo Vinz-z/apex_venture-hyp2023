@@ -1,290 +1,296 @@
 <template>
-  <nav
-    class="w-full p-4 bg-[var(--primary-color)] fixed top-0 z-20 mb-[spacerHeight]"
-    id="header"
-  >
-    <div class="flex items-center justify-between">
-      <!-- Header logo -->
-      <div>
-        <NuxtLink to="/">
-          <img
-            src="~/assets/logos/apex_venture_logo.svg"
-            alt="logo_desktop"
-            class="h-auto w-20"
-          />
-        </NuxtLink>
-      </div>
+    <nav
+        class="w-full p-4 bg-[var(--primary-color)] fixed top-0 z-20 mb-[spacerHeight]"
+        id="header"
+    >
+        <div class="flex items-center justify-between">
+            <!-- Header logo -->
+            <div>
+                <NuxtLink to="/">
+                    <nuxt-img
+                        src="/logos/apex_venture_logo.svg"
+                        alt="logo_desktop"
+                        class="h-auto w-20"
+                        sizes="sm:100vw md:50vw lg:400px"
+                        format="webp"
+                    />
+                </NuxtLink>
+            </div>
 
-      <!-- Mobile toggle -->
-      <div class="md:hidden">
-        <button @click="drawer">
-          <svg
-            class="h-8 w-8 fill-current text-[var(--white-color)]"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
+            <!-- Mobile toggle -->
+            <div class="md:hidden">
+                <button id="drawer-button" @click="drawer">
+                    <svg
+                        class="h-8 w-8 fill-current text-[var(--white-color)]"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
 
-      <!-- Navbar -->
-      <div class="hidden md:flex w-full justify-center">
-        <ul class="flex space-x-20 text-l items-center">
-          <li>
-            <NuxtLink
-              to="/team"
-              style="color: var(--white-color)"
-              class="hovered-link"
-              @mouseenter="handleMouseEnter"
-              @mouseleave="handleMouseLeave"
-              >Our Team
-            </NuxtLink>
-          </li>
-          <li>
-            <NuxtLink
-              to="/about-us"
-              style="color: var(--white-color)"
-              class="hovered-link"
-              @mouseenter="handleMouseEnter"
-              @mouseleave="handleMouseLeave"
-              >About us</NuxtLink
-            >
-          </li>
-          <li>
-            <NuxtLink
-              to="/projects"
-              style="color: var(--white-color)"
-              class="hovered-link"
-              @mouseenter="handleMouseEnter"
-              @mouseleave="handleMouseLeave"
-              >Projects</NuxtLink
-            >
-          </li>
-          <li>
-            <NuxtLink
-              to="/areas"
-              style="color: var(--white-color)"
-              class="hovered-link"
-              @mouseenter="handleMouseEnter"
-              @mouseleave="handleMouseLeave"
-              >Areas</NuxtLink
-            >
-          </li>
-          <li>
-            <NuxtLink
-              to="/contacts"
-              style="color: var(--white-color)"
-              class="hovered-link"
-              @mouseenter="handleMouseEnter"
-              @mouseleave="handleMouseLeave"
-              >Contacts</NuxtLink
-            >
-          </li>
-        </ul>
-      </div>
+            <!-- Navbar -->
+            <div class="hidden md:flex w-full justify-center">
+                <ul class="flex space-x-20 text-l items-center">
+                    <li>
+                        <NuxtLink
+                            to="/team"
+                            style="color: var(--white-color)"
+                            class="hovered-link"
+                            @mouseenter="handleMouseEnter"
+                            @mouseleave="handleMouseLeave"
+                            >Our Team
+                        </NuxtLink>
+                    </li>
+                    <li>
+                        <NuxtLink
+                            to="/about-us"
+                            style="color: var(--white-color)"
+                            class="hovered-link"
+                            @mouseenter="handleMouseEnter"
+                            @mouseleave="handleMouseLeave"
+                            >About us</NuxtLink
+                        >
+                    </li>
+                    <li>
+                        <NuxtLink
+                            to="/projects"
+                            style="color: var(--white-color)"
+                            class="hovered-link"
+                            @mouseenter="handleMouseEnter"
+                            @mouseleave="handleMouseLeave"
+                            >Projects</NuxtLink
+                        >
+                    </li>
+                    <li>
+                        <NuxtLink
+                            to="/areas"
+                            style="color: var(--white-color)"
+                            class="hovered-link"
+                            @mouseenter="handleMouseEnter"
+                            @mouseleave="handleMouseLeave"
+                            >Areas</NuxtLink
+                        >
+                    </li>
+                    <li>
+                        <NuxtLink
+                            to="/contacts"
+                            style="color: var(--white-color)"
+                            class="hovered-link"
+                            @mouseenter="handleMouseEnter"
+                            @mouseleave="handleMouseLeave"
+                            >Contacts</NuxtLink
+                        >
+                    </li>
+                </ul>
+            </div>
 
-      <!-- Dark Background Transition -->
-      <transition
-        enter-class="opacity-0"
-        enter-active-class="ease-out transition-medium"
-        enter-to-class="opacity-100"
-        leave-class="opacity-100"
-        leave-active-class="ease-out transition-medium"
-        leave-to-class="opacity-0"
-      >
-        <div
-          @keydown.esc="isOpen = false"
-          v-show="isOpen"
-          class="z-10 fixed inset-0 transition-opacity"
-        >
-          <div
-            @click="isOpen = false"
-            class="absolute inset-0 bg-black opacity-50"
-            tabindex="0"
-          ></div>
+            <!-- Dark Background Transition -->
+            <transition
+                enter-class="opacity-0"
+                enter-active-class="ease-out transition-medium"
+                enter-to-class="opacity-100"
+                leave-class="opacity-100"
+                leave-active-class="ease-out transition-medium"
+                leave-to-class="opacity-0"
+            >
+                <div
+                    @keydown.esc="isOpen = false"
+                    v-show="isOpen"
+                    class="z-10 fixed inset-0 transition-opacity"
+                >
+                    <div
+                        @click="isOpen = false"
+                        class="absolute inset-0 bg-black opacity-50"
+                        tabindex="0"
+                    ></div>
+                </div>
+            </transition>
+
+            <!-- Drawer Menu -->
+            <aside
+                class="p-5 transform top-0 left-0 w-64 bg-[var(--primary-color)] fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30"
+                :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
+            >
+                <div class="md:hidden">
+                    <button
+                        id="close-button"
+                        class="absolute top-0 right-0 mt-4 mr-4 text-[var(--white-color)]"
+                        @click="isOpen = false"
+                    >
+                        <svg
+                            class="w-6 h-6"
+                            fill="none"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <span
+                    @click="isOpen = false"
+                    class="flex w-full items-center p-4 border-b"
+                >
+                    <div>
+                        <nuxt-link to="/">
+                            <nuxt-img
+                                src="/logos/apex_venture_logo.svg"
+                                alt="logo_desktop"
+                                class="h-auto w-20"
+                                sizes="sm:100vw md:50vw lg:400px"
+                                format="webp"
+                            />
+                        </nuxt-link>
+                    </div>
+                </span>
+
+                <ul class="divide-y font-sans">
+                    <li>
+                        <nuxt-link to="/team">
+                            <div class="w-full">
+                                <div
+                                    style="color: var(--white-color)"
+                                    class="my-4 inline-block w-full"
+                                    @click="isOpen = false"
+                                >
+                                    Our Team
+                                </div>
+                            </div>
+                        </nuxt-link>
+                    </li>
+                    <li>
+                        <nuxt-link to="/about-us">
+                            <div class="w-full">
+                                <div
+                                    style="color: var(--white-color)"
+                                    class="my-4 inline-block w-full"
+                                    @click="isOpen = false"
+                                >
+                                    About us
+                                </div>
+                            </div>
+                        </nuxt-link>
+                    </li>
+                    <li>
+                        <nuxt-link to="/projects">
+                            <div class="w-full">
+                                <div
+                                    style="color: var(--white-color)"
+                                    class="my-4 inline-block w-full"
+                                    @click="isOpen = false"
+                                >
+                                    Projects
+                                </div>
+                            </div>
+                        </nuxt-link>
+                    </li>
+                    <li>
+                        <nuxt-link to="/areas">
+                            <div class="w-full">
+                                <div
+                                    style="color: var(--white-color)"
+                                    class="my-4 inline-block w-full"
+                                    @click="isOpen = false"
+                                >
+                                    Areas
+                                </div>
+                            </div>
+                        </nuxt-link>
+                    </li>
+                    <li>
+                        <nuxt-link to="/contacts">
+                            <div class="w-full">
+                                <div
+                                    style="color: var(--white-color)"
+                                    class="my-4 inline-block w-full"
+                                    @click="isOpen = false"
+                                >
+                                    Contacts
+                                </div>
+                            </div>
+                        </nuxt-link>
+                    </li>
+                </ul>
+            </aside>
         </div>
-      </transition>
-
-      <!-- Drawer Menu -->
-      <aside
-        class="p-5 transform top-0 left-0 w-64 bg-[var(--primary-color)] fixed h-full overflow-auto ease-in-out transition-all duration-300 z-30"
-        :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
-      >
-        <div class="close">
-          <button
-            class="absolute top-0 right-0 mt-4 mr-4 text-[var(--white-color)]"
-            @click="isOpen = false"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
-        </div>
-
-        <span
-          @click="isOpen = false"
-          class="flex w-full items-center p-4 border-b"
-        >
-          <div>
-            <nuxt-link to="/">
-              <img
-                src="~/assets/logos/apex_venture_logo.svg"
-                alt="logo_mobile"
-                class="h-auto w-20"
-              />
-            </nuxt-link>
-          </div>
-        </span>
-
-        <ul class="divide-y font-sans">
-          <li>
-            <nuxt-link to="/team">
-              <div class="w-full">
-                <div
-                  style="color: var(--white-color)"
-                  class="my-4 inline-block w-full"
-                  @click="isOpen = false"
-                >
-                  Our Team
-                </div>
-              </div>
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/about-us">
-              <div class="w-full">
-                <div
-                  style="color: var(--white-color)"
-                  class="my-4 inline-block w-full"
-                  @click="isOpen = false"
-                >
-                  About us
-                </div>
-              </div>
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/projects">
-              <div class="w-full">
-                <div
-                  style="color: var(--white-color)"
-                  class="my-4 inline-block w-full"
-                  @click="isOpen = false"
-                >
-                  Projects
-                </div>
-              </div>
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/areas">
-              <div class="w-full">
-                <div
-                  style="color: var(--white-color)"
-                  class="my-4 inline-block w-full"
-                  @click="isOpen = false"
-                >
-                  Areas
-                </div>
-              </div>
-            </nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/contacts">
-              <div class="w-full">
-                <div
-                  style="color: var(--white-color)"
-                  class="my-4 inline-block w-full"
-                  @click="isOpen = false"
-                >
-                  Contacts
-                </div>
-              </div>
-            </nuxt-link>
-          </li>
-        </ul>
-      </aside>
-    </div>
-  </nav>
-  <div id="spacer" :style="{ height: spacerHeight }"></div>
+    </nav>
+    <div id="spacer" :style="{ height: spacerHeight }"></div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      isHovered: false,
-      isOpen: false,
-      spacerHeight: 0,
-    };
-  },
-  methods: {
-    drawer() {
-      this.isOpen = !this.isOpen;
+    data() {
+        return {
+            isHovered: false,
+            isOpen: false,
+            spacerHeight: 0,
+        };
     },
-    handleMouseEnter() {
-      this.isHovered = true;
+    methods: {
+        drawer() {
+            this.isOpen = !this.isOpen;
+        },
+        handleMouseEnter() {
+            this.isHovered = true;
+        },
+        handleMouseLeave() {
+            this.isHovered = false;
+        },
+        calculateSpacerHeight() {
+            const headerElement = document.getElementById("header");
+            const headerHeight = headerElement.offsetHeight - 8;
+            this.spacerHeight = `${headerHeight}px`;
+        },
     },
-    handleMouseLeave() {
-      this.isHovered = false;
+    watch: {
+        isOpen: {
+            immediate: true,
+            handler(isOpen) {
+                if (process.client) {
+                    if (isOpen)
+                        document.body.style.setProperty("overflow", "hidden");
+                    else document.body.style.removeProperty("overflow");
+                }
+            },
+        },
     },
-    calculateSpacerHeight() {
-      const headerElement = document.getElementById("header");
-      const headerHeight = headerElement.offsetHeight - 8;
-      this.spacerHeight = `${headerHeight}px`;
+    mounted() {
+        this.calculateSpacerHeight();
     },
-  },
-  watch: {
-    isOpen: {
-      immediate: true,
-      handler(isOpen) {
-        if (process.client) {
-          if (isOpen) document.body.style.setProperty("overflow", "hidden");
-          else document.body.style.removeProperty("overflow");
-        }
-      },
-    },
-  },
-  mounted() {
-    this.calculateSpacerHeight();
-  },
 };
 </script>
 
 <style scoped>
 .hovered-link {
-  position: relative;
+    position: relative;
 }
 
 .hovered-link::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--clickable-color);
-  transition: width 0.2s ease;
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--clickable-color);
+    transition: width 0.2s ease;
 }
 
 .hovered-link:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
 #header {
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 </style>

@@ -274,7 +274,14 @@ export default {
 </script>
 
 <script setup>
-useHead({ title: "Apex Venture | Contacts" });
+useHead({ htmlAttrs: {lang: "en"}, title: "Apex Venture | Contacts" });
+useSeoMeta({ 
+    lang: "en",
+    title: "Apex Venture | Contacts",
+    description: "Sign up for our newsletter to receive the latest news and updates. To get in touch with us, reach out to us via landline phone or email.",
+    image: "images/banners/contacts.jpeg",
+    url: "https://apex-venture.vercel.app/contacts",
+})
 </script>
 
 <style scoped>

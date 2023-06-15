@@ -20,6 +20,8 @@
   border: none;
   min-width: 150px;
   min-height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
   border-radius: 10px 0 10px 0;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s;

@@ -85,7 +85,13 @@
         return data;
     });
   setProjectList(person.supervised.map(project => project.name))
-  useHead({title: `Apex Venture | ${person.name}`});
+  useHead({htmlAttrs: {lang: "en"}, title: `Apex Venture | ${person.name}`});
+  useSeoMeta({
+    title: `Apex Venture | ${person.name}`,
+    description: person.description,
+    image: person.image,
+    url: `https://apexventure.com/team/${route2name(person.name)}`
+  })
 </script>
 
 
