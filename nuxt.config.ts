@@ -8,11 +8,4 @@ export default defineNuxtConfig({
             autoprefixer: {},
         },
     },
-    image: {
-      screens: {
-        'smartphone': "375px",
-        'tablet': '820px',
-        'desktop': "1280px",
-      },
-    },
 });
