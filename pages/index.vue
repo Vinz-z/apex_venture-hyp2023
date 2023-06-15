@@ -88,7 +88,7 @@
       id="our-team"
       :style="{ marginBottom: responsiveMarginBottom }"
     >
-      <img class="photo mt-10" src="/images/banners/hometeam.jpeg" />
+      <img class="photo mt-10" src="/images/banners/hometeam.jpeg" alt="team photo"/>
       <div class="green-box" id="green-box">
         <h2 class="text-xl mb-4"><b>Our Team</b></h2>
         <p class="mb-5">

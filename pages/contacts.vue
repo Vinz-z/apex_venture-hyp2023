@@ -6,31 +6,7 @@
         percentage="80"
     />
 
-    <div
-        v-if="registrationSuccess"
-        class="flex justify-center mt-4 mb-14 tablet:mt-20"
-    >
-        <div
-            class="bg-[var(--secondary-color)] min-w-[220px] w-[30%] rounded-br-3xl rounded-tl-3xl text-center justify-center flex flex-col p-10 text-[var(--white-color)]"
-        >
-            <div class="text-3xl font-bold mb-4">Thanks!</div>
-            <div class="text-xl">
-                Thank you {{ this.name }}, you have been registered successfully
-                to our newsletter
-            </div>
-            <div>
-                <div class="email_animation flex items-center justify-center mt-10 h-2">
-                    <img class="h-10"
-                        src="~/assets/icons/email.svg"
-                    />
-                </div>
-            </div>
-        </div>
-    </div>
-    <div
-        v-else="registrationSuccess"
-        class="main-container mt-4 tablet:mt-20 mb-4 tablet:mb-20"
-    >
+    <div class="main-container mt-4 tablet:mt-20 mb-4 tablet:mb-20">
         <div class="card rounded-br-3xl rounded-tl-3xl">
             <div class="card-body ml-[10%] mr-[10%]">
                 <div class="contacts-container grid grid-rows-2 gap-10">
@@ -87,39 +63,62 @@
                 </div>
             </div>
             <hr />
-            <form @submit.prevent="checkIfCorrect">
+            <div
+                v-if="registrationSuccess"
+                class="flex justify-center"
+            >
+                <div
+                    class="text-center justify-center flex flex-col p-10 text-[var(--white-color)]"
+                >
+                    <div class="text-3xl font-bold mb-4">Thanks!</div>
+                    <div class="text-xl">
+                        Thank you {{ this.name }}, you have been registered
+                        successfully to our newsletter
+                    </div>
+                    <div>
+                        <div
+                            class="email_animation flex items-center justify-center mt-10 h-2"
+                        >
+                            <img class="h-10" src="~/assets/icons/email.svg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form v-else="registrationSuccess" @submit.prevent="checkIfCorrect">
                 <div class="newsletter">
                     <h2 style="color: var(--white-color)">Newsletter</h2>
                     <div class="field-row grid desktop:grid-cols-2 gap-x-36">
                         <div class="field">
-                            <span class="text-[var(--white-color)]"
+                            <label for="name_field" class="text-[var(--white-color)]"
                                 >Name
                                 <b class="text-[var(--decoration-color)]"
                                     >*</b
-                                ></span
+                                ></label
                             >
                             <input
                                 type="text"
                                 class="input-field focus:outline-none focus:ring-2 focus:ring-[var(--clickable-color)]"
                                 name="name"
                                 v-model="name"
+                                id="name_field"
                             />
                             <span v-if="errors.name" class="text-yellow-500"
                                 >Please enter your name.</span
                             >
                         </div>
                         <div class="field">
-                            <span class="text-[var(--white-color)]"
+                            <label for="surname_field" class="text-[var(--white-color)]"
                                 >Surname
                                 <b class="text-[var(--decoration-color)]"
                                     >*</b
-                                ></span
+                                ></label
                             >
                             <input
                                 type="text"
                                 class="input-field focus:outline-none focus:ring-2 focus:ring-[var(--clickable-color)]"
                                 name="surname"
                                 v-model="surname"
+                                id="surname_field"
                             />
                             <span v-if="errors.surname" class="text-yellow-500"
                                 >Please enter your surname.</span
@@ -127,26 +126,28 @@
                         </div>
                     </div>
                     <div class="field">
-                        <span class="text-[var(--white-color)]"
+                        <label for="email_field" class="text-[var(--white-color)]"
                             >Email
                             <b class="text-[var(--decoration-color)]">*</b>
-                        </span>
+                        </label>
                         <input
                             type="email"
                             class="input-field focus:outline-none focus:ring-2 focus:ring-[var(--clickable-color)]"
                             name="email"
                             v-model="email"
+                            id="email_field"
                         />
                         <span v-if="errors.email" class="text-yellow-500"
                             >Please enter a valid email address.</span
                         >
                     </div>
                     <div class="field">
-                        <span class="text-[var(--white-color)]">Company</span>
+                        <label for="company_field" class="text-[var(--white-color)]">Company</label>
                         <input
                             type="text"
                             class="input-field focus:outline-none focus:ring-2 focus:ring-[var(--clickable-color)]"
                             name="company"
+                            id="company_field"
                         />
                     </div>
                 </div>
@@ -157,15 +158,16 @@
                             name="informative"
                             v-model="checkBoxValue"
                             @change="handleChangeCheckbox"
+                            id="checkbox"
                         />
                         <b class="text-[var(--decoration-color)]">*</b>
                     </div>
-                    <span class="informative-text"
+                    <label for="checkbox" class="informative-text"
                         >I declare that I have read the privacy policy and
                         consent to the processing of my personal data for the
                         purposes of service delivery and for the fulfillment of
                         contractual and legal obligations
-                    </span>
+                </label>
                 </div>
                 <span v-if="checkboxError" class="text-yellow-500"
                     >Please check the box</span
@@ -264,7 +266,8 @@ export default {
     },
 };
 
-useHead({ title: "Apex Venture | Contact Us" });
+useHead({title: "Apex Venture | Contact us"});
+
 </script>
 
 <style scoped>
@@ -331,7 +334,7 @@ useHead({ title: "Apex Venture | Contact Us" });
     margin: 0 10% auto 10%;
 }
 
-.informative-checkbox > span {
+.informative-checkbox > label {
     text-align: left;
     color: var(--white-color);
 }

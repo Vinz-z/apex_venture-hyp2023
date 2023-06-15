@@ -1,7 +1,7 @@
 <template>
     <div class="box">
         <div class="image-column">
-            <img class="image" :src="person_image">
+            <img class="image" :src="person_image" :alt="person_name">
             <div :class="[`bg-shape1-${left ? 'left' : 'right'}`]">
             </div>
             <div :class="[`bg-shape2-${left ? 'right' : 'left'}`]">

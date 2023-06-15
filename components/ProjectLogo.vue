@@ -4,7 +4,7 @@
       class="shape-container group"
     >
       <div class="shape">
-        <img class="project-logo" :src="project_image" />
+        <img class="project-logo" :src="project_image" :alt="project_name" />
       </div>
 
       <div

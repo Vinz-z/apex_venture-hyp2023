@@ -28,7 +28,7 @@
                 class="flex items-center gap-4 m-1 p-2 px-6 whitespace-nowrap choice" 
                 :id="state.activeFilter == tech.id ? 'active' : ''"
             >
-                <img :src="tech.icon" class="w-6 h-6pl">
+                <img :src="tech.icon" class="w-6 h-6pl" :alt="tech.name">
                 <div>{{ tech.name }}</div>
             </button>
             <div class="text-xs m-1">Sectors</div>
@@ -38,7 +38,7 @@
                 class="flex items-center gap-4 m-1 p-2 px-6 whitespace-nowrap choice" 
                 :id="state.activeFilter == sect.id ? 'active' : ''"
             >
-                <img :src="sect.icon" class="h-6">
+                <img :src="sect.icon" class="h-6" :alt="sect.name">
                 <div>{{ sect.name }}</div>
             </button>
         </div>

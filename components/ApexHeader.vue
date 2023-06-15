@@ -9,7 +9,7 @@
         <NuxtLink to="/">
           <img
             src="~/assets/logos/apex_venture_logo.svg"
-            alt="logo"
+            alt="logo_desktop"
             class="h-auto w-20"
           />
         </NuxtLink>
@@ -142,7 +142,7 @@
             <nuxt-link to="/">
               <img
                 src="~/assets/logos/apex_venture_logo.svg"
-                alt="logo"
+                alt="logo_mobile"
                 class="h-auto w-20"
               />
             </nuxt-link>
@@ -243,7 +243,7 @@ export default {
     },
     calculateSpacerHeight() {
       const headerElement = document.getElementById("header");
-      const headerHeight = headerElement.offsetHeight - 5;
+      const headerHeight = headerElement.offsetHeight - 8;
       this.spacerHeight = `${headerHeight}px`;
     },
   },

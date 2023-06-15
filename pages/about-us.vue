@@ -41,7 +41,7 @@
 </template>
 
 <script setup>
-useHead({title: "Apex Venture | Contact Us"});
+useHead({title: "Apex Venture | About us"});
 </script>
 
 <style scoped>
