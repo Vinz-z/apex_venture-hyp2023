@@ -70,7 +70,7 @@
                 >
                     <div class="text-3xl font-bold mb-4">Thanks!</div>
                     <div class="text-xl">
-                        Thank you {{ this.registeredName }}, you have been registered
+                        Thank you, you have been registered
                         successfully to our newsletter
                     </div>
                     <div>
@@ -213,7 +213,6 @@ export default {
             checkboxError: false,
             errors: {},
             registrationSuccess: false,
-            registeredName: "",
         };
     },
 
@@ -253,15 +252,14 @@ export default {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({
+                body: {
                     name: this.name,
                     surname: this.surname,
                     email: this.email,
-                }),
+                },
             })
                 .then(({ data }) => {
                     this.registrationSuccess = true;
-                    this.registeredName = data.value.name;
                 })
                 .catch((error) => {
                     console.log(error);
