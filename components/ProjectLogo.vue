@@ -71,7 +71,7 @@ const props = defineProps({
     position: relative;
     z-index: -1;
     transition: 0.2s ease;
-    width: 100%;
+    width: 150px;
     height: 100px;
     border-bottom-right-radius: var(--big-round);
     background-color: var(--clickable-color);
