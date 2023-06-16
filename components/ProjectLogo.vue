@@ -73,6 +73,8 @@ const props = defineProps({
     transition: 0.2s ease;
     width: 150px;
     height: 100px;
+    padding-left: 5px;
+    padding-right: 5px;
     border-bottom-right-radius: var(--big-round);
     background-color: var(--clickable-color);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
