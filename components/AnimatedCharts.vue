@@ -1,3 +1,4 @@
+<!-- Animated chart to show the progress of the Venture Capital among years in the About Us page-->
 <template>
   <div class="chartBarsWrap">
     <div class="chartBars chartBars1">
@@ -55,6 +56,7 @@ export default {
         observer.observe(bar);
       });
     },
+    // The callback that's run whenever the intersection observer sees a new intersection
     scrollReveal(entries, observer) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {

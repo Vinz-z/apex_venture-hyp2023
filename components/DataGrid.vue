@@ -1,3 +1,4 @@
+<!-- Grid that contains all technical informations about Projects or Areas-->
 <template>
     <div class="mega-container 
                 min-h-50

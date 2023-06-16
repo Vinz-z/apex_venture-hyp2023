@@ -1,3 +1,4 @@
+<!-- Component that give a brief summary about a team member of the Venture Capital-->
 <template>
     <div class="box">
         <div class="image-column">

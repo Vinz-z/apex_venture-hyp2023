@@ -1,3 +1,4 @@
+<!-- White box containing personal information about the team member of the Venture Capital -->
 <template>
     <div class="white-box">
       <slot></slot>

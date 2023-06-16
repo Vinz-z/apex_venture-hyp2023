@@ -1,3 +1,4 @@
+<!-- Page that shows all the information about a particular area of investment-->
 <template>
     <Banner
         :imageUrl="area.banner"

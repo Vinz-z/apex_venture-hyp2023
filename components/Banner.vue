@@ -1,3 +1,4 @@
+<!-- Banner that are present in all the pages, it has a image that represent the topic of that page-->
 <template>
     <div class="banner">
         <div class="banner-image">

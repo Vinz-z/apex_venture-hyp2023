@@ -1,3 +1,4 @@
+<!-- Page that contains short informations about all the team members of the Venture Capital-->
 <template>
     <Banner
         imageUrl="/images/banners/ourTeam.png"

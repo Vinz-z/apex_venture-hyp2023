@@ -1,3 +1,4 @@
+<!-- Page that contains all the information about a member of the team of the Venture Capital-->
 <template>
   <banner 
       :imageUrl="'/images/banners/person.png'"

@@ -1,3 +1,4 @@
+<!-- Simple circle used to decorate the background-->
 <template>
     <div class="circle hidden desktop:block" :style="{ top: top + '%', left: left + '%' ,width: size + 'px', height: size + 'px', backgroundColor: color}"></div>
   </template>

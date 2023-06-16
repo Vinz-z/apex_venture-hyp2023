@@ -1,3 +1,4 @@
+<!-- Page where the user can contacts the Venture Capital, he/she can also subscribe to the newsletter-->
 <template>
     <banner
         imageUrl="images/banners/contacts.jpeg"
@@ -245,9 +246,8 @@ export default {
             return regex.test(email);
         },
 
-        async handleClick() {
-            console.log("Button clicked");
-            return await useFetch("/api/newsletter", {
+        handleClick() {
+            return useFetch("/api/newsletter", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -274,14 +274,15 @@ export default {
 </script>
 
 <script setup>
-useHead({ htmlAttrs: {lang: "en"}, title: "Apex Venture | Contacts" });
-useSeoMeta({ 
+useHead({ htmlAttrs: { lang: "en" }, title: "Apex Venture | Contacts" });
+useSeoMeta({
     lang: "en",
     title: "Apex Venture | Contacts",
-    description: "Sign up for our newsletter to receive the latest news and updates. To get in touch with us, reach out to us via landline phone or email.",
+    description:
+        "Sign up for our newsletter to receive the latest news and updates. To get in touch with us, reach out to us via landline phone or email.",
     image: "images/banners/contacts.jpeg",
     url: "https://apex-venture.vercel.app/contacts",
-})
+});
 </script>
 
 <style scoped>

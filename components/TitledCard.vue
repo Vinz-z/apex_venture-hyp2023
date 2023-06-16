@@ -1,3 +1,4 @@
+<!-- Card that contains a Title and a dynamic content based on what it must contain-->
 <template>
     <div class="titled-card">
         <div

@@ -1,3 +1,4 @@
+<!-- Page that contains informations about a specific Project-->
 <template>
     <banner
         :imageUrl="project.banner ?? `/images/banners/sports.png`"

@@ -1,3 +1,4 @@
+<!-- Component to allow the group navigation among Projects or Areas, it is in the bottom of the page-->
 <template>
     <div
         class="flex flex-col gap-4 tablet:gap-8 tablet:flex-row items-center justify-center mx-4 my-12"

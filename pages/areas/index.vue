@@ -1,3 +1,4 @@
+<!-- Page that contains information about All the Area of investment of the Venture Capital-->
 <template>
     <banner
         image-url="/images/areas/banners/collage.png"

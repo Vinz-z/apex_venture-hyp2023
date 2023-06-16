@@ -1,3 +1,4 @@
+<!-- Page that contains all the projects of a specific Area-->
 <template>
     <Banner :title="`${target} Projects`" :imageUrl="area.banner" />
     <div class="mb-10 flex flex-col tablet:flex-row">

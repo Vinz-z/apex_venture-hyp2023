@@ -1,3 +1,4 @@
+<!-- Standard button used around all the website-->
 <template>
   <button class="rectangle-button">
     <span> {{caption}} </span>
@@ -6,6 +7,7 @@
 
 <script setup>
     const props = defineProps({
+      // The caption of the button
         caption: {
             type: String,
             required: true,

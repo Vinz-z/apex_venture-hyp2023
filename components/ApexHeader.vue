@@ -1,3 +1,4 @@
+<!-- Header of the website, it has a different layout in desktop version and in mobile version -->
 <template>
     <nav
         class="w-full p-4 bg-[var(--primary-color)] fixed top-0 z-20 mb-[spacerHeight]"
@@ -237,6 +238,7 @@ export default {
         };
     },
     methods: {
+        // Open the drawer menu
         drawer() {
             this.isOpen = !this.isOpen;
         },
@@ -246,6 +248,7 @@ export default {
         handleMouseLeave() {
             this.isHovered = false;
         },
+        // Calculate the height of the spacer to push the Banner
         calculateSpacerHeight() {
             const headerElement = document.getElementById("header");
             const headerHeight = headerElement.offsetHeight - 8;

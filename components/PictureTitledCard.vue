@@ -1,3 +1,4 @@
+<!-- Component that show the profile picture of the team member in his/her personal page-->
 <template>
     <div class="person-box">
         <div class="title-left-bottom font-bold text-3xl">

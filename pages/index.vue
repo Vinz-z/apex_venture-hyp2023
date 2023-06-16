@@ -1,3 +1,4 @@
+<!-- Homepage of the website, it contains a brief description about the Venture Capital and a short overview about Projects, Investment Strategy and Team -->
 <template>
     <banner-home
         imageUrl="/images/banners/homepage.jpg"

@@ -1,3 +1,4 @@
+<!-- Component to show preliminary information about an Area-->
 <template>
     <div
         class="mega-container"
@@ -59,10 +60,12 @@ const props = defineProps({
 
 const isHovered = ref(false);
 
+// Expand the components when the mouse is over the area
 const expandComponents = function () {
     isHovered.value = true;
 };
 
+// Collapse the components when the mouse is not over the area
 const collapseComponents = function () {
     isHovered.value = false;
 };

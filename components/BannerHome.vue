@@ -1,3 +1,4 @@
+<!-- Banner of the Homepage, it is different from the standard Banner because it has a big caption on the middle of the Banner-->
 <template>
   <div class="banner">
     <div class="banner-image">

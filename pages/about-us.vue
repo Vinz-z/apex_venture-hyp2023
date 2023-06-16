@@ -1,3 +1,4 @@
+<!-- Page that shows information about the investment strategy of the Venture Capital, with data info and statistics-->
 <template>
   <banner
     title="About us"

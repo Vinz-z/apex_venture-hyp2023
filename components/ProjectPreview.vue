@@ -1,14 +1,31 @@
+<!-- Component that describe a project in detail, it shows the logo, name and a short description of the project, 
+    in addition it shows the areas that the project concerns-->
 <template>
     <nuxt-link :to="`/projects/${name2route(name)}`" class="project-preview">
         <div class="image-container">
-            <div class="project-image drop-shadow-lg" :style="`background-image: url(${logo});`"></div>
+            <div
+                class="project-image drop-shadow-lg"
+                :style="`background-image: url(${logo});`"
+            ></div>
         </div>
         <div class="project-info">
-            <h2 class="w-full text-center text-2xl font-bold leading-normal">{{ name }}</h2>
-            <div class="h-[30px] w-full flex flex-row gap-4 align-center justify-center">
-                <nuxt-img v-for="area in areas_icons" :src="area" alt="area icon" class="object-contain w-[30px]" sizes="sm:100vw md:50vw lg:400px"/>
+            <h2 class="w-full text-center text-2xl font-bold leading-normal">
+                {{ name }}
+            </h2>
+            <div
+                class="h-[30px] w-full flex flex-row gap-4 align-center justify-center"
+            >
+                <nuxt-img
+                    v-for="area in areas_icons"
+                    :src="area"
+                    alt="area icon"
+                    class="object-contain w-[30px]"
+                    sizes="sm:100vw md:50vw lg:400px"
+                />
             </div>
-            <div class="text-wrap m-4">{{ truncateText(short_overview, 95) }}</div>
+            <div class="text-wrap m-4">
+                {{ truncateText(short_overview, 95) }}
+            </div>
         </div>
     </nuxt-link>
 </template>
@@ -34,13 +51,12 @@ const props = defineProps({
 });
 
 const truncateText = (text: string, maxLength: number) => {
-  if (text.length <= maxLength) {
-    return text;
-  } else {
-    return text.substring(0, maxLength) + '...';
-  }
+    if (text.length <= maxLength) {
+        return text;
+    } else {
+        return text.substring(0, maxLength) + "...";
+    }
 };
-
 </script>
 
 <style scoped>

@@ -1,3 +1,4 @@
+<!-- Page that contains all the projects funded from the Venture Capital, it has also a filter to show only projects of a specific Area-->
 <template>
     <banner
     image-url="images/banners/all-projects.png"

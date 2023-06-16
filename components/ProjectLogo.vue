@@ -1,3 +1,4 @@
+<!-- Minimal Component that describe a project with essential information like logo and name-->
 <template>
     <NuxtLink :to="`/projects/${name2route(project_name)}`">
         <div class="shape-container group">

@@ -1,3 +1,4 @@
+<!-- Group of Single Data Card, it is used in the About Us page to give some information and statistics about the Venture Capital-->
 <template>
     <div class="deck">
       <div class="card">
