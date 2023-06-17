@@ -6,7 +6,7 @@
         :caption="project.short_description"
     />
     <div
-        class="self-center grid grid-cols-1 gap-4 max-w-6xl place-item-center m-4 desktop:grid-cols-2 desktop:mx-auto z-10"
+        class="self-center grid grid-cols-1 gap-4 max-w-6xl place-item-center justify-items-center items-center m-4 desktop:grid-cols-2 desktop:mx-auto z-10"
     >
         <div class="relative text-[var(--white-color)] desktop:col-span-2">
             <titled-card :title="project.name" class="z-0">
@@ -70,7 +70,7 @@
             sizes="sm:100vw lg:800px"
             format="webp"
         />
-        <titled-card :title="`${project.name} Team`" class="object-contain">
+        <titled-card :title="`${project.name} Team`" class="object-contain mt-5">
             <div class="grid grid-cols-2 gap-4">
                 <div
                     v-for="[role, people] of Object.entries(

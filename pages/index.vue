@@ -7,8 +7,8 @@
     <div class="description self-center flex px-10 desktop:px-60 py-20">
         <p class="text-center text-2xl">
             Welcome to <b>Apex Venture</b> where <b>innovation</b> meets
-            <b>opportunity</b>. As a leading venture capital firm, we fuel the
-            growth of groundbreaking startups, providing not only capital but
+            <b>opportunity</b>. As a leading venture capital firm founded in 2015,
+            we fuel groundbreaking startups, providing not only capital but
             also invaluable expertise and guidance. Join us as we reshape
             industries, redefine possibilities, and create a brighter future
             together.
