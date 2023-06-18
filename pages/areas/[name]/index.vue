@@ -52,7 +52,7 @@
                     class="little-container w-[190px] h-[150px] flex justify-center"
                 >
                     <button
-                        class="bg-[var(--clickable-color)] h-[150px] w-[150px] rounded-br-[var(--big-round)] rounded-tl-[var(--big-round)] justify-center p-3 shadow-md my-5"
+                        class=" see-all-button bg-[var(--clickable-color)] h-[150px] w-[150px] rounded-br-[var(--big-round)] rounded-tl-[var(--big-round)] justify-center p-3 shadow-md my-5"
                     >
                         <div class="text-xl font-bold text-white break-word">
                             See All Projects
@@ -111,3 +111,11 @@ useSeoMeta({
     description: area.short_overview,
 });
 </script>
+
+<style scoped>
+.see-all-button:hover {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    transform: scale(1.03);
+    transition: all 0.2s ease-in-out;
+}
+</style>
