@@ -98,7 +98,7 @@
                 sizes="sm:100vw md:50vw lg:800px"
                 format="webp"
             />
-            <div class="green-box" id="green-box">
+            <div class="green-box mb-8" id="green-box">
                 <h2 class="text-xl mb-4"><b>Our Team</b></h2>
                 <p class="mb-5">
                     When investors, operators, founders, and specialists align
