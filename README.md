@@ -1,42 +1,36 @@
-# Nuxt 3 Minimal Starter
+# Hypermedia Applications Project 2023
+Project for the Hypermedia Applications course at Politecnico di Milano.
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+The website is accessible at [https://apex-venture-ecru.vercel.app/]
 
-## Setup
+Team name: TheSuisiteSquad
 
-Make sure to install the dependencies:
-
+Authors
+- Vincenzo Curreri ([@Vinz-z](https://github.com/Vinz-z))
+- Fabio Chini ([@chinifabio](https://github.com/chinifabio))
+- Giovanni Caleffi ([@giovannicaleffi](https://github.com/giovannicaleffi))
+- Simone Coluccio ([@SimoneColuccio](https://github.com/SimoneColuccio))
+- - - -
+## Usability Evaluation
+This part of the project consists in evaluating the usability of the [TheInternGroup](https://www.theinterngroup.com/) web application.
+- - - -
+## Web Application Design
+This part of the project consists in the design and development of a website for a venture capital firm, showing the projects funded, the areas of investment and the team of the venture capital firm.
+> The file of the final Design Report can be found [here](https://github.com/Vinz-z/apex_venture-hyp2023/blob/master/documentation/Design%20Report.pdf)
+> The file of the final Implementation Specification can be found [here](https://github.com/Vinz-z/apex_venture-hyp2023/blob/master/documentation/Website%20Project%20-%20TheSuisiteSquad%20-%2019-06-2023%20.pdf)
+- - - -
+## Build Setup
 ```bash
-# yarn
-yarn install
+# install dependencies
+$ npm install
 
-# npm
-npm install
+# serve with hot reload at localhost:3000
+$ npm run dev
 
-# pnpm
-pnpm install
+# build for production and launch server
+$ npm run build
+$ npm run start
+
+# generate static project
+$ npm run generate
 ```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
